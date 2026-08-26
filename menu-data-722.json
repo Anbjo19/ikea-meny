@@ -1,0 +1,149 @@
+{
+  "generatedAt": "2026-08-26T12:04:39.295633Z",
+  "salesarea": "restaurant",
+  "store": {
+    "code": "722",
+    "name": "IKEA Karl Johan"
+  },
+  "categories": [
+    {
+      "slug": "sandwiches-wraps",
+      "name": "Smørbrød og wraps",
+      "items": [
+        {
+          "categorySlug": "sandwiches-wraps",
+          "category": "Smørbrød og wraps",
+          "name": "Baguette",
+          "description": "med ost, skinke, paprika, agurk og salat",
+          "isSwedishClassic": false,
+          "regularPrice": 59,
+          "regularPriceFormatted": "59,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": true,
+          "commercialLabel": null,
+          "allergens": [
+            "Gluten",
+            "Egg",
+            "Melk"
+          ],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/5ae16cae-8cff-46ab-812c-2f1956e79324"
+        }
+      ]
+    },
+    {
+      "slug": "desserts-pastries",
+      "name": "Bakverk, desserter og småkaker",
+      "items": [
+        {
+          "categorySlug": "desserts-pastries",
+          "category": "Bakverk, desserter og småkaker",
+          "name": "Mandelkake med sitron",
+          "description": "Mandelkake med sitron",
+          "isSwedishClassic": false,
+          "regularPrice": 39,
+          "regularPriceFormatted": "39,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": true,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Egg",
+            "Melk",
+            "Soyabønner",
+            "Mandler",
+            "Trenøtter"
+          ],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/5fbd9c45-a306-4d4d-a6a0-21ceb4f908aa"
+        },
+        {
+          "categorySlug": "desserts-pastries",
+          "category": "Bakverk, desserter og småkaker",
+          "name": "Kanelbolle",
+          "description": "En hvetebolle fylt med en blanding av smør og kanel og dekorert med perlesukker.",
+          "isSwedishClassic": true,
+          "regularPrice": 15,
+          "regularPriceFormatted": "15,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": true,
+          "commercialLabel": null,
+          "allergens": [
+            "Gluten",
+            "Melk"
+          ],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/523d7bfc-76fb-4c5d-8f63-65273e4155c7"
+        },
+        {
+          "categorySlug": "desserts-pastries",
+          "category": "Bakverk, desserter og småkaker",
+          "name": "Muffin blåbær",
+          "description": "Bakverk fylt med blåbær",
+          "isSwedishClassic": false,
+          "regularPrice": 39,
+          "regularPriceFormatted": "39,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Gluten",
+            "Egg",
+            "Melk"
+          ],
+          "allergensTraces": [
+            "Soyabønner"
+          ],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/1611b5bb-cd37-4a47-a9f1-8af146d0cdbc"
+        }
+      ]
+    },
+    {
+      "slug": "hot-beverages",
+      "name": "Varme drikker",
+      "items": [
+        {
+          "categorySlug": "hot-beverages",
+          "category": "Varme drikker",
+          "name": "Te",
+          "description": "Te, valgfri smak. Gratis påfyll",
+          "isSwedishClassic": false,
+          "regularPrice": 20,
+          "regularPriceFormatted": "20,-",
+          "familyPrice": 5,
+          "familyPriceFormatted": "5,-",
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/d3061be7-dec5-4af2-bf2b-6d950403e11b"
+        },
+        {
+          "categorySlug": "hot-beverages",
+          "category": "Varme drikker",
+          "name": "Kaffe",
+          "description": "Sort kaffe",
+          "isSwedishClassic": false,
+          "regularPrice": 20,
+          "regularPriceFormatted": "20,-",
+          "familyPrice": 5,
+          "familyPriceFormatted": "5,-",
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/28643d25-f0ae-4b1e-a76c-6b173a8bcc25"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+/*
+ * ikea-labels.css
+ * ================
+ * Ekte design-tokens og CSS hentet direkte fra ikea.com (inspisert i
+ * nettleseren 26.08.2026, restaurant-siden i Skapa-designsystemet deres).
+ * Brukes av menu.html for at prislapper og farger skal se ut som IKEA sine
+ * egne — ikke en tilnærming.
+ *
+ * Kilder:
+ *  - Fargetokens: :root-variablene i IKEA sin globale stilarkfil
+ *  - .price--bti: den gule/røde prislappen IKEA bruker på "budsjett"-retter
+ *    (samme rett som får `showAsBti: true` i food-API-et — se isBti i
+ *    fetch_menu.py)
+ *  - @font-face: https://www.ikea.com/global/assets/fonts/no/fonts.12ac7b60.css
+ *    (kun "latin"-varianten, ikke "latin-ext" — det er den IKEA selv laster
+ *    for norsk/vesteuropeisk tekst)
+ */
+
+/* ---------- Offisielle IKEA-fargetokens (rgb-verdier fra :root) -------- */
+:root{
+  --ikea-brand-blue:   rgb(0, 88, 163);    /* --colour-static-ikea-brand-blue   */
+  --ikea-brand-yellow: rgb(255, 219, 0);   /* --colour-static-ikea-brand-yellow */
+  --ikea-family-blue:  rgb(0, 124, 193);   /* --colour-static-ikea-family / --colour-commercial-message-ikea-family */
+  --ikea-message-new:        rgb(202, 80, 8);  /* --colour-commercial-message-new */
+  --ikea-message-lower-price:rgb(204, 0, 8);   /* --colour-commercial-message-new-lower-price */
+  --ikea-message-bti-yellow: rgb(255, 219, 0); /* --colour-commercial-message-bti-yellow */
+  --ikea-message-bti-red:    rgb(204, 0, 8);   /* --colour-commercial-message-bti-red */
+  --ikea-ink:  rgb(17, 17, 17);            /* --colour-text-and-icon-1 */
+}
+
+/* ---------- Skrift: Noto IKEA (latin) ----------------------------------
+ * Last ned filene med download-ikea-assets.sh (se README) og legg dem i
+ * assets/fonts/ ved siden av denne CSS-filen. */
+@font-face{
+  font-display: swap;
+  font-family: "Noto IKEA";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/noto-ikea-400.latin.woff2") format("woff2");
+}
+@font-face{
+  font-display: swap;
+  font-family: "Noto IKEA";
+  font-style: normal;
+  font-weight: 700;
+  src: url("./fonts/noto-ikea-700.latin.woff2") format("woff2");
+}
+@font-face{
+  font-display: swap;
+  font-family: "Noto IKEA";
+  font-style: italic;
+  font-weight: 400;
+  src: url("./fonts/noto-ikea-400i.latin.woff2") format("woff2");
+}
+@font-face{
+  font-display: swap;
+  font-family: "Noto IKEA";
+  font-style: italic;
+  font-weight: 700;
+  src: url("./fonts/noto-ikea-700i.latin.woff2") format("woff2");
+}
+
+/* ---------- Den gule/røde "BTI"-prislappen -----------------------------
+ * Dette er IKEA sin egen CSS for .price--bti, hentet rett fra
+ * devtools (kun formatert/kommentert av oss). Brukes på ikea.com for
+ * retter som er flagget showAsBti — samme flagg som isBti i
+ * menu-data.json. */
+.ikea-price--bti{
+  display: inline-block;
+  color: var(--ikea-ink);
+  padding: 0.2em 0.3em;
+  background: var(--ikea-message-bti-yellow);
+  box-shadow: .08em .08em 0 var(--ikea-message-bti-red);
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* Grunnleggende pris-typografi (fra .price / .price__* i Skapa) */
+.ikea-price{
+  font-weight: 700;
+  line-height: 1;
+  position: relative;
+  color: var(--ikea-ink);
+}
+.ikea-price .decimal{
+  font-size: 0.5em;
+  position: relative;
+  top: -0.727em;
+}
+
+/* IKEA Family-pris (den blå varianten) — bygget etter samme mønster som
+ * .price--bti, med IKEA sin offisielle Family-blå i stedet for gult. */
+.ikea-price--family{
+  display: inline-block;
+  color: #fff;
+  padding: 0.2em 0.3em;
+  background: var(--ikea-family-blue);
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* IKEA sin egen "Nyhet"-merking (.commercial-message / .commercial-message--new),
+ * hentet fra devtools på restaurant-siden (26.08.2026). IKEA har to
+ * varianter av akkurat samme merke, og bytter mellom dem med kun én ekstra
+ * klasse ("--subtle"):
+ *  - .ikea-message--new         -> heldekket: oransje bakgrunn, hvit tekst
+ *                                   (padding 4px 7px, kantete hjørner)
+ *  - .ikea-message--new-subtle  -> ren oransje tekst, ingen bakgrunn/padding
+ * Begge: fet (700), 14px. */
+.ikea-message--new{
+  display: inline-block;
+  color: #fff;
+  background: var(--ikea-message-new);
+  padding: 0.286em 0.5em;
+  border-radius: 0;
+  font-weight: 700;
+  font-style: normal;
+}
+.ikea-message--new-subtle{
+  display: inline;
+  color: var(--ikea-message-new);
+  background: none;
+  padding: 0;
+  font-weight: 700;
+  font-style: normal;
+}

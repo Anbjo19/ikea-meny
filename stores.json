@@ -1,0 +1,36 @@
+{
+  "stores": [
+    {
+      "code": "091",
+      "name": "IKEA Slependen"
+    },
+    {
+      "code": "095",
+      "name": "IKEA Furuset"
+    },
+    {
+      "code": "441",
+      "name": "IKEA Åsane"
+    },
+    {
+      "code": "371",
+      "name": "IKEA Leangen"
+    },
+    {
+      "code": "126",
+      "name": "IKEA Forus"
+    },
+    {
+      "code": "390",
+      "name": "IKEA Ringsaker"
+    },
+    {
+      "code": "007",
+      "name": "IKEA Sørlandet"
+    },
+    {
+      "code": "722",
+      "name": "IKEA Karl Johan"
+    }
+  ]
+}

@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Restaurantmeny</title>
+<link rel="stylesheet" href="./assets/ikea-labels.css" />
+<style>
+  :root{
+    /* Offisielle IKEA-fargetokens, se assets/ikea-labels.css for kilde */
+    --ikea-blue:#0058a3;
+    --ikea-blue-dark:#003d73;
+    --ikea-yellow:#ffdb00;
+    --ikea-family-blue:#007cc1;
+    --ink:#111111;
+    --paper:#ffffff;
+    --muted:#5b6b82;
+    /* Logoen nede til høyre: selve høyden, brukt både til størrelsen og
+       til luften rundt (100% av høyden, som bedt om). */
+    --logo-h: clamp(56px, 7.2vw, 92px);
+  }
+  *{box-sizing:border-box;}
+  html,body{
+    margin:0; padding:0; width:100%; height:100%;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Noto IKEA","Helvetica Neue",Arial,sans-serif;
+    overflow:hidden;
+  }
+  #app{
+    display:flex; flex-direction:column;
+    width:100vw; height:100vh;
+    background:var(--paper);
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    display:flex; align-items:flex-end; justify-content:space-between;
+    gap: 3vw;
+    background:var(--ikea-yellow);
+    color:var(--ink);
+    padding: 2.8vh 4.6vw 2.6vh;
+    flex:0 0 auto;
+  }
+  header .brand{
+    display:flex; flex-direction:column; gap:0.6vh;
+    flex:1 1 auto;
+    max-width:82%;
+  }
+  header .brand .hej{
+    font-size:clamp(26px, 4.6vw, 60px);
+    font-weight:900;
+    line-height:1.08;
+    /* Bryter etter "Hej!" (se <br> i markup), resten skal få plass på én
+       linje til med max-width over — ikke brekke igjen. */
+  }
+  header .clock{
+    flex:0 0 auto;
+    white-space:nowrap;
+    font-size:clamp(12px, 1.4vw, 18px);
+    font-variant-numeric: tabular-nums;
+    opacity:0.75;
+    text-align:right;
+  }
+  header .clock .store{
+    font-size:0.62em;
+    opacity:0.85;
+    font-weight:400;
+  }
+
+  /* ---------- Logo, nede til høyre, med luft rundt = egen høyde ---------- */
+  .corner-logo{
+    position:fixed;
+    right: var(--logo-h);
+    bottom: var(--logo-h);
+    height: var(--logo-h);
+    width:auto;
+    z-index:20;
+  }
+  #logoFallback{
+    position:fixed;
+    right: var(--logo-h);
+    bottom: var(--logo-h);
+    z-index:20;
+    background:var(--ikea-yellow);
+    color:var(--ikea-blue-dark);
+    font-weight:900;
+    font-size:calc(var(--logo-h) * 0.42);
+    padding:0.3em 0.5em;
+    border-radius:5px;
+    letter-spacing:0.5px;
+  }
+
+  /* ---------- Board (all retter, én skjerm) ---------- */
+  #boardViewport{
+    flex:1 1 auto;
+    position:relative;
+    overflow:hidden;
+    padding: 3.4vh 4vw 1vh;
+    /* Flisbakgrunn: kvadratiske hvite/lyse fliser med gul fuge (rutenett),
+       to sett stripete gradienter (vannrett + loddrett) som til sammen
+       danner et rutenett. --tile-size = flisstørrelse inkl. fuge,
+       --tile-fuge = fugebredde. */
+    --tile-size: 9.5vh;
+    --tile-fuge: 2px;
+    --tile-fuge-color: rgba(255, 219, 0, 0.55);
+    background-color: #fcfcfa;
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        var(--tile-fuge-color) 0,
+        var(--tile-fuge-color) var(--tile-fuge),
+        transparent var(--tile-fuge),
+        transparent var(--tile-size)
+      ),
+      repeating-linear-gradient(
+        90deg,
+        var(--tile-fuge-color) 0,
+        var(--tile-fuge-color) var(--tile-fuge),
+        transparent var(--tile-fuge),
+        transparent var(--tile-size)
+      );
+  }
+  /* To egne kolonner (i stedet for CSS multi-column) fordi de to sidene skal
+     ha ulik bunnklaring: venstre kolonne har ingen logo og kan derfor gå
+     nesten helt ned, mens høyre kolonne må stoppe med full luft over
+     hjørnelogoen. board-col-right sin egen padding-bottom sørger for det —
+     se splitCategoriesIntoColumns() i JS, som fordeler kategoriene mellom
+     de to før rendering. */
+  #board{
+    display:flex;
+    align-items:flex-start;
+    gap: 3.2vw;
+    width:100%;
+  }
+  .board-col{
+    flex:1 1 0;
+    min-width:0;
+  }
+  .board-col-right{
+    /* plass til logoen (egen høyde + luften under den) i høyre hjørne */
+    padding-bottom: calc(var(--logo-h) * 2.2);
+  }
+  .category{
+    break-inside: avoid-column;
+    margin-bottom: 2vh;
+  }
+  .category h2{
+    margin:0 0 0.45vh 0;
+    font-size:clamp(21px, 2.7vw, 34px);
+    font-weight:900;
+    color:var(--ink);
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+    padding-bottom:0.1vh;
+    break-after: avoid-column;
+  }
+  /* Grid i stedet for ren flex-rad: kolonne 1 (tittel/beskrivelse/
+     allergener) og kolonne 2 (priser) er de samme radene ned gjennom
+     hele retten, slik at beskrivelsen aldri går lenger til høyre enn der
+     den prikkete linja stopper (dvs. der priskolonnen begynner). */
+  .item{
+    display:grid;
+    grid-template-columns: 1fr auto;
+    column-gap:0.6em;
+    padding: 0.22vh 0;
+    break-inside: avoid-column;
+  }
+  .item .row-name{
+    grid-column:1;
+    display:flex;
+    align-items:baseline;
+    gap:0.5em;
+    min-width:0;
+  }
+  .item .name{
+    flex:0 1 auto;
+    font-weight:700;
+    font-size:clamp(18px, 2.0vw, 26px);
+    white-space:nowrap;
+  }
+  .se-flag{
+    display:inline-block;
+    width:1.7em;
+    height:1.0625em;
+    margin-left:0.4em;
+    vertical-align:middle;
+    border-radius:0;
+    flex:0 0 auto;
+  }
+  /* "Nyhet" rett etter tittelen, midtstilt vertikalt ift. tittelteksten
+     (ikea.com selv har den over tittelen, men vi prøver den etter her).
+     Fargen/formen (heldekket pille eller ren tekst) kommer fra
+     .ikea-message--new i ikea-labels.css. */
+  .item .new-label{
+    display:inline-block;
+    margin-left:0.5em;
+    vertical-align:middle;
+    font-size:clamp(10px, 1.05vw, 14px);
+  }
+  .item .desc{
+    grid-column:1;
+    min-width:0;
+    margin-top:0.08vh;
+    white-space:normal;
+    overflow-wrap:break-word;
+    font-size:clamp(14px, 1.5vw, 19px);
+    color:var(--muted);
+    line-height:1.16;
+  }
+  .item .allergens{
+    grid-column:1;
+    min-width:0;
+    margin-top:0.05vh;
+    white-space:normal;
+    overflow-wrap:break-word;
+    font-size:clamp(11px, 1.15vw, 15px);
+    color:var(--muted);
+    opacity:0.75;
+    font-style:italic;
+    line-height:1.14;
+  }
+  .item .leader{
+    flex:1 1 auto;
+    min-width:0.6em;
+    border-bottom: 1px dotted #c7cede;
+    height:0.55em;
+    align-self:flex-end;
+    margin-bottom:0.3em;
+  }
+  .item .prices{
+    grid-column:2;
+    grid-row:1;
+    align-self:baseline;
+    display:flex;
+    gap:0.6em;
+    font-variant-numeric: tabular-nums;
+    white-space:nowrap;
+  }
+  .item .family{
+    font-weight:800;
+    font-size:clamp(16px, 1.85vw, 24px);
+    color:var(--ikea-family-blue);
+    min-width:2.6em;
+    text-align:right;
+  }
+  .item .regular{
+    font-weight:900;
+    font-size:clamp(18px, 2.0vw, 26px);
+    color:var(--ink);
+    min-width:2.8em;
+    text-align:right;
+  }
+  /* Ekte IKEA-prislapp (gul/rød) for retter merket isBti — se assets/ikea-labels.css */
+  .item .regular.ikea-price--bti{
+    min-width:auto;
+    font-size:clamp(17px, 1.85vw, 23px);
+    border-radius:2px;
+  }
+
+  .empty-state{
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    height:100%; text-align:center; color:var(--muted);
+    gap:1.2vh; padding: 4vh;
+  }
+  .empty-state .big{
+    font-size:clamp(18px,2.6vw,32px); color:var(--ikea-blue-dark); font-weight:800;
+  }
+
+  /* ---------- Spotlight: "nyhet"-overtak ---------- */
+  #spotlight{
+    position:fixed; inset:0;
+    background: linear-gradient(160deg, var(--ikea-blue), var(--ikea-blue-dark) 75%);
+    color:#fff;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center;
+    padding: 6vh 8vw;
+    opacity:0; pointer-events:none;
+    transition: opacity 0.7s ease;
+    z-index:50;
+  }
+  #spotlight.show{
+    opacity:1;
+  }
+  #spotlight .badge{
+    background:var(--ikea-yellow);
+    color:var(--ikea-blue-dark);
+    font-weight:900;
+    font-size:clamp(14px, 2vw, 22px);
+    padding:0.35em 1em;
+    border-radius:999px;
+    letter-spacing:0.08em;
+    margin-bottom:3vh;
+  }
+  #spotlight img{
+    max-width:min(70vw, 520px);
+    max-height:38vh;
+    object-fit:cover;
+    border-radius:16px;
+    box-shadow: 0 1.5vh 4vh rgba(0,0,0,0.35);
+    margin-bottom:3.5vh;
+  }
+  #spotlight .name{
+    font-size:clamp(26px, 5vw, 56px);
+    font-weight:900;
+    margin-bottom:1.6vh;
+    line-height:1.1;
+  }
+  #spotlight .desc{
+    font-size:clamp(15px, 2.2vw, 24px);
+    opacity:0.9;
+    max-width:44em;
+    margin-bottom:2.6vh;
+    line-height:1.4;
+  }
+  #spotlight .price{
+    font-size:clamp(22px, 3.4vw, 40px);
+    font-weight:900;
+    color:var(--ikea-yellow);
+  }
+</style>
+</head>
+<body>
+<div id="app">
+  <header>
+    <div class="brand">
+      <span class="hej">Hej!<br />Velkommen til restauranten</span>
+    </div>
+    <div class="clock">
+      <div id="clockTime">--:--</div>
+      <div class="store" id="storeLine">&nbsp;</div>
+    </div>
+  </header>
+  <div id="boardViewport">
+    <div class="empty-state">
+      <div class="big">Laster meny …</div>
+      <div>Henter data fra menu-data.json</div>
+    </div>
+  </div>
+  <img class="corner-logo" src="./assets/ikea-logo.svg" alt="IKEA"
+       onerror="this.style.display='none'; document.getElementById('logoFallback').style.display='';" />
+  <span id="logoFallback" style="display:none;">IKEA</span>
+</div>
+
+<div id="spotlight">
+  <div class="badge">Nyhet</div>
+  <img id="spotlightImg" alt="" />
+  <div class="name" id="spotlightName"></div>
+  <div class="desc" id="spotlightDesc"></div>
+  <div class="price" id="spotlightPrice"></div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // ---- Konfigurasjon -------------------------------------------------
+  // Hvilken butikk skal vises? Uten ?store i URL-en brukes menu-data.json
+  // som normalt (fint for en skjerm som alltid står i samme butikk). Med
+  // f.eks. ?store=091 i URL-en leses i stedet menu-data-091.json — slik
+  // kan samme menu.html-utrulling brukes til flere butikker, hver med sin
+  // egen skjerm-URL. Generer filen med:
+  //   python3 fetch_menu.py --store 091 --out menu-data-091.json
+  var urlParams = new URLSearchParams(window.location.search);
+  var storeOverride = (urlParams.get("store") || "").trim();
+  var DATA_URL = storeOverride
+    ? "./menu-data-" + encodeURIComponent(storeOverride) + ".json"
+    : "./menu-data.json";
+  var DATA_POLL_MS = 5 * 60 * 1000;        // sjekk om menu-data.json er oppdatert
+  var FULL_RELOAD_MS = 6 * 60 * 60 * 1000; // last hele siden på nytt (holder skjermen frisk)
+  var SPOTLIGHT_ENABLED = false;           // av for nå — kun menytavlen vises. Sett til true for å slå på "nyhet"-overtaket igjen.
+  var SPOTLIGHT_CYCLE_MS = 25000;          // hvor ofte et "nyhet"-overtak vises
+  var SPOTLIGHT_SHOW_MS = 8000;            // hvor lenge det står på skjermen
+  var MIN_SCALE = 0.45;                    // laveste vi skalerer tavlen ned til
+
+  var boardViewportEl = document.getElementById("boardViewport");
+  var storeLineEl = document.getElementById("storeLine");
+  var spotlightEl = document.getElementById("spotlight");
+
+  var lastGeneratedAt = null;
+  var newItems = [];
+  var spotlightIndex = 0;
+  var spotlightCycleTimer = null;
+  var spotlightHideTimer = null;
+
+  // ---- Klokke ----------------------------------------------------------
+  function tickClock() {
+    var now = new Date();
+    var hh = String(now.getHours()).padStart(2, "0");
+    var mm = String(now.getMinutes()).padStart(2, "0");
+    document.getElementById("clockTime").textContent = hh + ":" + mm;
+  }
+  tickClock();
+  setInterval(tickClock, 1000 * 15);
+
+  function escapeHtml(s) {
+    return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  // Grov vekting av hvor mye plass en kategori tar, brukt til å dele
+  // kategoriene mellom venstre/høyre kolonne omtrent likt (samme idé som
+  // CSS sin egen column-balance, men vi trenger ett kuttpunkt selv siden
+  // kolonnene nå er to separate elementer, ikke CSS multi-column).
+  function estimateCategoryWeight(cat) {
+    var w = 1.6; // kategori-tittel
+    (cat.items || []).forEach(function (it) {
+      w += 1; // navn/pris-rad
+      if (it.description) w += Math.max(1, Math.ceil(it.description.length / 44));
+      var hasAllergens =
+        (it.allergens && it.allergens.length) || (it.allergensTraces && it.allergensTraces.length);
+      if (hasAllergens) w += 1;
+    });
+    return w;
+  }
+
+  function splitCategoriesIntoColumns(categories) {
+    var withWeight = categories
+      .filter(function (c) {
+        return c.items && c.items.length;
+      })
+      .map(function (c) {
+        return { cat: c, weight: estimateCategoryWeight(c) };
+      });
+    var total = withWeight.reduce(function (sum, c) {
+      return sum + c.weight;
+    }, 0);
+
+    var left = [];
+    var right = [];
+    var acc = 0;
+    withWeight.forEach(function (c) {
+      // Fyll venstre kolonne til vi passerer halvparten av totalvekten,
+      // deretter resten i høyre — gir samme lesevennlige rekkefølge
+      // (ovenfra og ned, deretter neste kolonne) som før.
+      if (acc < total / 2) {
+        left.push(c.cat);
+      } else {
+        right.push(c.cat);
+      }
+      acc += c.weight;
+    });
+    // Ikke la høyre kolonne stå helt tom hvis alt havnet i venstre (svært
+    // få kategorier) — flytt i så fall siste kategori over.
+    if (!right.length && left.length > 1) {
+      right.push(left.pop());
+    }
+    return [left, right];
+  }
+
+  function renderCategoryList(categories) {
+    var html = "";
+    categories.forEach(function (cat) {
+      if (!cat.items || !cat.items.length) return;
+      html += '<div class="category"><h2>' + escapeHtml(cat.name) + "</h2>";
+      cat.items.forEach(function (it) {
+        var family = it.familyPriceFormatted
+          ? '<span class="family">' + escapeHtml(it.familyPriceFormatted) + "</span>"
+          : '<span class="family"></span>';
+        var regular = it.regularPriceFormatted
+          ? escapeHtml(it.regularPriceFormatted)
+          : it.regularPrice != null
+          ? escapeHtml(it.regularPrice + ",-")
+          : "";
+        var regularCls = "regular" + (it.isBti ? " ikea-price--bti" : "");
+        var descHtml = it.description
+          ? '<div class="desc">' + escapeHtml(it.description) + "</div>"
+          : "";
+        var seFlagHtml = it.isSwedishClassic
+          ? '<svg class="se-flag" viewBox="0 0 16 10" aria-label="Tradisjonell svensk klassiker" role="img">' +
+            '<rect width="16" height="10" fill="#006AA7"/>' +
+            '<rect x="5" width="2" height="10" fill="#FECC00"/>' +
+            '<rect y="4" width="16" height="2" fill="#FECC00"/>' +
+            "</svg>"
+          : "";
+        var newLabelHtml = it.isNew ? '<span class="ikea-message--new new-label">Nyhet</span>' : "";
+        var allergenBits = [];
+        if (it.allergens && it.allergens.length) {
+          allergenBits.push("Inneholder: " + it.allergens.join(", "));
+        }
+        if (it.allergensTraces && it.allergensTraces.length) {
+          allergenBits.push("kan inneholde spor av: " + it.allergensTraces.join(", "));
+        }
+        var allergenHtml = allergenBits.length
+          ? '<div class="allergens">' + escapeHtml(allergenBits.join(" — ")) + "</div>"
+          : "";
+        html +=
+          '<div class="item">' +
+          '<div class="row-name">' +
+          '<span class="name">' + escapeHtml(it.name) + newLabelHtml + seFlagHtml + "</span>" +
+          '<span class="leader"></span>' +
+          "</div>" +
+          '<span class="prices">' + family + '<span class="' + regularCls + '">' + regular + "</span></span>" +
+          descHtml +
+          allergenHtml +
+          "</div>";
+      });
+      html += "</div>";
+    });
+    return html;
+  }
+
+  function renderBoard(menu) {
+    var categories = menu.categories || [];
+    if (!categories.length) {
+      boardViewportEl.innerHTML =
+        '<div class="empty-state"><div class="big">Ingen retter tilgjengelig akkurat nå</div>' +
+        "<div>Sjekk at menu-data.json er generert (kjør fetch_menu.py).</div></div>";
+      return;
+    }
+
+    var cols = splitCategoriesIntoColumns(categories);
+    var html =
+      '<div id="board">' +
+      '<div class="board-col board-col-left">' + renderCategoryList(cols[0]) + "</div>" +
+      '<div class="board-col board-col-right">' + renderCategoryList(cols[1]) + "</div>" +
+      "</div>";
+    boardViewportEl.innerHTML = html;
+    fitBoard();
+  }
+
+  // ---- Skaler tavlen slik at ALT vises uten scrolling --------------------
+  function fitBoard() {
+    var board = document.getElementById("board");
+    if (!board) return;
+    board.style.transform = "none";
+    board.style.width = "100%";
+
+    // clientHeight inkluderer boardViewport sin egen padding (bl.a. plassen
+    // reservert til hjørnelogoen) — den må trekkes fra for å finne hvor mye
+    // høyde #board faktisk har å bruke, ellers skalerer vi for lite ned og
+    // innholdet kan overlappe logoen.
+    var cs = window.getComputedStyle(boardViewportEl);
+    var vPad = parseFloat(cs.paddingTop || 0) + parseFloat(cs.paddingBottom || 0);
+    var availH = boardViewportEl.clientHeight - vPad;
+    var naturalH = board.scrollHeight;
+    if (naturalH <= availH || naturalH === 0) return;
+
+    var scale = Math.max(MIN_SCALE, (availH / naturalH) * 0.985);
+    board.style.transformOrigin = "top left";
+    board.style.width = 100 / scale + "%";
+    board.style.transform = "scale(" + scale + ")";
+  }
+
+  var resizeTimer = null;
+  window.addEventListener("resize", function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(fitBoard, 200);
+  });
+
+  // ---- "Nyhet"-overtak ----------------------------------------------------
+  function stopSpotlightCycle() {
+    if (spotlightCycleTimer) clearInterval(spotlightCycleTimer);
+    if (spotlightHideTimer) clearTimeout(spotlightHideTimer);
+    spotlightEl.classList.remove("show");
+  }
+
+  function showNextSpotlight() {
+    if (!newItems.length) return;
+    var it = newItems[spotlightIndex % newItems.length];
+    spotlightIndex++;
+
+    var imgEl = document.getElementById("spotlightImg");
+    if (it.image) {
+      imgEl.src = it.image;
+      imgEl.style.display = "";
+    } else {
+      imgEl.style.display = "none";
+    }
+    document.getElementById("spotlightName").textContent = it.name || "";
+    document.getElementById("spotlightDesc").textContent = it.description || "";
+    document.getElementById("spotlightPrice").textContent = it.regularPriceFormatted || "";
+
+    spotlightEl.classList.add("show");
+    if (spotlightHideTimer) clearTimeout(spotlightHideTimer);
+    spotlightHideTimer = setTimeout(function () {
+      spotlightEl.classList.remove("show");
+    }, SPOTLIGHT_SHOW_MS);
+  }
+
+  function startSpotlightCycle() {
+    stopSpotlightCycle();
+    if (!SPOTLIGHT_ENABLED || !newItems.length) return;
+    spotlightCycleTimer = setInterval(showNextSpotlight, SPOTLIGHT_CYCLE_MS);
+    // vis det første "nyhet"-overtaket etter en liten pause, så tavlen rekker å vises først
+    setTimeout(showNextSpotlight, 6000);
+  }
+
+  // ---- Hent data ---------------------------------------------------------
+  function loadMenu() {
+    fetch(DATA_URL, { cache: "no-store" })
+      .then(function (r) {
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        return r.json();
+      })
+      .then(function (menu) {
+        if (menu.generatedAt === lastGeneratedAt) return; // ingenting nytt
+        lastGeneratedAt = menu.generatedAt;
+
+        var storeBits = [];
+        if (menu.store && menu.store.code) storeBits.push("Butikk " + menu.store.code);
+        if (menu.generatedAt) {
+          var d = new Date(menu.generatedAt);
+          if (!isNaN(d)) {
+            storeBits.push(
+              "Oppdatert " +
+                d.toLocaleDateString("no-NO") +
+                " " +
+                d.toLocaleTimeString("no-NO", { hour: "2-digit", minute: "2-digit" })
+            );
+          }
+        }
+        storeLineEl.textContent = storeBits.join(" · ");
+
+        renderBoard(menu);
+
+        newItems = [];
+        (menu.categories || []).forEach(function (cat) {
+          (cat.items || []).forEach(function (it) {
+            if (it.isNew || it.commercialLabel) newItems.push(it);
+          });
+        });
+        spotlightIndex = 0;
+        startSpotlightCycle();
+      })
+      .catch(function (err) {
+        console.error("Kunne ikke laste " + DATA_URL + ":", err);
+        if (!document.getElementById("board")) {
+          var howTo = storeOverride
+            ? "Kjør <code>python3 fetch_menu.py --store " + escapeHtml(storeOverride) +
+              " --out menu-data-" + escapeHtml(storeOverride) + ".json</code> i denne mappen."
+            : "Kjør <code>python3 fetch_menu.py</code> i denne mappen.";
+          boardViewportEl.innerHTML =
+            '<div class="empty-state"><div class="big">Fant ikke ' + escapeHtml(DATA_URL) + "</div>" +
+            "<div>" + howTo + " Server mappen med en lokal webserver " +
+            "(ikke åpne filen direkte).</div></div>";
+        }
+      });
+  }
+
+  loadMenu();
+  setInterval(loadMenu, DATA_POLL_MS);
+  setTimeout(function () {
+    window.location.reload();
+  }, FULL_RELOAD_MS);
+})();
+</script>
+</body>
+</html>

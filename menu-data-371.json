@@ -1,0 +1,826 @@
+{
+  "generatedAt": "2026-08-26T12:04:39.288841Z",
+  "salesarea": "restaurant",
+  "store": {
+    "code": "371",
+    "name": "IKEA Leangen"
+  },
+  "categories": [
+    {
+      "slug": "breakfast",
+      "name": "Frokost",
+      "items": [
+        {
+          "categorySlug": "breakfast",
+          "category": "Frokost",
+          "name": "Frokost- rundstykke",
+          "description": "Rundstykke servert med ost og agurk",
+          "isSwedishClassic": false,
+          "regularPrice": 19,
+          "regularPriceFormatted": "19,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": true,
+          "commercialLabel": null,
+          "allergens": [
+            "Gluten",
+            "Melk",
+            "Sesam",
+            "Soyabønner"
+          ],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/aa97d3d4-88a4-48a7-9f51-85f7574a4092"
+        },
+        {
+          "categorySlug": "breakfast",
+          "category": "Frokost",
+          "name": "Engelsk frokost",
+          "description": "serveres med eggerøre, bacon, pølse, tomatbønner, potetbåter, bakte cherry tomater, sjampinjong og hvitløksbrød.",
+          "isSwedishClassic": false,
+          "regularPrice": 89,
+          "regularPriceFormatted": "89,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Gluten",
+            "Egg",
+            "Melk",
+            "Soyabønner"
+          ],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/443dbef0-de92-4afb-a812-64f9ab9a8a64"
+        },
+        {
+          "categorySlug": "breakfast",
+          "category": "Frokost",
+          "name": "Frokosttallerken",
+          "description": "Serveres med ost, skinke, egg, paprika, salat og rundstykke.",
+          "isSwedishClassic": false,
+          "regularPrice": 49,
+          "regularPriceFormatted": "49,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Gluten",
+            "Egg",
+            "Melk",
+            "Sesam",
+            "Soyabønner"
+          ],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/f1572808-e925-4008-998e-c4b3f5d034b4"
+        }
+      ]
+    },
+    {
+      "slug": "mains",
+      "name": "Hovedretter",
+      "items": [
+        {
+          "categorySlug": "mains",
+          "category": "Hovedretter",
+          "name": "Kjøttboller",
+          "description": "Kjøttboller (8 stk.) serveres med erter, potetmos, fløtesaus og tyttebærsyltetøy.",
+          "isSwedishClassic": true,
+          "regularPrice": 109,
+          "regularPriceFormatted": "109,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Gluten",
+            "Egg",
+            "Melk"
+          ],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/2d744ee3-d0d6-477d-bf01-08c4bf0c3a21"
+        },
+        {
+          "categorySlug": "mains",
+          "category": "Hovedretter",
+          "name": "Laksefilet med sitron- og dillsaus",
+          "description": "Laksefilet serveres med bønnemiks, potetmos sitron- og dillsaus.",
+          "isSwedishClassic": false,
+          "regularPrice": 169,
+          "regularPriceFormatted": "169,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Fisk",
+            "Melk",
+            "Soyabønner"
+          ],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/60209bbd-863e-4d3d-b288-dfa5e2dd2af3"
+        },
+        {
+          "categorySlug": "mains",
+          "category": "Hovedretter",
+          "name": "Planteboller",
+          "description": "Planteboller (8 stk.) serveres med erter, potetmos, fløtesaus og tyttebærsyltetøy. Plantebollene er laget av erteproteiner, havre, potet, løk og eple.",
+          "isSwedishClassic": false,
+          "regularPrice": 89,
+          "regularPriceFormatted": "89,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Gluten",
+            "Melk"
+          ],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/1c1d2f05-53e9-470a-b376-2b39a63c8699"
+        },
+        {
+          "categorySlug": "mains",
+          "category": "Hovedretter",
+          "name": "Falafel",
+          "description": "Falafel 8 stk. med couscous, grønnsaker og aioli",
+          "isSwedishClassic": false,
+          "regularPrice": 99,
+          "regularPriceFormatted": "99,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Gluten",
+            "Egg",
+            "Sennep"
+          ],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/67f1c1c0-8a56-404c-b891-68ffe0dfdfec"
+        },
+        {
+          "categorySlug": "mains",
+          "category": "Hovedretter",
+          "name": "BBQ- marinert kyllingfilet",
+          "description": "serveres med pommes frites, chilibernaise og salat",
+          "isSwedishClassic": false,
+          "regularPrice": 189,
+          "regularPriceFormatted": "189,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": true,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Selleri",
+            "Egg"
+          ],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/3a9ad9b0-0197-49f9-9c9b-04cfbf77142c"
+        },
+        {
+          "categorySlug": "mains",
+          "category": "Hovedretter",
+          "name": "Risrett med grønnsaker",
+          "description": "Ris og grønnsaker med kokosmelk og urter",
+          "isSwedishClassic": false,
+          "regularPrice": 69,
+          "regularPriceFormatted": "69,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": true,
+          "commercialLabel": null,
+          "allergens": [
+            "Gluten",
+            "Melk",
+            "Soyabønner"
+          ],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/1b2dc7b3-ce1a-4076-913f-05ccf8261def"
+        }
+      ]
+    },
+    {
+      "slug": "childrens-menu",
+      "name": "Barnemeny",
+      "items": [
+        {
+          "categorySlug": "childrens-menu",
+          "category": "Barnemeny",
+          "name": "Planteboller barnerett",
+          "description": "Planteboller (5 stk.) med potetmos, erter, fløtesaus og tyttebærsyltetøy",
+          "isSwedishClassic": false,
+          "regularPrice": 45,
+          "regularPriceFormatted": "45,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Gluten",
+            "Melk"
+          ],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/8b93cf85-31c9-4e31-aabe-5bd99726d670"
+        },
+        {
+          "categorySlug": "childrens-menu",
+          "category": "Barnemeny",
+          "name": "Kjøttboller barnerett",
+          "description": "Kjøttboller (5 stk.) med potetmos, erter, fløtesaus og tyttebærsyltetøy",
+          "isSwedishClassic": true,
+          "regularPrice": 45,
+          "regularPriceFormatted": "45,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Gluten",
+            "Egg",
+            "Melk"
+          ],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/a342a103-d089-447c-a200-2b8aa65dd65a"
+        },
+        {
+          "categorySlug": "childrens-menu",
+          "category": "Barnemeny",
+          "name": "Pannekaker 3 stk",
+          "description": "serveres med syltetøy",
+          "isSwedishClassic": false,
+          "regularPrice": 45,
+          "regularPriceFormatted": "45,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Gluten",
+            "Egg",
+            "Melk"
+          ],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/2f1ac030-c650-4e24-8c8e-db04d2eb4342"
+        },
+        {
+          "categorySlug": "childrens-menu",
+          "category": "Barnemeny",
+          "name": "FALAFEL BARNERETT",
+          "description": "Falafel. 5 stk. med couscous, grønnsaker og aioli",
+          "isSwedishClassic": false,
+          "regularPrice": 45,
+          "regularPriceFormatted": "45,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Gluten",
+            "Egg",
+            "Sennep"
+          ],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/097d8292-542b-49c7-b01a-8c5a22a7f322"
+        },
+        {
+          "categorySlug": "childrens-menu",
+          "category": "Barnemeny",
+          "name": "Stekte fiskeboller barnerett",
+          "description": "Fiskeboller, 5 stk, med potetmos, grønne erter, smør og tyttebær",
+          "isSwedishClassic": false,
+          "regularPrice": 45,
+          "regularPriceFormatted": "45,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Gluten",
+            "Egg",
+            "Fisk",
+            "Melk",
+            "Sennep"
+          ],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/1da94901-93f1-4f2b-9130-3d4e408d6313"
+        }
+      ]
+    },
+    {
+      "slug": "sandwiches-wraps",
+      "name": "Smørbrød og wraps",
+      "items": [
+        {
+          "categorySlug": "sandwiches-wraps",
+          "category": "Smørbrød og wraps",
+          "name": "Rekesmørbrød",
+          "description": "Rekesmørbrød med egg og majones.",
+          "isSwedishClassic": true,
+          "regularPrice": 89,
+          "regularPriceFormatted": "89,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Gluten",
+            "Skalldyr",
+            "Egg",
+            "Bløtdyr",
+            "Sennep"
+          ],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/958838ae-55d9-4e4f-a5c4-636b511c4aee"
+        },
+        {
+          "categorySlug": "sandwiches-wraps",
+          "category": "Smørbrød og wraps",
+          "name": "Wrap med gravet laks",
+          "description": "Wrap m gravet laks, sennepsaus og salat",
+          "isSwedishClassic": false,
+          "regularPrice": 79,
+          "regularPriceFormatted": "79,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Gluten",
+            "Fisk",
+            "Sennep"
+          ],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/36bacad4-aa93-4650-99e2-d50500adb88a"
+        }
+      ]
+    },
+    {
+      "slug": "cold-starter",
+      "name": "Kalde tallerkener og forretter",
+      "items": [
+        {
+          "categorySlug": "cold-starter",
+          "category": "Kalde tallerkener og forretter",
+          "name": "Gravet Laks",
+          "description": "med gravlakssaus og salat",
+          "isSwedishClassic": false,
+          "regularPrice": 79,
+          "regularPriceFormatted": "79,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Fisk",
+            "Sennep"
+          ],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/62a66310-0bb9-4cb6-9a36-a3192b21a6e3"
+        },
+        {
+          "categorySlug": "cold-starter",
+          "category": "Kalde tallerkener og forretter",
+          "name": "Grønn sidesalat",
+          "description": "Salatmiks, grønnsaker og cherrytomater",
+          "isSwedishClassic": false,
+          "regularPrice": 25,
+          "regularPriceFormatted": "25,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": true,
+          "commercialLabel": null,
+          "allergens": [
+            "Selleri"
+          ],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/e3908599-cf7d-44d6-adaf-bff361a00b70"
+        }
+      ]
+    },
+    {
+      "slug": "salads",
+      "name": "Salater",
+      "items": [
+        {
+          "categorySlug": "salads",
+          "category": "Salater",
+          "name": "Tomat- og mozzarellasalat",
+          "description": "Tomat- og mozzarellasalat serveres med balsamico-eddik og basilikum.",
+          "isSwedishClassic": false,
+          "regularPrice": 35,
+          "regularPriceFormatted": "35,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": true,
+          "commercialLabel": null,
+          "allergens": [
+            "Melk",
+            "Sulfitt"
+          ],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/92b99c8f-65db-4e9c-b115-bafbf2e10d01"
+        },
+        {
+          "categorySlug": "salads",
+          "category": "Salater",
+          "name": "Kalkunsalat",
+          "description": "Salaten består av salatmiks, parmesan, kalkunkjøtt og cæsardressing. Pyntet med bladpersille.",
+          "isSwedishClassic": false,
+          "regularPrice": 109,
+          "regularPriceFormatted": "109,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Egg",
+            "Fisk",
+            "Melk",
+            "Sennep"
+          ],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/6ad778e8-b73e-4643-a32c-a2e8f912b193"
+        }
+      ]
+    },
+    {
+      "slug": "side-dishes",
+      "name": "Tilbehør",
+      "items": [
+        {
+          "categorySlug": "side-dishes",
+          "category": "Tilbehør",
+          "name": "Hvitløksbaguette",
+          "description": "Halv hvitløksbaguette",
+          "isSwedishClassic": false,
+          "regularPrice": 15,
+          "regularPriceFormatted": "15,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": true,
+          "commercialLabel": null,
+          "allergens": [
+            "Gluten",
+            "Melk"
+          ],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/e7c42bce-2783-4972-aa82-4dee2fa3f86f"
+        },
+        {
+          "categorySlug": "side-dishes",
+          "category": "Tilbehør",
+          "name": "Rundstykke med frø",
+          "description": "Rundstykke med frø",
+          "isSwedishClassic": false,
+          "regularPrice": 10,
+          "regularPriceFormatted": "10,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Gluten",
+            "Sesam",
+            "Soyabønner"
+          ],
+          "allergensTraces": [
+            "Egg",
+            "Melk",
+            "Mandler",
+            "Pekannøtter",
+            "Trenøtter"
+          ],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/d6f713fa-1f0c-4cc3-8d94-57ac7797aa6c"
+        },
+        {
+          "categorySlug": "side-dishes",
+          "category": "Tilbehør",
+          "name": "Rundstykke",
+          "description": "Fint rundstykke",
+          "isSwedishClassic": false,
+          "regularPrice": 10,
+          "regularPriceFormatted": "10,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Gluten"
+          ],
+          "allergensTraces": [
+            "Egg",
+            "Melk",
+            "Sesam",
+            "Soyabønner",
+            "Mandler",
+            "Pekannøtter",
+            "Trenøtter"
+          ],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/164a7d12-f9d8-49e6-94b5-8d4d81a2dc67"
+        }
+      ]
+    },
+    {
+      "slug": "desserts-pastries",
+      "name": "Bakverk, desserter og småkaker",
+      "items": [
+        {
+          "categorySlug": "desserts-pastries",
+          "category": "Bakverk, desserter og småkaker",
+          "name": "Gele med jordbærsmak",
+          "description": "serveres med vaniljesaus",
+          "isSwedishClassic": false,
+          "regularPrice": 29,
+          "regularPriceFormatted": "29,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Melk"
+          ],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/eb3922f9-4bbf-4612-b92f-7a239b818d32"
+        },
+        {
+          "categorySlug": "desserts-pastries",
+          "category": "Bakverk, desserter og småkaker",
+          "name": "Daimkake",
+          "description": "Mandelkakebunn med kremfyll og daim",
+          "isSwedishClassic": false,
+          "regularPrice": 39,
+          "regularPriceFormatted": "39,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Egg",
+            "Melk",
+            "Soyabønner",
+            "Mandler",
+            "Trenøtter"
+          ],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/fac930a6-f059-4096-8b7e-0be87132e5b1"
+        },
+        {
+          "categorySlug": "desserts-pastries",
+          "category": "Bakverk, desserter og småkaker",
+          "name": "Mazarin",
+          "description": "består av mørdeig fylt med mandelmasse og toppet med hvit glasur",
+          "isSwedishClassic": false,
+          "regularPrice": 25,
+          "regularPriceFormatted": "25,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Gluten",
+            "Egg"
+          ],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/4a2132cf-cd13-41dc-83a2-c850fa3b3cad"
+        },
+        {
+          "categorySlug": "desserts-pastries",
+          "category": "Bakverk, desserter og småkaker",
+          "name": "Tiramisu",
+          "description": "italiensk kake med fingerkjeks, og krem med kaffesmak",
+          "isSwedishClassic": false,
+          "regularPrice": 69,
+          "regularPriceFormatted": "69,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Gluten",
+            "Egg",
+            "Melk"
+          ],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/a10ec156-0c96-461a-bb88-f8105bad8088"
+        },
+        {
+          "categorySlug": "desserts-pastries",
+          "category": "Bakverk, desserter og småkaker",
+          "name": "Svensk eplekake",
+          "description": "Smuldrekake med marsipan, eplebiter, kanel og vaniljesaus",
+          "isSwedishClassic": false,
+          "regularPrice": 49,
+          "regularPriceFormatted": "49,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Gluten",
+            "Egg",
+            "Melk",
+            "Mandler",
+            "Trenøtter"
+          ],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/16175b10-cdf3-43e1-96b6-cdac31bddd1c"
+        },
+        {
+          "categorySlug": "desserts-pastries",
+          "category": "Bakverk, desserter og småkaker",
+          "name": "Napoleonskake",
+          "description": "med et deilig fyll med smak av vanilje og rom presset mellom to sprø plater av butterdeig",
+          "isSwedishClassic": false,
+          "regularPrice": 69,
+          "regularPriceFormatted": "69,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Gluten",
+            "Melk",
+            "Soyabønner"
+          ],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/e1109228-d15a-40c2-b37e-d6a1dc498c11"
+        },
+        {
+          "categorySlug": "desserts-pastries",
+          "category": "Bakverk, desserter og småkaker",
+          "name": "Kladdkake",
+          "description": "Seig og klebrig kakao og sjokoladekake",
+          "isSwedishClassic": false,
+          "regularPrice": 25,
+          "regularPriceFormatted": "25,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": true,
+          "commercialLabel": null,
+          "allergens": [
+            "Gluten",
+            "Egg"
+          ],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/48d70a23-d315-4c60-a1b1-ad07c549a380"
+        },
+        {
+          "categorySlug": "desserts-pastries",
+          "category": "Bakverk, desserter og småkaker",
+          "name": "Croissant",
+          "description": "Croissant",
+          "isSwedishClassic": false,
+          "regularPrice": 20,
+          "regularPriceFormatted": "20,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Gluten",
+            "Egg",
+            "Melk"
+          ],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/ec3b2c29-e215-4f19-abf9-00641421b394"
+        },
+        {
+          "categorySlug": "desserts-pastries",
+          "category": "Bakverk, desserter og småkaker",
+          "name": "Mandelkake med sitron",
+          "description": "Mandelkake med sitron",
+          "isSwedishClassic": false,
+          "regularPrice": 39,
+          "regularPriceFormatted": "39,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": true,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Egg",
+            "Melk",
+            "Soyabønner",
+            "Mandler",
+            "Trenøtter"
+          ],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/5fbd9c45-a306-4d4d-a6a0-21ceb4f908aa"
+        },
+        {
+          "categorySlug": "desserts-pastries",
+          "category": "Bakverk, desserter og småkaker",
+          "name": "Kanelbolle",
+          "description": "En hvetebolle fylt med en blanding av smør og kanel og dekorert med perlesukker.",
+          "isSwedishClassic": true,
+          "regularPrice": 15,
+          "regularPriceFormatted": "15,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": true,
+          "commercialLabel": null,
+          "allergens": [
+            "Gluten",
+            "Melk"
+          ],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/523d7bfc-76fb-4c5d-8f63-65273e4155c7"
+        },
+        {
+          "categorySlug": "desserts-pastries",
+          "category": "Bakverk, desserter og småkaker",
+          "name": "Punsjrull",
+          "description": "bakverk pakket inn i marsipan og dyppet i smeltet sjokolade",
+          "isSwedishClassic": false,
+          "regularPrice": 10,
+          "regularPriceFormatted": "10,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Gluten",
+            "Mandler",
+            "Trenøtter"
+          ],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/0cdd47f3-7fb2-45a4-9a75-f7670f633b3b"
+        }
+      ]
+    },
+    {
+      "slug": "hot-beverages",
+      "name": "Varme drikker",
+      "items": [
+        {
+          "categorySlug": "hot-beverages",
+          "category": "Varme drikker",
+          "name": "Te",
+          "description": "Te, valgfri smak. Gratis påfyll",
+          "isSwedishClassic": false,
+          "regularPrice": 20,
+          "regularPriceFormatted": "20,-",
+          "familyPrice": 5,
+          "familyPriceFormatted": "5,-",
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/d3061be7-dec5-4af2-bf2b-6d950403e11b"
+        },
+        {
+          "categorySlug": "hot-beverages",
+          "category": "Varme drikker",
+          "name": "Kaffe",
+          "description": "Sort kaffe",
+          "isSwedishClassic": false,
+          "regularPrice": 20,
+          "regularPriceFormatted": "20,-",
+          "familyPrice": 5,
+          "familyPriceFormatted": "5,-",
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/28643d25-f0ae-4b1e-a76c-6b173a8bcc25"
+        }
+      ]
+    }
+  ]
+}
