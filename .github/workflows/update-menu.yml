@@ -6,12 +6,12 @@ name: Oppdater IKEA-menydata
 
 "on":
   schedule:
-    # kl 04:30 UTC ≈ 05:30 vintertid / 06:30 sommertid i Norge. GitHub
+    # kl 07:45 UTC ≈ 08:45 vintertid / 09:45 sommertid i Norge. GitHub
     # Actions justerer ikke automatisk for sommertid, men siden IKEA uansett
     # cacher menyen sin i ca. 48 timer og skjermen laster hele siden på nytt
     # hvert 6. time, er det ikke kritisk at tidspunktet er presist — bare at
     # det kjører en gang tidlig hver dag.
-    - cron: "30 4 * * *"
+    - cron: "45 7 * * *"
   # Lar deg trigge en oppdatering manuelt fra Actions-fanen på GitHub, uten
   # å vente på tidsplanen — nyttig rett etter oppsett, eller hvis IKEA har
   # endret noe og du vil ha ny data med en gang.
