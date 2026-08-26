@@ -1,0 +1,48 @@
+name: Oppdater IKEA-menydata
+
+# Kjører fetch_menu.py --all-stores på en tidsplan og publiserer resultatet
+# via GitHub Pages. Se README.md, avsnittet "Hosting med GitHub Pages +
+# Actions" for full oppsettsguide.
+
+"on":
+  schedule:
+    # kl 04:30 UTC ≈ 05:30 vintertid / 06:30 sommertid i Norge. GitHub
+    # Actions justerer ikke automatisk for sommertid, men siden IKEA uansett
+    # cacher menyen sin i ca. 48 timer og skjermen laster hele siden på nytt
+    # hvert 6. time, er det ikke kritisk at tidspunktet er presist — bare at
+    # det kjører en gang tidlig hver dag.
+    - cron: "30 4 * * *"
+  # Lar deg trigge en oppdatering manuelt fra Actions-fanen på GitHub, uten
+  # å vente på tidsplanen — nyttig rett etter oppsett, eller hvis IKEA har
+  # endret noe og du vil ha ny data med en gang.
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update-menu:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sjekk ut repoet
+        uses: actions/checkout@v4
+
+      - name: Sett opp Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Hent fersk menydata for alle butikker
+        run: python3 fetch_menu.py --all-stores
+
+      - name: Commit og push hvis noe faktisk endret seg
+        run: |
+          git config user.name "menu-bot"
+          git config user.email "menu-bot@users.noreply.github.com"
+          git add menu-data-*.json stores.json
+          if git diff --cached --quiet; then
+            echo "Ingen endringer i menydataene — ingenting å committe."
+          else
+            git commit -m "Oppdater menydata ($(date -u +%Y-%m-%dT%H:%M:%SZ))"
+            git push
+          fi
