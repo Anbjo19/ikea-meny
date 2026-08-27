@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-27T09:52:39.157995Z",
+  "generatedAt": "2026-08-27T18:24:37.579834Z",
   "salesarea": "restaurant",
   "store": {
     "code": "722",
@@ -29,7 +29,7 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/5ae16cae-8cff-46ab-812c-2f1956e79324"
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/9882b11c-2d1d-4c42-8ebd-248d8cf0e2b7"
         }
       ]
     },
@@ -58,7 +58,7 @@
             "Trenøtter"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/5fbd9c45-a306-4d4d-a6a0-21ceb4f908aa"
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/7e315db6-39c1-4bf6-a0cb-43545dceb1c6"
         },
         {
           "categorySlug": "desserts-pastries",
@@ -78,7 +78,7 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/523d7bfc-76fb-4c5d-8f63-65273e4155c7"
+          "image": null
         },
         {
           "categorySlug": "desserts-pastries",
@@ -101,7 +101,7 @@
           "allergensTraces": [
             "Soyabønner"
           ],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/1611b5bb-cd37-4a47-a9f1-8af146d0cdbc"
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/18724c6d-31d5-4b4d-8853-a4c205eb9314"
         }
       ]
     },
@@ -124,7 +124,7 @@
           "commercialLabel": null,
           "allergens": [],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/d3061be7-dec5-4af2-bf2b-6d950403e11b"
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/fea695bc-2223-4580-9914-5f41d075d072"
         },
         {
           "categorySlug": "hot-beverages",
@@ -141,7 +141,7 @@
           "commercialLabel": null,
           "allergens": [],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/28643d25-f0ae-4b1e-a76c-6b173a8bcc25"
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/a811e650-a05d-4d6b-8a8e-6c9f719cbb37"
         }
       ]
     }
