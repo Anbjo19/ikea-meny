@@ -15,9 +15,11 @@
     --ink:#111111;
     --paper:#ffffff;
     --muted:#5b6b82;
-    /* Logoen nede til høyre: selve høyden, brukt både til størrelsen og
-       til luften rundt (100% av høyden, som bedt om). */
-    --logo-h: clamp(56px, 7.2vw, 92px);
+    /* Logoen nede til høyre: 22,78 % av breddan, høyden regnet ut fra
+       IKEA-logoens egne proporsjoner (98.36 × 40 i SVG-en), og selve den
+       utregnede høyden brukt som luft rundt (100 % av høyden, som bedt om). */
+    --logo-w: 22.78vw;
+    --logo-h: calc(var(--logo-w) * 40 / 98.36);
   }
   *{box-sizing:border-box;}
   html,body{
@@ -68,13 +70,14 @@
     font-weight:400;
   }
 
-  /* ---------- Logo, nede til høyre, med luft rundt = egen høyde ---------- */
+  /* ---------- Logo, nede til høyre: 22,78 % av bredden, med luft rundt
+     tilsvarende 100 % av logoens (utregnede) høyde ---------- */
   .corner-logo{
     position:fixed;
     right: var(--logo-h);
     bottom: var(--logo-h);
-    height: var(--logo-h);
-    width:auto;
+    width: var(--logo-w);
+    height:auto;
     z-index:20;
   }
   #logoFallback{
@@ -97,29 +100,6 @@
     position:relative;
     overflow:hidden;
     padding: 3.4vh 7vw 4vh;
-    /* Flisbakgrunn: kvadratiske hvite/lyse fliser med gul fuge (rutenett),
-       to sett stripete gradienter (vannrett + loddrett) som til sammen
-       danner et rutenett. --tile-size = flisstørrelse inkl. fuge,
-       --tile-fuge = fugebredde. */
-    --tile-size: 16.5vh;
-    --tile-fuge: 2px;
-    --tile-fuge-color: rgba(255, 219, 0, 0.55);
-    background-color: #fcfcfa;
-    background-image:
-      repeating-linear-gradient(
-        0deg,
-        var(--tile-fuge-color) 0,
-        var(--tile-fuge-color) var(--tile-fuge),
-        transparent var(--tile-fuge),
-        transparent var(--tile-size)
-      ),
-      repeating-linear-gradient(
-        90deg,
-        var(--tile-fuge-color) 0,
-        var(--tile-fuge-color) var(--tile-fuge),
-        transparent var(--tile-fuge),
-        transparent var(--tile-size)
-      );
   }
   /* To egne kolonner (i stedet for CSS multi-column) fordi de to sidene skal
      ha ulik bunnklaring: venstre kolonne har ingen logo og kan derfor gå
