@@ -134,6 +134,15 @@
     letter-spacing:0.03em;
     padding-bottom:0.1vh;
     break-after: avoid-column;
+    display:flex;
+    align-items:center;
+    gap:0.35em;
+  }
+  .cat-icon{
+    flex:0 0 auto;
+    width:0.95em;
+    height:0.95em;
+    display:block;
   }
   /* Grid i stedet for ren flex-rad: kolonne 1 (tittel/beskrivelse/
      allergener) og kolonne 2 (priser) er de samme radene ned gjennom
@@ -429,11 +438,31 @@
     return [left, right];
   }
 
+  // Ikon ved siden av hver kategori-tittel. 7 av 9 er hentet fra IKEAs eget
+  // Skapa-designsystem (https://skapa.ikea.net/foundations/all-icons/); de to
+  // siste (smørbrød/wraps og tilbehør) finnes ikke i Skapa, så de er hentet
+  // fra Lucide (lucide.dev, MIT-lisens) i tilnærmet samme enkle strek-stil.
+  var CATEGORY_ICONS = {
+    "breakfast": "assets/icons/egg.svg",
+    "mains": "assets/icons/cutlery.svg",
+    "childrens-menu": "assets/icons/balloon.svg",
+    "sandwiches-wraps": "assets/icons/sandwich.svg",
+    "cold-starter": "assets/icons/seafood.svg",
+    "salads": "assets/icons/salad.svg",
+    "side-dishes": "assets/icons/hand-platter.svg",
+    "desserts-pastries": "assets/icons/piece-of-cake.svg",
+    "hot-beverages": "assets/icons/hot-drink.svg"
+  };
+
   function renderCategoryList(categories) {
     var html = "";
     categories.forEach(function (cat) {
       if (!cat.items || !cat.items.length) return;
-      html += '<div class="category"><h2>' + escapeHtml(cat.name) + "</h2>";
+      var iconSrc = CATEGORY_ICONS[cat.slug];
+      var iconHtml = iconSrc
+        ? '<img class="cat-icon" src="' + iconSrc + '" alt="" aria-hidden="true">'
+        : "";
+      html += '<div class="category"><h2>' + iconHtml + escapeHtml(cat.name) + "</h2>";
       cat.items.forEach(function (it) {
         var family = it.familyPriceFormatted
           ? '<span class="family">' + escapeHtml(it.familyPriceFormatted) + "</span>"
