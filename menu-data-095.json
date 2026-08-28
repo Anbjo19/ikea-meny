@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-27T18:24:37.575975Z",
+  "generatedAt": "2026-08-28T19:35:24.213904Z",
   "salesarea": "restaurant",
   "store": {
     "code": "095",
@@ -54,7 +54,7 @@
             "Soyabønner"
           ],
           "allergensTraces": [],
-          "image": null
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/ffeefe28-a390-49b7-a0bb-f57b68e39967"
         },
         {
           "categorySlug": "breakfast",
@@ -77,7 +77,7 @@
             "Soyabønner"
           ],
           "allergensTraces": [],
-          "image": null
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/546d2d06-9096-44d5-bf0d-bc6438301697"
         }
       ]
     },
@@ -145,7 +145,7 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": null
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/f0f407f7-497f-4770-9133-45e0912fecb4"
         },
         {
           "categorySlug": "mains",
@@ -166,7 +166,7 @@
             "Sennep"
           ],
           "allergensTraces": [],
-          "image": null
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/2272cedc-d8de-447e-beb9-f35bd0943e3b"
         },
         {
           "categorySlug": "mains",
@@ -207,7 +207,7 @@
             "Soyabønner"
           ],
           "allergensTraces": [],
-          "image": null
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/9f85955f-3ede-4d5e-88e4-da3cd8764548"
         },
         {
           "categorySlug": "mains",
@@ -256,7 +256,7 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": null
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/58005872-4c7a-4336-9a5d-505c6a5712ca"
         },
         {
           "categorySlug": "childrens-menu",
@@ -277,7 +277,7 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": null
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/84707690-e415-4e51-ac5b-8303fa816c27"
         },
         {
           "categorySlug": "childrens-menu",
@@ -298,7 +298,7 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": null
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/34acbbd7-748a-4d24-bb18-ec991327d48a"
         },
         {
           "categorySlug": "childrens-menu",
@@ -342,7 +342,7 @@
             "Sennep"
           ],
           "allergensTraces": [],
-          "image": null
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/e648cbd1-accb-4110-8e13-683a2513a7b0"
         }
       ]
     },
@@ -371,7 +371,7 @@
             "Sennep"
           ],
           "allergensTraces": [],
-          "image": null
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/55d76f05-30ff-4e39-9145-477f4aed1856"
         },
         {
           "categorySlug": "sandwiches-wraps",
@@ -458,7 +458,7 @@
             "Selleri"
           ],
           "allergensTraces": [],
-          "image": null
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/aae4a9c9-7520-4d9d-9cf2-328a6c6a232f"
         }
       ]
     },
@@ -506,7 +506,7 @@
             "Sennep"
           ],
           "allergensTraces": [],
-          "image": null
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/4a6e5f5d-b686-45a9-87c2-216e65a9b04a"
         }
       ]
     },
@@ -532,7 +532,7 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": null
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/a17ffc1b-eecd-4a52-8883-20772fe29f68"
         },
         {
           "categorySlug": "side-dishes",
@@ -611,7 +611,7 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": null
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/23a03bd8-2068-4994-8190-5dbfba578ca9"
         },
         {
           "categorySlug": "desserts-pastries",
@@ -654,7 +654,7 @@
             "Egg"
           ],
           "allergensTraces": [],
-          "image": null
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/aef3881b-dba3-4f48-ae98-1d3370acc662"
         },
         {
           "categorySlug": "desserts-pastries",
@@ -675,7 +675,7 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": null
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/2c7c43f0-056c-4da0-85af-9f00930546bb"
         },
         {
           "categorySlug": "desserts-pastries",
@@ -719,7 +719,7 @@
             "Soyabønner"
           ],
           "allergensTraces": [],
-          "image": null
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/85372e52-96d5-4c22-956d-3197a2cf0b5a"
         },
         {
           "categorySlug": "desserts-pastries",
@@ -739,7 +739,7 @@
             "Egg"
           ],
           "allergensTraces": [],
-          "image": null
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/abb0365f-b3a0-468b-9e33-c57be67d8f7a"
         },
         {
           "categorySlug": "desserts-pastries",
@@ -760,7 +760,7 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": null
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/cea9f3ee-670e-4aed-b5e1-dc869192a9a0"
         },
         {
           "categorySlug": "desserts-pastries",
@@ -803,7 +803,7 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": null
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/2d2d86e4-9297-4dc0-a2f9-388ed814b87d"
         },
         {
           "categorySlug": "desserts-pastries",
@@ -847,7 +847,7 @@
             "Trenøtter"
           ],
           "allergensTraces": [],
-          "image": null
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/86de6c90-dcc5-498e-a2b1-130d1efe7f42"
         }
       ]
     },
