@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-01T12:44:35.175468Z",
+  "generatedAt": "2026-09-02T12:17:12.148544Z",
   "salesarea": "restaurant",
   "store": {
     "code": "441",
@@ -317,7 +317,7 @@
             "Sennep"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/097d8292-542b-49c7-b01a-8c5a22a7f322"
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/d102ad1e-a012-4462-bd8f-512021919cae"
         },
         {
           "categorySlug": "childrens-menu",
