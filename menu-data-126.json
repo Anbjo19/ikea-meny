@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-02T12:17:12.150980Z",
+  "generatedAt": "2026-09-03T12:15:08.178664Z",
   "salesarea": "restaurant",
   "store": {
     "code": "126",
@@ -193,8 +193,8 @@
           "name": "BBQ- marinert kyllingfilet",
           "description": "serveres med pommes frites, chilibernaise og salat",
           "isSwedishClassic": false,
-          "regularPrice": 159,
-          "regularPriceFormatted": "159,-",
+          "regularPrice": 189,
+          "regularPriceFormatted": "189,-",
           "familyPrice": null,
           "familyPriceFormatted": null,
           "isNew": true,
