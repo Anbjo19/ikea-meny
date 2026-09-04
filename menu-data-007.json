@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-03T12:15:08.180988Z",
+  "generatedAt": "2026-09-04T12:15:57.594590Z",
   "salesarea": "restaurant",
   "store": {
     "code": "007",
@@ -681,8 +681,8 @@
           "name": "Svensk eplekake",
           "description": "Smuldrekake med marsipan, eplebiter, kanel og vaniljesaus",
           "isSwedishClassic": false,
-          "regularPrice": 49,
-          "regularPriceFormatted": "49,-",
+          "regularPrice": 29,
+          "regularPriceFormatted": "29,-",
           "familyPrice": null,
           "familyPriceFormatted": null,
           "isNew": false,
