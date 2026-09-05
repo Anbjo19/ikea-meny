@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-04T12:15:57.595624Z",
+  "generatedAt": "2026-09-05T11:23:33.043821Z",
   "salesarea": "restaurant",
   "store": {
     "code": "722",
@@ -117,8 +117,8 @@
           "isSwedishClassic": false,
           "regularPrice": 20,
           "regularPriceFormatted": "20,-",
-          "familyPrice": null,
-          "familyPriceFormatted": null,
+          "familyPrice": 5,
+          "familyPriceFormatted": "5,-",
           "isNew": false,
           "isBti": false,
           "commercialLabel": null,
@@ -134,8 +134,8 @@
           "isSwedishClassic": false,
           "regularPrice": 20,
           "regularPriceFormatted": "20,-",
-          "familyPrice": null,
-          "familyPriceFormatted": null,
+          "familyPrice": 5,
+          "familyPriceFormatted": "5,-",
           "isNew": false,
           "isBti": false,
           "commercialLabel": null,
