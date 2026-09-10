@@ -397,18 +397,19 @@
     return [left, right];
   }
 
-  // Ikon ved siden av hver kategori-tittel. 7 av 9 er hentet fra IKEAs eget
-  // Skapa-designsystem (https://skapa.ikea.net/foundations/all-icons/); de to
-  // siste (smørbrød/wraps og tilbehør) finnes ikke i Skapa, så de er hentet
-  // fra Lucide (lucide.dev, MIT-lisens) i tilnærmet samme enkle strek-stil.
+  // Ikon ved siden av hver kategori-tittel. 8 av 9 er hentet fra IKEAs eget
+  // Skapa-designsystem (https://skapa.ikea.net/foundations/all-icons/, SVG
+  // byte for byte som i Skapa). Smørbrød/wraps finnes ikke i Skapa (ingen
+  // sandwich-/brød-ikon der), så det er hentet fra Lucide (lucide.dev,
+  // MIT-lisens) i tilnærmet samme enkle strek-stil.
   var CATEGORY_ICONS = {
-    "breakfast": "assets/icons/egg.svg",
+    "breakfast": "assets/icons/egg-cup.svg",
     "mains": "assets/icons/cutlery.svg",
     "childrens-menu": "assets/icons/balloon.svg",
     "sandwiches-wraps": "assets/icons/sandwich.svg",
     "cold-starter": "assets/icons/seafood.svg",
     "salads": "assets/icons/salad.svg",
-    "side-dishes": "assets/icons/hand-platter.svg",
+    "side-dishes": "assets/icons/hand-with-plate.svg",
     "desserts-pastries": "assets/icons/piece-of-cake.svg",
     "hot-beverages": "assets/icons/hot-drink.svg"
   };
