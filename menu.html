@@ -291,8 +291,9 @@
   /* Ekte IKEA-prislapp (gul/rød) for retter merket isBti — se assets/ikea-labels.css */
   .item .regular.ikea-price--bti{
     min-width:auto;
-    font-size:clamp(17px, calc(1.85 * var(--vw)), 23px);
+    /* samme skriftstørrelse som .regular — lappen skal ikke være mindre */
     border-radius:2px;
+    padding:0.12em 0.3em;
   }
 
   .empty-state{
