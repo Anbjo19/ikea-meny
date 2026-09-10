@@ -73,11 +73,21 @@
      i motsetning til butikkode/tidsstempel som lå her før. */
   header .store-name{
     flex:0 0 auto;
+    display:flex;
+    align-items:center;
+    gap:0.4em;
     white-space:nowrap;
     font-size:clamp(14px, calc(1.7 * var(--vw)), 22px);
     font-weight:700;
     text-align:right;
     padding-top:calc(0.6 * var(--vh));
+  }
+  /* Skapa-ikonet "store" foran varehusnavnet */
+  header .store-name .store-icon{
+    width:1.1em;
+    height:1.1em;
+    flex:0 0 auto;
+    display:block;
   }
   /* Tidsstempel for personalet: liten og diskret nede til venstre, så det
      er lett å sjekke at dataene er ferske uten at det tar plass på tavlen. */
@@ -298,7 +308,10 @@
     <div class="brand">
       <span class="hej">Hej!<br />Velkommen til restauranten</span>
     </div>
-    <div class="store-name" id="storeLine"></div>
+    <div class="store-name" id="storeLine" hidden>
+      <img class="store-icon" src="assets/icons/store.svg" alt="" aria-hidden="true" />
+      <span id="storeName"></span>
+    </div>
   </header>
   <div id="boardViewport">
     <div class="empty-state">
@@ -336,6 +349,7 @@
   var appEl = document.getElementById("app");
   var boardViewportEl = document.getElementById("boardViewport");
   var storeLineEl = document.getElementById("storeLine");
+  var storeNameEl = document.getElementById("storeName");
   var updatedStampEl = document.getElementById("updatedStamp");
 
   var lastGeneratedAt = null;
@@ -572,7 +586,8 @@
         // Butikknavn i headeren (gjesterettet). Butikkode og tidsstempel er
         // internt og havner i stedet som en liten linje nede til venstre.
         var store = menu.store || {};
-        storeLineEl.textContent = store.name || "";
+        storeNameEl.textContent = store.name || "";
+        storeLineEl.hidden = !store.name;
 
         var stampBits = [];
         if (store.code) stampBits.push("Butikk " + store.code);
