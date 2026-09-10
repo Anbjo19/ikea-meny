@@ -145,19 +145,16 @@
   .board-col.clears-logo{
     padding-bottom: calc(var(--logo-h) * 2.2);
   }
-  /* Forklaring øverst i hver kolonne, over priskolonnen: blå = IKEA
-     Family-pris. Vises kun når minst én rett faktisk har Family-pris. */
-  .price-key{
-    display:flex;
-    justify-content:flex-end;
-    gap:1.2em;
-    font-size:clamp(12px, calc(1.5 * var(--vw)), 19px);
+  /* Liten etikett "IKEA Family-pris" rett foran den blå prisen, så hver
+     rett forklarer seg selv uten egen forklaringsrad. */
+  .item .fam-label{
+    font-size:clamp(10px, calc(1.15 * var(--vw)), 14px);
     font-weight:700;
-    margin-bottom:calc(1.4 * var(--vh));
-    padding-bottom:calc(0.6 * var(--vh));
-    border-bottom:1px solid #e3e7ee;
+    color:var(--ikea-family-blue);
+    margin-right:0.45em;
+    letter-spacing:0.01em;
+    white-space:nowrap;
   }
-  .price-key .key-family{ color:var(--ikea-family-blue); }
   .category{
     break-inside: avoid-column;
     margin-bottom: calc(2 * var(--vh));
@@ -416,26 +413,6 @@
     "hot-beverages": "assets/icons/hot-drink.svg"
   };
 
-  function menuHasFamilyPrice(categories) {
-    return categories.some(function (cat) {
-      return (cat.items || []).some(function (it) {
-        return it.familyPriceFormatted || it.familyPrice != null;
-      });
-    });
-  }
-
-  // Forklaring øverst i kolonnen, plassert over priskolonnen: blå tall er
-  // IKEA Family-pris. Vises bare hvis menyen faktisk har minst én
-  // Family-pris — ellers er det ingenting å forklare.
-  function renderPriceKey(showFamily) {
-    if (!showFamily) return "";
-    return (
-      '<div class="price-key">' +
-      '<span class="key-family">IKEA Family-pris</span>' +
-      "</div>"
-    );
-  }
-
   function renderCategoryList(categories) {
     var html = "";
     categories.forEach(function (cat) {
@@ -447,7 +424,8 @@
       html += '<div class="category"><h2>' + iconHtml + escapeHtml(cat.name) + "</h2>";
       cat.items.forEach(function (it) {
         var family = it.familyPriceFormatted
-          ? '<span class="family">' + escapeHtml(it.familyPriceFormatted) + "</span>"
+          ? '<span class="family"><span class="fam-label">IKEA Family-pris</span>' +
+            escapeHtml(it.familyPriceFormatted) + "</span>"
           : '<span class="family"></span>';
         var regular = it.regularPriceFormatted
           ? escapeHtml(it.regularPriceFormatted)
@@ -505,12 +483,10 @@
       return;
     }
 
-    var keyHtml = renderPriceKey(menuHasFamilyPrice(categories));
-
     // Forsøk 1: én spalte, naturlig størrelse.
     boardViewportEl.innerHTML =
       '<div id="board" class="single">' +
-      '<div class="board-col clears-logo">' + keyHtml + renderCategoryList(categories) + "</div>" +
+      '<div class="board-col clears-logo">' + renderCategoryList(categories) + "</div>" +
       "</div>";
     if (fitBoard(true)) return;
 
@@ -518,8 +494,8 @@
     var cols = splitCategoriesIntoColumns(categories);
     boardViewportEl.innerHTML =
       '<div id="board">' +
-      '<div class="board-col board-col-left">' + keyHtml + renderCategoryList(cols[0]) + "</div>" +
-      '<div class="board-col board-col-right clears-logo">' + keyHtml + renderCategoryList(cols[1]) + "</div>" +
+      '<div class="board-col board-col-left">' + renderCategoryList(cols[0]) + "</div>" +
+      '<div class="board-col board-col-right clears-logo">' + renderCategoryList(cols[1]) + "</div>" +
       "</div>";
     fitBoard(false);
   }
