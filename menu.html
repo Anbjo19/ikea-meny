@@ -164,7 +164,7 @@
   }
   .category{
     break-inside: avoid-column;
-    margin-bottom: calc(1.1 * var(--vh));
+    margin-bottom: calc(1.7 * var(--vh));
   }
   .category h2{
     margin:0 0 calc(0.45 * var(--vh)) 0;
@@ -654,6 +654,16 @@
 
   loadMenu();
   setInterval(loadMenu, DATA_POLL_MS);
+
+  // Skaleringen måles ut fra tekstens faktiske bredde/høyde. Kommer
+  // menydataene før "Noto IKEA" er ferdig lastet, blir målingen gjort med
+  // reservefonten — og tavlen kan stikke ut i bunnen når fonten byttes
+  // inn. Derfor rendres tavlen på nytt når fontene er klare.
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(function () {
+      if (lastMenu) renderBoard(lastMenu);
+    });
+  }
   setTimeout(function () {
     window.location.reload();
   }, FULL_RELOAD_MS);
