@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+# Lokal forhåndsvisning med statisk eksempeldata (ikke en del av selve
+# nettsiden dere hoster) — trenger ikke være med i repoet.
+menu-preview-artifact.html
+# macOS-/Word-støy og lokal Claude-konfig
+.DS_Store
+~$*.docx
+.claude/

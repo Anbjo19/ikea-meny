@@ -56,18 +56,27 @@
     /* Bryter etter "Hej!" (se <br> i markup), resten skal få plass på én
        linje til med max-width over — ikke brekke igjen. */
   }
-  header .clock{
+  /* Butikknavn oppe til høyre (f.eks. "IKEA Slependen") — gjesterettet,
+     i motsetning til butikkode/tidsstempel som lå her før. */
+  header .store-name{
     flex:0 0 auto;
     white-space:nowrap;
-    font-size:clamp(12px, 1.4vw, 18px);
-    font-variant-numeric: tabular-nums;
-    opacity:0.75;
+    font-size:clamp(14px, 1.7vw, 22px);
+    font-weight:700;
     text-align:right;
+    padding-top:0.6vh;
   }
-  header .clock .store{
-    font-size:0.62em;
-    opacity:0.85;
-    font-weight:400;
+  /* Tidsstempel for personalet: liten og diskret nede til venstre, så det
+     er lett å sjekke at dataene er ferske uten at det tar plass på tavlen. */
+  .updated-stamp{
+    position:fixed;
+    left:7vw;
+    bottom:1.2vh;
+    font-size:clamp(9px, 0.85vw, 12px);
+    color:var(--muted);
+    opacity:0.5;
+    z-index:20;
+    font-variant-numeric: tabular-nums;
   }
 
   /* ---------- Logo, nede til høyre: 22,78 % av bredden, med luft rundt
@@ -117,10 +126,28 @@
     flex:1 1 0;
     min-width:0;
   }
-  .board-col-right{
-    /* plass til logoen (egen høyde + luften under den) i høyre hjørne */
+  /* Kolonnen som deler høyrekant med logoen (høyre kolonne i to-spalte-
+     modus, eneste kolonne i én-spalte-modus) må stoppe med full luft over
+     hjørnelogoen: plass til logoen (egen høyde + luften under den). */
+  .board-col.clears-logo{
     padding-bottom: calc(var(--logo-h) * 2.2);
   }
+  /* Forklaring øverst i hver kolonne, over priskolonnene: blå = IKEA
+     Family-pris. Vises kun når minst én rett faktisk har Family-pris. */
+  .price-key{
+    display:flex;
+    justify-content:flex-end;
+    gap:1.2em;
+    font-size:clamp(12px, 1.5vw, 19px);
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    margin-bottom:1.4vh;
+    padding-bottom:0.6vh;
+    border-bottom:1px solid #e3e7ee;
+  }
+  .price-key .key-family{ color:var(--ikea-family-blue); }
+  .price-key .key-regular{ color:var(--ink); opacity:0.7; }
   .category{
     break-inside: avoid-column;
     margin-bottom: 2vh;
@@ -212,7 +239,7 @@
   .item .leader{
     flex:1 1 auto;
     min-width:0.6em;
-    border-bottom: 1px dotted #c7cede;
+    border-bottom: 2px dotted #98a2b3;
     height:0.55em;
     align-self:flex-end;
     margin-bottom:0.3em;
@@ -256,57 +283,6 @@
     font-size:clamp(18px,2.6vw,32px); color:var(--ikea-blue-dark); font-weight:800;
   }
 
-  /* ---------- Spotlight: "nyhet"-overtak ---------- */
-  #spotlight{
-    position:fixed; inset:0;
-    background: linear-gradient(160deg, var(--ikea-blue), var(--ikea-blue-dark) 75%);
-    color:#fff;
-    display:flex; flex-direction:column; align-items:center; justify-content:center;
-    text-align:center;
-    padding: 6vh 8vw;
-    opacity:0; pointer-events:none;
-    transition: opacity 0.7s ease;
-    z-index:50;
-  }
-  #spotlight.show{
-    opacity:1;
-  }
-  #spotlight .badge{
-    background:var(--ikea-yellow);
-    color:var(--ikea-blue-dark);
-    font-weight:900;
-    font-size:clamp(14px, 2vw, 22px);
-    padding:0.35em 1em;
-    border-radius:999px;
-    letter-spacing:0.08em;
-    margin-bottom:3vh;
-  }
-  #spotlight img{
-    max-width:min(70vw, 520px);
-    max-height:38vh;
-    object-fit:cover;
-    border-radius:16px;
-    box-shadow: 0 1.5vh 4vh rgba(0,0,0,0.35);
-    margin-bottom:3.5vh;
-  }
-  #spotlight .name{
-    font-size:clamp(26px, 5vw, 56px);
-    font-weight:900;
-    margin-bottom:1.6vh;
-    line-height:1.1;
-  }
-  #spotlight .desc{
-    font-size:clamp(15px, 2.2vw, 24px);
-    opacity:0.9;
-    max-width:44em;
-    margin-bottom:2.6vh;
-    line-height:1.4;
-  }
-  #spotlight .price{
-    font-size:clamp(22px, 3.4vw, 40px);
-    font-weight:900;
-    color:var(--ikea-yellow);
-  }
 </style>
 </head>
 <body>
@@ -315,10 +291,7 @@
     <div class="brand">
       <span class="hej">Hej!<br />Velkommen til restauranten</span>
     </div>
-    <div class="clock">
-      <div id="clockTime">--:--</div>
-      <div class="store" id="storeLine">&nbsp;</div>
-    </div>
+    <div class="store-name" id="storeLine"></div>
   </header>
   <div id="boardViewport">
     <div class="empty-state">
@@ -329,14 +302,7 @@
   <img class="corner-logo" src="./assets/ikea-logo.svg" alt="IKEA"
        onerror="this.style.display='none'; document.getElementById('logoFallback').style.display='';" />
   <span id="logoFallback" style="display:none;">IKEA</span>
-</div>
-
-<div id="spotlight">
-  <div class="badge">Nyhet</div>
-  <img id="spotlightImg" alt="" />
-  <div class="name" id="spotlightName"></div>
-  <div class="desc" id="spotlightDesc"></div>
-  <div class="price" id="spotlightPrice"></div>
+  <div class="updated-stamp" id="updatedStamp"></div>
 </div>
 
 <script>
@@ -357,30 +323,15 @@
     : "./menu-data.json";
   var DATA_POLL_MS = 5 * 60 * 1000;        // sjekk om menu-data.json er oppdatert
   var FULL_RELOAD_MS = 6 * 60 * 60 * 1000; // last hele siden på nytt (holder skjermen frisk)
-  var SPOTLIGHT_ENABLED = false;           // av for nå — kun menytavlen vises. Sett til true for å slå på "nyhet"-overtaket igjen.
-  var SPOTLIGHT_CYCLE_MS = 25000;          // hvor ofte et "nyhet"-overtak vises
-  var SPOTLIGHT_SHOW_MS = 8000;            // hvor lenge det står på skjermen
-  var MIN_SCALE = 0.45;                    // laveste vi skalerer tavlen ned til
+  var MIN_SCALE = 0.45;                    // laveste vi skalerer tavlen ned til (to spalter)
+  var MAX_SCALE = 1.5;                     // høyeste vi skalerer tavlen opp til (én spalte)
 
   var boardViewportEl = document.getElementById("boardViewport");
   var storeLineEl = document.getElementById("storeLine");
-  var spotlightEl = document.getElementById("spotlight");
+  var updatedStampEl = document.getElementById("updatedStamp");
 
   var lastGeneratedAt = null;
-  var newItems = [];
-  var spotlightIndex = 0;
-  var spotlightCycleTimer = null;
-  var spotlightHideTimer = null;
-
-  // ---- Klokke ----------------------------------------------------------
-  function tickClock() {
-    var now = new Date();
-    var hh = String(now.getHours()).padStart(2, "0");
-    var mm = String(now.getMinutes()).padStart(2, "0");
-    document.getElementById("clockTime").textContent = hh + ":" + mm;
-  }
-  tickClock();
-  setInterval(tickClock, 1000 * 15);
+  var lastMenu = null;
 
   function escapeHtml(s) {
     return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
@@ -454,6 +405,27 @@
     "hot-beverages": "assets/icons/hot-drink.svg"
   };
 
+  function menuHasFamilyPrice(categories) {
+    return categories.some(function (cat) {
+      return (cat.items || []).some(function (it) {
+        return it.familyPriceFormatted || it.familyPrice != null;
+      });
+    });
+  }
+
+  // Forklaring øverst i kolonnen, plassert over priskolonnene: blå tall er
+  // IKEA Family-pris, svart er ordinær pris. Vises bare hvis menyen faktisk
+  // har minst én Family-pris — ellers er det ingenting å forklare.
+  function renderPriceKey(showFamily) {
+    if (!showFamily) return "";
+    return (
+      '<div class="price-key">' +
+      '<span class="key-family">IKEA Family-pris</span>' +
+      '<span class="key-regular">Ordinær pris</span>' +
+      "</div>"
+    );
+  }
+
   function renderCategoryList(categories) {
     var html = "";
     categories.forEach(function (cat) {
@@ -510,6 +482,10 @@
     return html;
   }
 
+  // Én eller to spalter? Får hele menyen plass i én spalte uten å skaleres
+  // ned (kort meny, f.eks. Karl Johan), bruker vi én spalte og skalerer
+  // heller OPP (inntil MAX_SCALE) så tavlen fyller skjermen. Ellers to
+  // spalter som skaleres ned akkurat nok til at alt får plass.
   function renderBoard(menu) {
     var categories = menu.categories || [];
     if (!categories.length) {
@@ -519,20 +495,32 @@
       return;
     }
 
-    var cols = splitCategoriesIntoColumns(categories);
-    var html =
-      '<div id="board">' +
-      '<div class="board-col board-col-left">' + renderCategoryList(cols[0]) + "</div>" +
-      '<div class="board-col board-col-right">' + renderCategoryList(cols[1]) + "</div>" +
+    var keyHtml = renderPriceKey(menuHasFamilyPrice(categories));
+
+    // Forsøk 1: én spalte, naturlig størrelse.
+    boardViewportEl.innerHTML =
+      '<div id="board" class="single">' +
+      '<div class="board-col clears-logo">' + keyHtml + renderCategoryList(categories) + "</div>" +
       "</div>";
-    boardViewportEl.innerHTML = html;
-    fitBoard();
+    if (fitBoard(true)) return;
+
+    // Forsøk 2: to spalter, skalert ned ved behov.
+    var cols = splitCategoriesIntoColumns(categories);
+    boardViewportEl.innerHTML =
+      '<div id="board">' +
+      '<div class="board-col board-col-left">' + keyHtml + renderCategoryList(cols[0]) + "</div>" +
+      '<div class="board-col board-col-right clears-logo">' + keyHtml + renderCategoryList(cols[1]) + "</div>" +
+      "</div>";
+    fitBoard(false);
   }
 
   // ---- Skaler tavlen slik at ALT vises uten scrolling --------------------
-  function fitBoard() {
+  // singleColumn=true: returnerer false hvis innholdet ikke får plass i
+  // naturlig størrelse (da må vi over på to spalter), ellers skaleres det
+  // opp inntil MAX_SCALE. singleColumn=false: skaleres ned til det passer.
+  function fitBoard(singleColumn) {
     var board = document.getElementById("board");
-    if (!board) return;
+    if (!board) return false;
     board.style.transform = "none";
     board.style.width = "100%";
 
@@ -544,57 +532,32 @@
     var vPad = parseFloat(cs.paddingTop || 0) + parseFloat(cs.paddingBottom || 0);
     var availH = boardViewportEl.clientHeight - vPad;
     var naturalH = board.scrollHeight;
-    if (naturalH <= availH || naturalH === 0) return;
+    if (naturalH === 0) return true;
 
-    var scale = Math.max(MIN_SCALE, (availH / naturalH) * 0.985);
+    var scale;
+    if (singleColumn) {
+      if (naturalH > availH) return false;
+      scale = Math.min(MAX_SCALE, (availH / naturalH) * 0.985);
+      if (scale <= 1.001) return true; // passer akkurat, ingen skalering nødvendig
+    } else {
+      if (naturalH <= availH) return true;
+      scale = Math.max(MIN_SCALE, (availH / naturalH) * 0.985);
+    }
     board.style.transformOrigin = "top left";
     board.style.width = 100 / scale + "%";
     board.style.transform = "scale(" + scale + ")";
+    return true;
   }
 
+  // Ved endret skjermstørrelse må vi ta valget én/to spalter på nytt, ikke
+  // bare re-skalere.
   var resizeTimer = null;
   window.addEventListener("resize", function () {
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(fitBoard, 200);
+    resizeTimer = setTimeout(function () {
+      if (lastMenu) renderBoard(lastMenu);
+    }, 200);
   });
-
-  // ---- "Nyhet"-overtak ----------------------------------------------------
-  function stopSpotlightCycle() {
-    if (spotlightCycleTimer) clearInterval(spotlightCycleTimer);
-    if (spotlightHideTimer) clearTimeout(spotlightHideTimer);
-    spotlightEl.classList.remove("show");
-  }
-
-  function showNextSpotlight() {
-    if (!newItems.length) return;
-    var it = newItems[spotlightIndex % newItems.length];
-    spotlightIndex++;
-
-    var imgEl = document.getElementById("spotlightImg");
-    if (it.image) {
-      imgEl.src = it.image;
-      imgEl.style.display = "";
-    } else {
-      imgEl.style.display = "none";
-    }
-    document.getElementById("spotlightName").textContent = it.name || "";
-    document.getElementById("spotlightDesc").textContent = it.description || "";
-    document.getElementById("spotlightPrice").textContent = it.regularPriceFormatted || "";
-
-    spotlightEl.classList.add("show");
-    if (spotlightHideTimer) clearTimeout(spotlightHideTimer);
-    spotlightHideTimer = setTimeout(function () {
-      spotlightEl.classList.remove("show");
-    }, SPOTLIGHT_SHOW_MS);
-  }
-
-  function startSpotlightCycle() {
-    stopSpotlightCycle();
-    if (!SPOTLIGHT_ENABLED || !newItems.length) return;
-    spotlightCycleTimer = setInterval(showNextSpotlight, SPOTLIGHT_CYCLE_MS);
-    // vis det første "nyhet"-overtaket etter en liten pause, så tavlen rekker å vises først
-    setTimeout(showNextSpotlight, 6000);
-  }
 
   // ---- Hent data ---------------------------------------------------------
   function loadMenu() {
@@ -607,12 +570,17 @@
         if (menu.generatedAt === lastGeneratedAt) return; // ingenting nytt
         lastGeneratedAt = menu.generatedAt;
 
-        var storeBits = [];
-        if (menu.store && menu.store.code) storeBits.push("Butikk " + menu.store.code);
+        // Butikknavn i headeren (gjesterettet). Butikkode og tidsstempel er
+        // internt og havner i stedet som en liten linje nede til venstre.
+        var store = menu.store || {};
+        storeLineEl.textContent = store.name || "";
+
+        var stampBits = [];
+        if (store.code) stampBits.push("Butikk " + store.code);
         if (menu.generatedAt) {
           var d = new Date(menu.generatedAt);
           if (!isNaN(d)) {
-            storeBits.push(
+            stampBits.push(
               "Oppdatert " +
                 d.toLocaleDateString("no-NO") +
                 " " +
@@ -620,18 +588,10 @@
             );
           }
         }
-        storeLineEl.textContent = storeBits.join(" · ");
+        updatedStampEl.textContent = stampBits.join(" · ");
 
+        lastMenu = menu;
         renderBoard(menu);
-
-        newItems = [];
-        (menu.categories || []).forEach(function (cat) {
-          (cat.items || []).forEach(function (it) {
-            if (it.isNew || it.commercialLabel) newItems.push(it);
-          });
-        });
-        spotlightIndex = 0;
-        startSpotlightCycle();
       })
       .catch(function (err) {
         console.error("Kunne ikke laste " + DATA_URL + ":", err);
