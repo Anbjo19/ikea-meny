@@ -54,7 +54,7 @@
     gap: calc(3 * var(--vw));
     background:var(--ikea-yellow);
     color:var(--ink);
-    padding: calc(2.8 * var(--vh)) calc(7 * var(--vw)) calc(2.6 * var(--vh));
+    padding: calc(2.2 * var(--vh)) calc(4.8 * var(--vw)) calc(2 * var(--vh));
     flex:0 0 auto;
   }
   header .brand{
@@ -63,7 +63,7 @@
     max-width:82%;
   }
   header .brand .hej{
-    font-size:clamp(26px, calc(4.6 * var(--vw)), 60px);
+    font-size:clamp(26px, calc(4.2 * var(--vw)), 60px);
     font-weight:900;
     line-height:1.08;
     /* Bryter etter "Hej!" (se <br> i markup), resten skal få plass på én
@@ -93,7 +93,7 @@
      er lett å sjekke at dataene er ferske uten at det tar plass på tavlen. */
   .updated-stamp{
     position:absolute;
-    left:calc(7 * var(--vw));
+    left:calc(4.8 * var(--vw));
     bottom:calc(1.2 * var(--vh));
     font-size:clamp(9px, calc(0.85 * var(--vw)), 12px);
     color:var(--muted);
@@ -131,7 +131,7 @@
     flex:1 1 auto;
     position:relative;
     overflow:hidden;
-    padding: calc(3.4 * var(--vh)) calc(7 * var(--vw)) calc(4 * var(--vh));
+    padding: calc(2.2 * var(--vh)) calc(4.8 * var(--vw)) calc(2.2 * var(--vh));
   }
   /* To egne kolonner (i stedet for CSS multi-column) fordi de to sidene skal
      ha ulik bunnklaring: venstre kolonne har ingen logo og kan derfor gå
@@ -142,7 +142,7 @@
   #board{
     display:flex;
     align-items:flex-start;
-    gap: calc(3.2 * var(--vw));
+    gap: calc(2.6 * var(--vw));
     width:100%;
   }
   .board-col{
@@ -167,11 +167,11 @@
   }
   .category{
     break-inside: avoid-column;
-    margin-bottom: calc(2 * var(--vh));
+    margin-bottom: calc(1.1 * var(--vh));
   }
   .category h2{
     margin:0 0 calc(0.45 * var(--vh)) 0;
-    font-size:clamp(21px, calc(2.7 * var(--vw)), 34px);
+    font-size:clamp(21px, calc(2.45 * var(--vw)), 32px);
     font-weight:900;
     color:var(--ink);
     text-transform:uppercase;
@@ -209,7 +209,7 @@
   .item .name{
     flex:0 1 auto;
     font-weight:700;
-    font-size:clamp(18px, calc(2.0 * var(--vw)), 26px);
+    font-size:clamp(18px, calc(2.2 * var(--vw)), 28px);
     white-space:nowrap;
   }
   .se-flag{
@@ -253,6 +253,13 @@
     font-style:italic;
     line-height:1.14;
   }
+  /* Allergenene henger på slutten av beskrivelsen (samme linje når det er
+     plass) i stedet for å alltid ta en egen linje — sparer mye høyde. */
+  .item .desc .allergens{
+    display:inline;
+    margin-left:0.55em;
+    font-size:0.78em;
+  }
   .item .leader{
     flex:1 1 auto;
     min-width:0.6em;
@@ -272,14 +279,14 @@
   }
   .item .family{
     font-weight:800;
-    font-size:clamp(16px, calc(1.85 * var(--vw)), 24px);
+    font-size:clamp(16px, calc(2.0 * var(--vw)), 26px);
     color:var(--ikea-family-blue);
     min-width:2.6em;
     text-align:right;
   }
   .item .regular{
     font-weight:900;
-    font-size:clamp(18px, calc(2.0 * var(--vw)), 26px);
+    font-size:clamp(18px, calc(2.2 * var(--vw)), 28px);
     color:var(--ink);
     min-width:2.8em;
     text-align:right;
@@ -448,9 +455,7 @@
           ? escapeHtml(it.regularPrice + ",-")
           : "";
         var regularCls = "regular" + (it.isBti ? " ikea-price--bti" : "");
-        var descHtml = it.description
-          ? '<div class="desc">' + escapeHtml(it.description) + "</div>"
-          : "";
+        var descHtml = ""; // settes etter at allergenHtml er kjent
         var seFlagHtml = it.isSwedishClassic
           ? '<svg class="se-flag" viewBox="0 0 16 10" aria-label="Tradisjonell svensk klassiker" role="img">' +
             '<rect width="16" height="10" fill="#006AA7"/>' +
@@ -466,9 +471,15 @@
         if (it.allergensTraces && it.allergensTraces.length) {
           allergenBits.push("kan inneholde spor av: " + it.allergensTraces.join(", "));
         }
-        var allergenHtml = allergenBits.length
-          ? '<div class="allergens">' + escapeHtml(allergenBits.join(" — ")) + "</div>"
+        var allergenSpan = allergenBits.length
+          ? '<span class="allergens">' + escapeHtml(allergenBits.join(" — ")) + "</span>"
           : "";
+        var allergenHtml = "";
+        if (it.description) {
+          descHtml = '<div class="desc">' + escapeHtml(it.description) + allergenSpan + "</div>";
+        } else if (allergenSpan) {
+          allergenHtml = '<div class="allergens">' + escapeHtml(allergenBits.join(" — ")) + "</div>";
+        }
         html +=
           '<div class="item">' +
           '<div class="row-name">' +
@@ -535,18 +546,40 @@
     var naturalH = board.scrollHeight;
     if (naturalH === 0) return true;
 
-    var scale;
-    if (singleColumn) {
-      if (naturalH > availH) return false;
-      scale = Math.min(MAX_SCALE, (availH / naturalH) * 0.985);
-      if (scale <= 1.001) return true; // passer akkurat, ingen skalering nødvendig
-    } else {
-      if (naturalH <= availH) return true;
-      scale = Math.max(MIN_SCALE, (availH / naturalH) * 0.985);
+    if (singleColumn && naturalH > availH) return false;
+    if (!singleColumn && naturalH <= availH) return true;
+
+    // Skalering og bredde henger sammen: skaleres tavlen ned, blir den
+    // tilsvarende bredere (width = 100/scale %), og bredere spalter gir
+    // færre linjebrudd i beskrivelsene — altså lavere høyde og rom for
+    // litt mindre nedskalering. Derfor måles høyden på nytt noen ganger
+    // til skaleringen har stabilisert seg, i stedet for å bruke det
+    // første (for pessimistiske) målet fra den smale tavlen.
+    var scale = 1;
+    for (var i = 0; i < 6; i++) {
+      var next = (availH / naturalH) * 0.985;
+      next = singleColumn ? Math.min(MAX_SCALE, next) : Math.max(MIN_SCALE, next);
+      if (Math.abs(next - scale) < 0.003) break;
+      scale = next;
+      board.style.transformOrigin = "top left";
+      board.style.width = 100 / scale + "%";
+      board.style.transform = "scale(" + scale + ")";
+      naturalH = board.scrollHeight;
+      if (naturalH === 0) break;
     }
-    board.style.transformOrigin = "top left";
-    board.style.width = 100 / scale + "%";
-    board.style.transform = "scale(" + scale + ")";
+    // Siste sikkerhetssjekk: den siste målingen kan være litt høyere enn
+    // den skaleringen ble regnet ut fra (linjebrudd flytter seg når
+    // bredden endres). Da må vi ned det lille hakket til, ellers stikker
+    // bunnen av tavlen ut i marginen.
+    if (naturalH * scale > availH) {
+      scale = (availH / naturalH) * 0.985;
+      board.style.width = 100 / scale + "%";
+      board.style.transform = "scale(" + scale + ")";
+    }
+    if (singleColumn && scale <= 1.001) {
+      board.style.transform = "none";
+      board.style.width = "100%";
+    }
     return true;
   }
 
