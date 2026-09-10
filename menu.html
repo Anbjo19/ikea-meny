@@ -7,6 +7,16 @@
 <link rel="stylesheet" href="./assets/ikea-labels.css" />
 <style>
   :root{
+    /* Fast portrett-scene: hele visningen tegnes i 1080×1920 og skaleres
+       proporsjonalt inn i det faktiske vinduet (se fitStage() i JS). Alle
+       mål i stilarket som før var vw/vh er nå relative til scenen, ikke
+       nettleservinduet — derfor ser tavlen identisk ut på en portrettskjerm
+       uansett oppløsning, og blir bare mindre (med hvit kant rundt) i en
+       vanlig liggende nettleser i stedet for å bli "responsiv". */
+    --stage-w: 1080px;
+    --stage-h: 1920px;
+    --vw: calc(var(--stage-w) / 100);
+    --vh: calc(var(--stage-h) / 100);
     /* Offisielle IKEA-fargetokens, se assets/ikea-labels.css for kilde */
     --ikea-blue:#0058a3;
     --ikea-blue-dark:#003d73;
@@ -18,7 +28,7 @@
     /* Logoen nede til høyre: 22,78 % av breddan, høyden regnet ut fra
        IKEA-logoens egne proporsjoner (98.36 × 40 i SVG-en), og selve den
        utregnede høyden brukt som luft rundt (100 % av høyden, som bedt om). */
-    --logo-w: 22.78vw;
+    --logo-w: calc(22.78 * var(--vw));
     --logo-h: calc(var(--logo-w) * 40 / 98.36);
   }
   *{box-sizing:border-box;}
@@ -31,26 +41,29 @@
   }
   #app{
     display:flex; flex-direction:column;
-    width:100vw; height:100vh;
+    width:var(--stage-w); height:var(--stage-h);
     background:var(--paper);
+    position:absolute; top:0; left:0;
+    transform-origin:top left;
+    overflow:hidden;
   }
 
   /* ---------- Header ---------- */
   header{
     display:flex; align-items:flex-start; justify-content:space-between;
-    gap: 3vw;
+    gap: calc(3 * var(--vw));
     background:var(--ikea-yellow);
     color:var(--ink);
-    padding: 2.8vh 7vw 2.6vh;
+    padding: calc(2.8 * var(--vh)) calc(7 * var(--vw)) calc(2.6 * var(--vh));
     flex:0 0 auto;
   }
   header .brand{
-    display:flex; flex-direction:column; gap:0.6vh;
+    display:flex; flex-direction:column; gap:calc(0.6 * var(--vh));
     flex:1 1 auto;
     max-width:82%;
   }
   header .brand .hej{
-    font-size:clamp(26px, 4.6vw, 60px);
+    font-size:clamp(26px, calc(4.6 * var(--vw)), 60px);
     font-weight:900;
     line-height:1.08;
     /* Bryter etter "Hej!" (se <br> i markup), resten skal få plass på én
@@ -61,18 +74,18 @@
   header .store-name{
     flex:0 0 auto;
     white-space:nowrap;
-    font-size:clamp(14px, 1.7vw, 22px);
+    font-size:clamp(14px, calc(1.7 * var(--vw)), 22px);
     font-weight:700;
     text-align:right;
-    padding-top:0.6vh;
+    padding-top:calc(0.6 * var(--vh));
   }
   /* Tidsstempel for personalet: liten og diskret nede til venstre, så det
      er lett å sjekke at dataene er ferske uten at det tar plass på tavlen. */
   .updated-stamp{
-    position:fixed;
-    left:7vw;
-    bottom:1.2vh;
-    font-size:clamp(9px, 0.85vw, 12px);
+    position:absolute;
+    left:calc(7 * var(--vw));
+    bottom:calc(1.2 * var(--vh));
+    font-size:clamp(9px, calc(0.85 * var(--vw)), 12px);
     color:var(--muted);
     opacity:0.5;
     z-index:20;
@@ -82,7 +95,7 @@
   /* ---------- Logo, nede til høyre: 22,78 % av bredden, med luft rundt
      tilsvarende 100 % av logoens (utregnede) høyde ---------- */
   .corner-logo{
-    position:fixed;
+    position:absolute;
     right: var(--logo-h);
     bottom: var(--logo-h);
     width: var(--logo-w);
@@ -90,7 +103,7 @@
     z-index:20;
   }
   #logoFallback{
-    position:fixed;
+    position:absolute;
     right: var(--logo-h);
     bottom: var(--logo-h);
     z-index:20;
@@ -108,7 +121,7 @@
     flex:1 1 auto;
     position:relative;
     overflow:hidden;
-    padding: 3.4vh 7vw 4vh;
+    padding: calc(3.4 * var(--vh)) calc(7 * var(--vw)) calc(4 * var(--vh));
   }
   /* To egne kolonner (i stedet for CSS multi-column) fordi de to sidene skal
      ha ulik bunnklaring: venstre kolonne har ingen logo og kan derfor gå
@@ -119,7 +132,7 @@
   #board{
     display:flex;
     align-items:flex-start;
-    gap: 3.2vw;
+    gap: calc(3.2 * var(--vw));
     width:100%;
   }
   .board-col{
@@ -132,34 +145,33 @@
   .board-col.clears-logo{
     padding-bottom: calc(var(--logo-h) * 2.2);
   }
-  /* Forklaring øverst i hver kolonne, over priskolonnene: blå = IKEA
+  /* Forklaring øverst i hver kolonne, over priskolonnen: blå = IKEA
      Family-pris. Vises kun når minst én rett faktisk har Family-pris. */
   .price-key{
     display:flex;
     justify-content:flex-end;
     gap:1.2em;
-    font-size:clamp(12px, 1.5vw, 19px);
+    font-size:clamp(12px, calc(1.5 * var(--vw)), 19px);
     font-weight:700;
     text-transform:uppercase;
     letter-spacing:0.06em;
-    margin-bottom:1.4vh;
-    padding-bottom:0.6vh;
+    margin-bottom:calc(1.4 * var(--vh));
+    padding-bottom:calc(0.6 * var(--vh));
     border-bottom:1px solid #e3e7ee;
   }
   .price-key .key-family{ color:var(--ikea-family-blue); }
-  .price-key .key-regular{ color:var(--ink); opacity:0.7; }
   .category{
     break-inside: avoid-column;
-    margin-bottom: 2vh;
+    margin-bottom: calc(2 * var(--vh));
   }
   .category h2{
-    margin:0 0 0.45vh 0;
-    font-size:clamp(21px, 2.7vw, 34px);
+    margin:0 0 calc(0.45 * var(--vh)) 0;
+    font-size:clamp(21px, calc(2.7 * var(--vw)), 34px);
     font-weight:900;
     color:var(--ink);
     text-transform:uppercase;
     letter-spacing:0.03em;
-    padding-bottom:0.1vh;
+    padding-bottom:calc(0.1 * var(--vh));
     break-after: avoid-column;
     display:flex;
     align-items:center;
@@ -179,7 +191,7 @@
     display:grid;
     grid-template-columns: 1fr auto;
     column-gap:0.6em;
-    padding: 0.22vh 0;
+    padding: calc(0.22 * var(--vh)) 0;
     break-inside: avoid-column;
   }
   .item .row-name{
@@ -192,7 +204,7 @@
   .item .name{
     flex:0 1 auto;
     font-weight:700;
-    font-size:clamp(18px, 2.0vw, 26px);
+    font-size:clamp(18px, calc(2.0 * var(--vw)), 26px);
     white-space:nowrap;
   }
   .se-flag{
@@ -212,25 +224,25 @@
     display:inline-block;
     margin-left:0.5em;
     vertical-align:middle;
-    font-size:clamp(10px, 1.05vw, 14px);
+    font-size:clamp(10px, calc(1.05 * var(--vw)), 14px);
   }
   .item .desc{
     grid-column:1;
     min-width:0;
-    margin-top:0.08vh;
+    margin-top:calc(0.08 * var(--vh));
     white-space:normal;
     overflow-wrap:break-word;
-    font-size:clamp(14px, 1.5vw, 19px);
+    font-size:clamp(14px, calc(1.5 * var(--vw)), 19px);
     color:var(--muted);
     line-height:1.16;
   }
   .item .allergens{
     grid-column:1;
     min-width:0;
-    margin-top:0.05vh;
+    margin-top:calc(0.05 * var(--vh));
     white-space:normal;
     overflow-wrap:break-word;
-    font-size:clamp(11px, 1.15vw, 15px);
+    font-size:clamp(11px, calc(1.15 * var(--vw)), 15px);
     color:var(--muted);
     opacity:0.75;
     font-style:italic;
@@ -255,14 +267,14 @@
   }
   .item .family{
     font-weight:800;
-    font-size:clamp(16px, 1.85vw, 24px);
+    font-size:clamp(16px, calc(1.85 * var(--vw)), 24px);
     color:var(--ikea-family-blue);
     min-width:2.6em;
     text-align:right;
   }
   .item .regular{
     font-weight:900;
-    font-size:clamp(18px, 2.0vw, 26px);
+    font-size:clamp(18px, calc(2.0 * var(--vw)), 26px);
     color:var(--ink);
     min-width:2.8em;
     text-align:right;
@@ -270,17 +282,17 @@
   /* Ekte IKEA-prislapp (gul/rød) for retter merket isBti — se assets/ikea-labels.css */
   .item .regular.ikea-price--bti{
     min-width:auto;
-    font-size:clamp(17px, 1.85vw, 23px);
+    font-size:clamp(17px, calc(1.85 * var(--vw)), 23px);
     border-radius:2px;
   }
 
   .empty-state{
     display:flex; flex-direction:column; align-items:center; justify-content:center;
     height:100%; text-align:center; color:var(--muted);
-    gap:1.2vh; padding: 4vh;
+    gap:calc(1.2 * var(--vh)); padding: calc(4 * var(--vh));
   }
   .empty-state .big{
-    font-size:clamp(18px,2.6vw,32px); color:var(--ikea-blue-dark); font-weight:800;
+    font-size:clamp(18px,calc(2.6 * var(--vw)),32px); color:var(--ikea-blue-dark); font-weight:800;
   }
 
 </style>
@@ -326,6 +338,7 @@
   var MIN_SCALE = 0.45;                    // laveste vi skalerer tavlen ned til (to spalter)
   var MAX_SCALE = 1.5;                     // høyeste vi skalerer tavlen opp til (én spalte)
 
+  var appEl = document.getElementById("app");
   var boardViewportEl = document.getElementById("boardViewport");
   var storeLineEl = document.getElementById("storeLine");
   var updatedStampEl = document.getElementById("updatedStamp");
@@ -413,15 +426,14 @@
     });
   }
 
-  // Forklaring øverst i kolonnen, plassert over priskolonnene: blå tall er
-  // IKEA Family-pris, svart er ordinær pris. Vises bare hvis menyen faktisk
-  // har minst én Family-pris — ellers er det ingenting å forklare.
+  // Forklaring øverst i kolonnen, plassert over priskolonnen: blå tall er
+  // IKEA Family-pris. Vises bare hvis menyen faktisk har minst én
+  // Family-pris — ellers er det ingenting å forklare.
   function renderPriceKey(showFamily) {
     if (!showFamily) return "";
     return (
       '<div class="price-key">' +
       '<span class="key-family">IKEA Family-pris</span>' +
-      '<span class="key-regular">Ordinær pris</span>' +
       "</div>"
     );
   }
@@ -549,14 +561,26 @@
     return true;
   }
 
-  // Ved endret skjermstørrelse må vi ta valget én/to spalter på nytt, ikke
-  // bare re-skalere.
+  // ---- Skaler hele scenen (1080×1920) proporsjonalt inn i vinduet ---------
+  // På en portrettskjerm med samme forhold fyller scenen hele skjermen;
+  // i et liggende vindu sentreres den med hvit kant på sidene.
+  function fitStage() {
+    var cs = window.getComputedStyle(appEl);
+    var stageW = parseFloat(cs.width) || 1080;
+    var stageH = parseFloat(cs.height) || 1920;
+    var scale = Math.min(window.innerWidth / stageW, window.innerHeight / stageH);
+    var offX = Math.max(0, (window.innerWidth - stageW * scale) / 2);
+    var offY = Math.max(0, (window.innerHeight - stageH * scale) / 2);
+    appEl.style.transform = "translate(" + offX + "px," + offY + "px) scale(" + scale + ")";
+  }
+  fitStage();
+
+  // Ved endret vindusstørrelse skaleres scenen på nytt. Tavlen selv trenger
+  // ikke re-rendres — scenen er alltid 1080×1920 innvendig.
   var resizeTimer = null;
   window.addEventListener("resize", function () {
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(function () {
-      if (lastMenu) renderBoard(lastMenu);
-    }, 200);
+    resizeTimer = setTimeout(fitStage, 100);
   });
 
   // ---- Hent data ---------------------------------------------------------

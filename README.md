@@ -10,21 +10,26 @@ opp som én statisk tavle for en portrettskjerm i inngangen, med et eget
 ## Filer
 
 - `fetch_menu.py` – henter fersk menydata fra IKEA og skriver `menu-data.json`.
-- `menu.html` – selve skjermvisningen. Portrettformat, viser **alle**
-  rettene samtidig på én tavle (ingen rullering mellom kategorier),
-  fordelt i to spalter. Hver rett vises med navn, beskrivelse under
-  tittelen, IKEA Family-pris (blå, når den finnes), vanlig pris (svart,
-  fet) og — når IKEA har oppgitt det — en liten kursivert linje med
-  allergener ("Inneholder: gluten, melk — kan inneholde spor av: sesam").
+- `menu.html` – selve skjermvisningen. Tegnes alltid som en fast
+  portrettscene på 1080×1920 som skaleres proporsjonalt inn i vinduet —
+  identisk utseende på en portrettskjerm uansett oppløsning, og bare
+  mindre (med hvit kant rundt) hvis du åpner den i en vanlig liggende
+  nettleser. Viser **alle** rettene samtidig på én tavle (ingen rullering
+  mellom kategorier): i én bred spalte, skalert opp, hvis hele menyen får
+  plass slik (kort meny, f.eks. Karl Johan), ellers fordelt i to spalter
+  som skaleres ned akkurat nok til at alt får plass. Hver rett vises med
+  navn, beskrivelse under tittelen, IKEA Family-pris (blå, når den
+  finnes), vanlig pris (svart, fet) og — når IKEA har oppgitt det — en
+  liten kursivert linje med allergener ("Inneholder: gluten, melk — kan
+  inneholde spor av: sesam"). Har menyen minst én Family-pris, står
+  "IKEA Family-pris" i blått øverst i hver spalte over priskolonnen, så
+  det er tydelig hva den blå prisen betyr; ellers vises ingen forklaring.
   Retter IKEA selv omtaler som en tradisjonell svensk spesialitet får et
   lite svensk flagg ved siden av navnet i stedet for at det skrives ut
-  som tekst. Header med "Hej! Smaklig måltid" øverst og IKEA-logoen nede
-  i høyre hjørne (med luft rundt tilsvarende egen høyde). Skalerer
-  automatisk ned hvis menyen en dag blir for lang til å få plass. Med
-  jevne mellomrom (hvert 25. sekund) tar en rett IKEA har merket som
-  "nyhet" over hele skjermen i noen sekunder, med bilde, navn,
-  beskrivelse og pris — deretter tilbake til tavlen. Vises ingenting hvis
-  ingen retter er merket som nye.
+  som tekst. Gul header med "Hej! Velkommen til restauranten" og
+  butikknavnet øverst, IKEA-logoen nede i høyre hjørne (med luft rundt
+  tilsvarende egen høyde), og en liten nedtonet linje nederst til venstre
+  med butikkode og når dataene sist ble hentet (for personalet).
 - `menu-data.json` – ferdig eksempeldata (IKEA Slependen, hentet nå) så
   visningen fungerer med det samme. Blir overskrevet neste gang du kjører
   `fetch_menu.py`.
