@@ -11,7 +11,7 @@ name: Oppdater IKEA-menydata
     # cacher menyen sin i ca. 48 timer og skjermen laster hele siden på nytt
     # hvert 6. time, er det ikke kritisk at tidspunktet er presist — bare at
     # det kjører en gang tidlig hver dag.
-    - cron: "30 4 * * *"
+    - cron: "0 4-9 * * *"
   # Lar deg trigge en oppdatering manuelt fra Actions-fanen på GitHub, uten
   # å vente på tidsplanen — nyttig rett etter oppsett, eller hvis IKEA har
   # endret noe og du vil ha ny data med en gang.
