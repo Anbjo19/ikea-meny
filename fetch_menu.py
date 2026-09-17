@@ -121,7 +121,8 @@ STORES = {
     "126": "IKEA Forus",
     "390": "IKEA Ringsaker",
     "007": "IKEA Sørlandet",
-    "722": "IKEA Karl Johan",
+    "722": "IKEA Oslo Stortorvet",  # het "Karl Johan" i IKEAs data tidligere
+    "1352": "IKEA Østfold",  # Østfoldhallene, lagt til 15.09.2026
 }
 
 # Rekkefølgen kategoriene vises i på skjermen. Kategorier som dukker opp i
@@ -229,23 +230,54 @@ def format_price(price: float | None) -> str | None:
 def extract_prices(entry: dict) -> tuple[float | None, float | None]:
     """Plukker ut (vanlig pris, IKEA Family-pris) fra en rett.
 
-    IKEA lister flere pristyper per rett (vanlig, spis-her, ansatt osv.).
-    Vi bryr oss om to av dem:
-      - RegularSalesUnitPrice      -> vanlig pris
+    IKEA lister flere pristyper per rett. I september 2026 begynte de å skille
+    mellom spis-her og ta-med: det som tidligere lå som "RegularSalesUnitPrice"
+    (f.eks. 19,- for frokostrundstykke) ligger nå som
+    "RegularEatInSalesUnitPrice", mens "RegularSalesUnitPrice" har fått en ny
+    (ofte høyere) verdi. Siden tavlen står i restauranten, foretrekker vi
+    spis-her-prisen når den finnes:
+      - RegularEatInSalesUnitPrice -> spis-her-pris (foretrukket)
+      - RegularSalesUnitPrice      -> vanlig pris (reserve)
       - IKEAFamilySalesUnitPrice   -> medlemspris (finnes ikke på alle retter)
     """
     sales_prices = (entry.get("itemSalesPrice") or {}).get("salesPrices") or []
-    regular = None
-    family = None
+    by_type: dict[str, float] = {}
     for p in sales_prices:
-        if p.get("type") == "RegularSalesUnitPrice" and regular is None:
-            regular = p.get("priceInclTax")
-        elif p.get("type") == "IKEAFamilySalesUnitPrice" and family is None:
-            family = p.get("priceInclTax")
+        t = p.get("type")
+        if t and t not in by_type and p.get("priceInclTax") is not None:
+            by_type[t] = p.get("priceInclTax")
+    regular = by_type.get("RegularEatInSalesUnitPrice")
+    if regular is None:
+        regular = by_type.get("RegularSalesUnitPrice")
     if regular is None and sales_prices:
-        # Fallback: ingen "RegularSalesUnitPrice" funnet, bruk første pris i lista.
+        # Fallback: ingen kjent pristype funnet, bruk første pris i lista.
         regular = sales_prices[0].get("priceInclTax")
+    family = by_type.get("IKEAFamilySalesUnitPrice")
     return regular, family
+
+
+# Hvis mer enn denne andelen av rettene mangler pris, er det nesten sikkert
+# IKEA-data som er midlertidig ufullstendig (skjedde 16.09.2026: 19 av 39
+# retter uten pris i én kjøring, alle tilbake noen timer senere). Da avbryter
+# vi heller enn å publisere — GitHub-jobben committer ikke, og skjermen
+# beholder forrige gode datasett.
+MAX_MISSING_PRICE_SHARE = 0.25
+
+
+def check_prices(menu: dict, label: str) -> None:
+    items = [it for c in menu["categories"] for it in c["items"]]
+    if not items:
+        return
+    missing = [it["name"] for it in items if it.get("regularPrice") is None]
+    share = len(missing) / len(items)
+    if share > MAX_MISSING_PRICE_SHARE:
+        raise SystemExit(
+            f"AVBRYTER ({label}): {len(missing)} av {len(items)} retter mangler pris "
+            f"({share:.0%}) — ser ut som ufullstendig data fra IKEA. Beholder forrige "
+            f"datasett. Uten pris: {', '.join(missing)}"
+        )
+    if missing:
+        print(f"  Merk ({label}): {len(missing)} rett(er) uten pris: {', '.join(missing)}")
 
 
 def build_allergen_dict(listing: dict) -> dict[str, str]:
@@ -458,6 +490,7 @@ def main():
             menu = build_menu_from_listing(
                 build_id, listing, args.salesarea, code, fetch_labels=args.labels
             )
+            check_prices(menu, f"{code} {name}")
             out_name = f"menu-data-{code}.json"
             with open(out_name, "w", encoding="utf-8") as f:
                 json.dump(menu, f, ensure_ascii=False, indent=2)
@@ -472,6 +505,7 @@ def main():
 
     store_code = args.store or None
     menu = build_menu(args.salesarea, store_code, fetch_labels=args.labels)
+    check_prices(menu, store_code or "alle butikker")
 
     with open(args.out, "w", encoding="utf-8") as f:
         json.dump(menu, f, ensure_ascii=False, indent=2)
