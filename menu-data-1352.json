@@ -1,15 +1,39 @@
 {
-  "generatedAt": "2026-09-17T08:34:22.324793Z",
+  "generatedAt": "2026-09-17T08:34:22.326513Z",
   "salesarea": "restaurant",
   "store": {
-    "code": "007",
-    "name": "IKEA Sørlandet"
+    "code": "1352",
+    "name": "IKEA Østfold"
   },
   "categories": [
     {
       "slug": "breakfast",
       "name": "Frokost",
       "items": [
+        {
+          "categorySlug": "breakfast",
+          "category": "Frokost",
+          "name": "Engelsk frokost med kalkunbacon",
+          "description": "Engelsk frokost serveres med eggerøre, bacon, pølse, tomatbønner, potetbåter, bakte cherry tomater, sjampinjong og hvitløksbrød.",
+          "isSwedishClassic": false,
+          "regularPrice": 89,
+          "regularPriceFormatted": "89,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Gluten",
+            "Egg",
+            "Melk",
+            "Soyabønner"
+          ],
+          "allergensTraces": [
+            "Sesam"
+          ],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/5f15662b-fb66-4cf4-af2e-40a90b42705d"
+        },
         {
           "categorySlug": "breakfast",
           "category": "Frokost",
@@ -107,6 +131,27 @@
         {
           "categorySlug": "mains",
           "category": "Hovedretter",
+          "name": "Komler/Raspeballer",
+          "description": "Komler/Raspeballer med salt svinebog, pølse, bacon og rotmos",
+          "isSwedishClassic": false,
+          "regularPrice": 159,
+          "regularPriceFormatted": "159,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Gluten",
+            "Melk",
+            "Soyabønner"
+          ],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/c94f5e02-d442-4657-82e5-5c0cfa4513dc"
+        },
+        {
+          "categorySlug": "mains",
+          "category": "Hovedretter",
           "name": "Laksefilet med sitron- og dillsaus",
           "description": "Laksefilet serveres med bønnemiks, potetmos sitron- og dillsaus.",
           "isSwedishClassic": false,
@@ -165,26 +210,6 @@
           ],
           "allergensTraces": [],
           "image": "https://storage.googleapis.com/fpi_product_images_prod/2272cedc-d8de-447e-beb9-f35bd0943e3b"
-        },
-        {
-          "categorySlug": "mains",
-          "category": "Hovedretter",
-          "name": "BBQ- marinert kyllingfilet",
-          "description": "serveres med pommes frites, chilibernaise og salat",
-          "isSwedishClassic": false,
-          "regularPrice": 189,
-          "regularPriceFormatted": "189,-",
-          "familyPrice": null,
-          "familyPriceFormatted": null,
-          "isNew": true,
-          "isBti": false,
-          "commercialLabel": null,
-          "allergens": [
-            "Selleri",
-            "Egg"
-          ],
-          "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/f1abda50-9ef0-419b-91a3-37dc33970492"
         },
         {
           "categorySlug": "mains",
@@ -722,6 +747,26 @@
         {
           "categorySlug": "desserts-pastries",
           "category": "Bakverk, desserter og småkaker",
+          "name": "Kakaobolle med kokosstrø",
+          "description": "Kakaobolle med kokosstrø",
+          "isSwedishClassic": false,
+          "regularPrice": 10,
+          "regularPriceFormatted": "10,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Gluten",
+            "Egg"
+          ],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/af80c789-12b0-4574-b095-7499be5b7068"
+        },
+        {
+          "categorySlug": "desserts-pastries",
+          "category": "Bakverk, desserter og småkaker",
           "name": "Kladdkake",
           "description": "Seig og klebrig kakao og sjokoladekake",
           "isSwedishClassic": false,
@@ -802,6 +847,29 @@
           ],
           "allergensTraces": [],
           "image": "https://storage.googleapis.com/fpi_product_images_prod/2d2d86e4-9297-4dc0-a2f9-388ed814b87d"
+        },
+        {
+          "categorySlug": "desserts-pastries",
+          "category": "Bakverk, desserter og småkaker",
+          "name": "Muffin blåbær",
+          "description": "Bakverk fylt med blåbær",
+          "isSwedishClassic": false,
+          "regularPrice": 39,
+          "regularPriceFormatted": "39,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Gluten",
+            "Egg",
+            "Melk"
+          ],
+          "allergensTraces": [
+            "Soyabønner"
+          ],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/18724c6d-31d5-4b4d-8853-a4c205eb9314"
         },
         {
           "categorySlug": "desserts-pastries",

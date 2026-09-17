@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-09-16T13:47:18.048163Z",
+  "generatedAt": "2026-09-17T08:34:22.325804Z",
   "salesarea": "restaurant",
   "store": {
     "code": "722",
-    "name": "IKEA Karl Johan"
+    "name": "IKEA Oslo Stortorvet"
   },
   "categories": [
     {
@@ -43,8 +43,8 @@
           "name": "Mandelkake med sitron",
           "description": "Mandelkake med sitron",
           "isSwedishClassic": false,
-          "regularPrice": null,
-          "regularPriceFormatted": null,
+          "regularPrice": 29,
+          "regularPriceFormatted": "29,-",
           "familyPrice": null,
           "familyPriceFormatted": null,
           "isNew": true,
@@ -86,8 +86,8 @@
           "name": "Muffin blåbær",
           "description": "Bakverk fylt med blåbær",
           "isSwedishClassic": false,
-          "regularPrice": null,
-          "regularPriceFormatted": null,
+          "regularPrice": 39,
+          "regularPriceFormatted": "39,-",
           "familyPrice": null,
           "familyPriceFormatted": null,
           "isNew": false,
@@ -132,8 +132,8 @@
           "name": "Kaffe",
           "description": "Sort kaffe",
           "isSwedishClassic": false,
-          "regularPrice": null,
-          "regularPriceFormatted": null,
+          "regularPrice": 5,
+          "regularPriceFormatted": "5,-",
           "familyPrice": null,
           "familyPriceFormatted": null,
           "isNew": false,
