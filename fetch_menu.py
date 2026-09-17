@@ -230,14 +230,12 @@ def format_price(price: float | None) -> str | None:
 def extract_prices(entry: dict) -> tuple[float | None, float | None]:
     """Plukker ut (vanlig pris, IKEA Family-pris) fra en rett.
 
-    IKEA lister flere pristyper per rett. I september 2026 begynte de å skille
-    mellom spis-her og ta-med: det som tidligere lå som "RegularSalesUnitPrice"
-    (f.eks. 19,- for frokostrundstykke) ligger nå som
-    "RegularEatInSalesUnitPrice", mens "RegularSalesUnitPrice" har fått en ny
-    (ofte høyere) verdi. Siden tavlen står i restauranten, foretrekker vi
-    spis-her-prisen når den finnes:
-      - RegularEatInSalesUnitPrice -> spis-her-pris (foretrukket)
-      - RegularSalesUnitPrice      -> vanlig pris (reserve)
+    IKEA lister flere pristyper per rett. Siden september 2026 finnes det
+    også en "RegularEatInSalesUnitPrice" på en del retter, men ikea.no viser
+    selv "RegularSalesUnitPrice" (sjekket 17.09.2026: Kaffe 20,-, Komler
+    179,-, Wrap 89,-), så tavla skal vise den samme:
+      - RegularSalesUnitPrice      -> vanlig pris (det ikea.no viser)
+      - RegularEatInSalesUnitPrice -> kun reserve hvis vanlig pris mangler
       - IKEAFamilySalesUnitPrice   -> medlemspris (finnes ikke på alle retter)
     """
     sales_prices = (entry.get("itemSalesPrice") or {}).get("salesPrices") or []
@@ -246,9 +244,9 @@ def extract_prices(entry: dict) -> tuple[float | None, float | None]:
         t = p.get("type")
         if t and t not in by_type and p.get("priceInclTax") is not None:
             by_type[t] = p.get("priceInclTax")
-    regular = by_type.get("RegularEatInSalesUnitPrice")
+    regular = by_type.get("RegularSalesUnitPrice")
     if regular is None:
-        regular = by_type.get("RegularSalesUnitPrice")
+        regular = by_type.get("RegularEatInSalesUnitPrice")
     if regular is None and sales_prices:
         # Fallback: ingen kjent pristype funnet, bruk første pris i lista.
         regular = sales_prices[0].get("priceInclTax")
