@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-21T09:20:11.612537Z",
+  "generatedAt": "2026-09-22T08:50:20.344603Z",
   "salesarea": "restaurant",
   "store": {
     "code": "1352",
@@ -76,7 +76,7 @@
             "Soyabønner"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/61ac3881-2e3e-48b1-b304-48519234938c"
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/25c03954-feca-4e04-8882-8ebe5637a2cc"
         },
         {
           "categorySlug": "breakfast",
@@ -147,7 +147,7 @@
             "Soyabønner"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/c94f5e02-d442-4657-82e5-5c0cfa4513dc"
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/9e7b0cfc-4c19-4efe-b94e-b690190e6fd1"
         },
         {
           "categorySlug": "mains",
