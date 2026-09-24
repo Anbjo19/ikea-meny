@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-24T08:47:50.419069Z",
+  "generatedAt": "2026-09-24T13:50:52.241643Z",
   "salesarea": "restaurant",
   "store": {
     "code": "126",
@@ -83,6 +83,25 @@
       "slug": "mains",
       "name": "Hovedretter",
       "items": [
+        {
+          "categorySlug": "mains",
+          "category": "Hovedretter",
+          "name": "Viltkarbonader",
+          "description": "med stekte poteter, grønnsaker, viltsaus og tyttebærsyltetøy",
+          "isSwedishClassic": false,
+          "regularPrice": 179,
+          "regularPriceFormatted": "179,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Melk"
+          ],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/558731e7-524c-4426-a36e-f073ff092c10"
+        },
         {
           "categorySlug": "mains",
           "category": "Hovedretter",
