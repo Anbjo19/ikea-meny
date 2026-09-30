@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T10:10:26.248448Z",
+  "generatedAt": "2026-09-30T10:02:11.597864Z",
   "salesarea": "restaurant",
   "store": {
     "code": "371",
@@ -195,7 +195,7 @@
           "regularPriceFormatted": "189,-",
           "familyPrice": null,
           "familyPriceFormatted": null,
-          "isNew": true,
+          "isNew": false,
           "isBti": false,
           "commercialLabel": null,
           "allergens": [
