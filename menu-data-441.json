@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T10:02:11.596564Z",
+  "generatedAt": "2026-10-01T10:30:05.621956Z",
   "salesarea": "restaurant",
   "store": {
     "code": "441",
@@ -224,6 +224,53 @@
           ],
           "allergensTraces": [],
           "image": "https://storage.googleapis.com/fpi_product_images_prod/9f85955f-3ede-4d5e-88e4-da3cd8764548"
+        },
+        {
+          "categorySlug": "mains",
+          "category": "Hovedretter",
+          "name": "Vegetable lasagne",
+          "description": "Vegetable lasagne, Vegetarisk lasagne, NO",
+          "isSwedishClassic": false,
+          "regularPrice": 59,
+          "regularPriceFormatted": "59,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Selleri",
+            "Gluten",
+            "Egg",
+            "Melk"
+          ],
+          "allergensTraces": [
+            "Soyabønner"
+          ],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/9b0fb14b-41d4-44bc-bec5-dcd057b38680"
+        },
+        {
+          "categorySlug": "mains",
+          "category": "Hovedretter",
+          "name": "Salmon file veg. medallion hollnds bn",
+          "description": "Salmon fillet, Veg medallion, Hollandaise, Green Beans, Laksefilet, grønnsaksmedaljong, hollandaisesaus og grønne bønner, NO",
+          "isSwedishClassic": false,
+          "regularPrice": 179,
+          "regularPriceFormatted": "179,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Selleri",
+            "Egg",
+            "Fisk",
+            "Melk",
+            "Soyabønner"
+          ],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/1516506d-ddbd-4edc-b929-ccb514d4e469"
         },
         {
           "categorySlug": "mains",
