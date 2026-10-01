@@ -191,6 +191,22 @@ Vil du endre selve visningen (`menu.html`) eller scriptet senere, gjør du
 det i repoet (last opp nye filer på samme måte, eller `git push` på
 nytt) — GitHub Pages oppdaterer seg automatisk innen kort tid.
 
+## Kun retter som faktisk vises på ikea.com
+
+IKEAs food-API returnerer alle retter i en kategori i ett jafs, uavhengig
+av hvilken kanal de er ment for. Hver rett har et felt `publishingAreas`
+som sier hvor den skal vises — nesten alle retter har `web` i den listen
+(det er disse som faktisk vises på ikea.com), men noen få retter er kun
+merket for den interne bestillingskiosken i butikken (`kiosk_restaurant`)
+og dukker aldri opp på nettsiden, ofte med et rått, uoversatt produktnavn
+fra det interne systemet i stedet for et ferdig redigert menynavn.
+
+Siden hele poenget med dette oppsettet er å speile akkurat det ikea.com
+viser (se "Hvorfor et eget script" over), hopper `fetch_menu.py` over
+retter som ikke har `web` i `publishingAreas`. Skriptet skriver ut hvor
+mange retter som ble filtrert bort per butikk, slik at det er synlig hvis
+antallet endrer seg mye fra kjøring til kjøring.
+
 ## Ekte IKEA-prislapp ("BTI")
 
 På ikea.com får enkelte retter en gul prislapp med et lite rødt "skygge"-

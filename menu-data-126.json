@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T10:30:05.739127Z",
+  "generatedAt": "2026-10-01T11:48:22.353159Z",
   "salesarea": "restaurant",
   "store": {
     "code": "126",
@@ -270,29 +270,6 @@
             "Soyabønner"
           ],
           "image": "https://storage.googleapis.com/fpi_product_images_prod/9b0fb14b-41d4-44bc-bec5-dcd057b38680"
-        },
-        {
-          "categorySlug": "mains",
-          "category": "Hovedretter",
-          "name": "Salmon file veg. medallion hollnds bn",
-          "description": "Salmon fillet, Veg medallion, Hollandaise, Green Beans, Laksefilet, grønnsaksmedaljong, hollandaisesaus og grønne bønner, NO",
-          "isSwedishClassic": false,
-          "regularPrice": 179,
-          "regularPriceFormatted": "179,-",
-          "familyPrice": null,
-          "familyPriceFormatted": null,
-          "isNew": false,
-          "isBti": false,
-          "commercialLabel": null,
-          "allergens": [
-            "Selleri",
-            "Egg",
-            "Fisk",
-            "Melk",
-            "Soyabønner"
-          ],
-          "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/1516506d-ddbd-4edc-b929-ccb514d4e469"
         },
         {
           "categorySlug": "mains",

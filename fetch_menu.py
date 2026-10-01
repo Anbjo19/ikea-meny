@@ -364,11 +364,25 @@ def build_menu_from_listing(
     allergen_dict = build_allergen_dict(listing)
 
     items = []
+    skipped_not_web = 0
     for entry in reduced_products:
         item = entry.get("item", {})
         excluded = {s.get("code") for s in item.get("excludedStores", []) or []}
         if store_code and store_code in excluded:
             continue  # denne retten selges ikke i den valgte butikken
+
+        # IKEA sitt API blander retter fra flere kanaler i samme liste —
+        # de fleste har "web" i publishingAreas (det er disse som vises på
+        # ikea.com), men noen få er kun til den interne bestillingskiosken
+        # i butikken ("kiosk_restaurant") og dukker aldri opp på nettsiden.
+        # Siden hele poenget med dette scriptet er å speile ikea.com (se
+        # README), hopper vi over retter som ikke er publisert for web —
+        # ellers vises retter på skjermen som gjesten ikke finner igjen på
+        # ikea.com, ofte med uoversatt/internt produktnavn.
+        publishing_areas = item.get("publishingAreas") or []
+        if "web" not in publishing_areas:
+            skipped_not_web += 1
+            continue
 
         sales_areas = item.get("salesAreas") or []
         categories = sales_areas[0].get("categories") if sales_areas else []
@@ -409,6 +423,8 @@ def build_menu_from_listing(
         )
 
     print(f"  {len(items)} retter etter butikk-filter")
+    if skipped_not_web:
+        print(f"  (hoppet over {skipped_not_web} rett(er) uten 'web' i publishingAreas — vises ikke på ikea.com)")
 
     grouped: dict[str, list[dict]] = {}
     for it in items:
