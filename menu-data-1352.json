@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T11:48:22.359978Z",
+  "generatedAt": "2026-10-02T10:05:18.562658Z",
   "salesarea": "restaurant",
   "store": {
     "code": "1352",
@@ -167,27 +167,6 @@
           ],
           "allergensTraces": [],
           "image": "https://storage.googleapis.com/fpi_product_images_prod/9e7b0cfc-4c19-4efe-b94e-b690190e6fd1"
-        },
-        {
-          "categorySlug": "mains",
-          "category": "Hovedretter",
-          "name": "Laksefilet med sitron- og dillsaus",
-          "description": "Laksefilet serveres med bønnemiks, potetmos sitron- og dillsaus.",
-          "isSwedishClassic": false,
-          "regularPrice": 169,
-          "regularPriceFormatted": "169,-",
-          "familyPrice": null,
-          "familyPriceFormatted": null,
-          "isNew": false,
-          "isBti": false,
-          "commercialLabel": null,
-          "allergens": [
-            "Fisk",
-            "Melk",
-            "Soyabønner"
-          ],
-          "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/d01f896b-1564-4ccc-b62e-f1646dd134f9"
         },
         {
           "categorySlug": "mains",
