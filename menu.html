@@ -203,11 +203,24 @@
     gap:0.5em;
     min-width:0;
   }
+  /* Navnet får brytes over flere linjer hvis det er for langt til å få
+     plass ved siden av prisen (skjer sjelden, f.eks. "Laksefilet,
+     grønnsaksmedaljong, hollandaisesaus og miks bønner"). Prisen blir
+     stående på første linje, og balance fordeler ordene jevnt på linjene
+     i stedet for én lang og én kort. */
   .item .name{
     flex:0 1 auto;
+    min-width:0;
     font-weight:700;
     font-size:clamp(18px, calc(2.2 * var(--vw)), 28px);
-    white-space:nowrap;
+    /* Strammere linjeavstand når navnet brytes; padding opp/ned gir
+       samme totalhøyde som én linje hadde med normal linjeavstand, så
+       vanlige navn ser ut som før. */
+    line-height:1.2;
+    padding:0.08em 0;
+    white-space:normal;
+    overflow-wrap:break-word;
+    text-wrap:balance;
   }
   .se-flag{
     display:inline-block;
@@ -257,9 +270,11 @@
     margin-left:0.55em;
     font-size:0.78em;
   }
+  /* Prikkelinja tar bare opp det som er til overs ved siden av navnet —
+     har navnet brutt over flere linjer, blir det ingenting igjen. */
   .item .leader{
-    flex:1 1 auto;
-    min-width:0.6em;
+    flex:1 1 0;
+    min-width:0;
     border-bottom: 2px dotted #98a2b3;
     height:0.55em;
     align-self:flex-end;
