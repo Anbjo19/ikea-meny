@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T10:14:51.525297Z",
+  "generatedAt": "2026-10-05T10:54:01.505648Z",
   "salesarea": "restaurant",
   "store": {
     "code": "390",
@@ -186,26 +186,6 @@
           ],
           "allergensTraces": [],
           "image": "https://storage.googleapis.com/fpi_product_images_prod/2272cedc-d8de-447e-beb9-f35bd0943e3b"
-        },
-        {
-          "categorySlug": "mains",
-          "category": "Hovedretter",
-          "name": "BBQ- marinert kyllingfilet",
-          "description": "serveres med pommes frites, chilibernaise og salat",
-          "isSwedishClassic": false,
-          "regularPrice": 189,
-          "regularPriceFormatted": "189,-",
-          "familyPrice": null,
-          "familyPriceFormatted": null,
-          "isNew": false,
-          "isBti": false,
-          "commercialLabel": null,
-          "allergens": [
-            "Selleri",
-            "Egg"
-          ],
-          "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/f1abda50-9ef0-419b-91a3-37dc33970492"
         },
         {
           "categorySlug": "mains",
