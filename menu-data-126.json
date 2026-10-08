@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T10:58:20.339613Z",
+  "generatedAt": "2026-10-08T12:01:29.424903Z",
   "salesarea": "restaurant",
   "store": {
     "code": "126",
@@ -150,7 +150,7 @@
           "categorySlug": "mains",
           "category": "Hovedretter",
           "name": "Komler/Raspeballer",
-          "description": "Serveres med salt svinebog, pølse, bacon og rotmos. «Raspeballer» hadde stor forbokstav midt i navnet, som «Gravet Laks»",
+          "description": "Serveres med salt svinebog, pølse, bacon og rotmos.",
           "isSwedishClassic": false,
           "regularPrice": 179,
           "regularPriceFormatted": "179,-",
@@ -769,7 +769,7 @@
           "categorySlug": "desserts-pastries",
           "category": "Bakverk, desserter og småkaker",
           "name": "Kladdkake",
-          "description": "Består av seig og klebrig kakao- og sjokoladekake. «kakao og sjokoladekake» rettet til «kakao- og sjokoladekake» (delt etterledd)",
+          "description": "Består av seig og klebrig kakao- og sjokoladekake.",
           "isSwedishClassic": false,
           "regularPrice": 19,
           "regularPriceFormatted": "19,-",

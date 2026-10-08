@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T10:58:20.343252Z",
+  "generatedAt": "2026-10-08T12:01:29.427513Z",
   "salesarea": "restaurant",
   "store": {
     "code": "722",
@@ -84,7 +84,7 @@
           "categorySlug": "desserts-pastries",
           "category": "Bakverk, desserter og småkaker",
           "name": "Blåbærmuffin",
-          "description": "Består av bakverk fylt med blåbær. Navnet snudd til vanlig norsk sammensetning, som «Kanelbolle» og «Eplekake» ellers i menyen",
+          "description": "Består av bakverk fylt med blåbær.",
           "isSwedishClassic": false,
           "regularPrice": 39,
           "regularPriceFormatted": "39,-",

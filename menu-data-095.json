@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T10:58:20.335366Z",
+  "generatedAt": "2026-10-08T12:01:29.420903Z",
   "salesarea": "restaurant",
   "store": {
     "code": "095",
@@ -14,7 +14,7 @@
           "categorySlug": "breakfast",
           "category": "Frokost",
           "name": "Engelsk frokost med kalkunbacon",
-          "description": "Serveres med eggerøre, kalkunbacon, pølse, tomatbønner, potetbåter, bakte cherrytomater, sjampinjong og hvitløksbrød. Se merknad under tabellen — beskrivelsen sier «bacon», ikke «kalkunbacon» som navnet lover",
+          "description": "Serveres med eggerøre, kalkunbacon, pølse, tomatbønner, potetbåter, bakte cherrytomater, sjampinjong og hvitløksbrød.",
           "isSwedishClassic": false,
           "regularPrice": 89,
           "regularPriceFormatted": "89,-",
@@ -750,7 +750,7 @@
           "categorySlug": "desserts-pastries",
           "category": "Bakverk, desserter og småkaker",
           "name": "Kladdkake",
-          "description": "Består av seig og klebrig kakao- og sjokoladekake. «kakao og sjokoladekake» rettet til «kakao- og sjokoladekake» (delt etterledd)",
+          "description": "Består av seig og klebrig kakao- og sjokoladekake.",
           "isSwedishClassic": false,
           "regularPrice": 19,
           "regularPriceFormatted": "19,-",
@@ -834,7 +834,7 @@
           "categorySlug": "desserts-pastries",
           "category": "Bakverk, desserter og småkaker",
           "name": "Blåbærmuffin",
-          "description": "Består av bakverk fylt med blåbær. Navnet snudd til vanlig norsk sammensetning, som «Kanelbolle» og «Eplekake» ellers i menyen",
+          "description": "Består av bakverk fylt med blåbær.",
           "isSwedishClassic": false,
           "regularPrice": 39,
           "regularPriceFormatted": "39,-",

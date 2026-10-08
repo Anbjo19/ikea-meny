@@ -207,6 +207,21 @@ retter som ikke har `web` i `publishingAreas`. Skriptet skriver ut hvor
 mange retter som ble filtrert bort per butikk, slik at det er synlig hvis
 antallet endrer seg mye fra kjøring til kjøring.
 
+## Midlertidige tekstoverstyringer (`text-overrides.json`)
+
+Tekstene på tavlen kommer fra IKEA, og skal rettes ved kilden i IKEA Food.
+Når noe åpenbart feil allerede står på tavlene (for eksempel et notat som
+ved en feil er limt inn i en beskrivelse), kan vi likevel rette det her
+mens vi venter. Hver overstyring har `name`, `field` (`description` eller
+`name`), `from` (IKEAs tekst slik den er nå) og `to` (teksten tavlen skal
+vise).
+
+Overstyringen brukes **bare hvis IKEAs tekst er identisk med `from`**.
+Retter IKEA Food kilden, slutter den å treffe, og IKEAs egen tekst vises av
+seg selv. Overstyringer kan altså aldri overskrive en tekst IKEA har rettet.
+`fetch_menu.py --all-stores` skriver ut hvor mange som ble brukt, og navngir
+dem som ikke lenger treffer, så de kan fjernes fra filen.
+
 ## Ekte IKEA-prislapp ("BTI")
 
 På ikea.com får enkelte retter en gul prislapp med et lite rødt "skygge"-

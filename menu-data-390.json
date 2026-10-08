@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T10:58:20.340983Z",
+  "generatedAt": "2026-10-08T12:01:29.426055Z",
   "salesarea": "restaurant",
   "store": {
     "code": "390",
@@ -748,7 +748,7 @@
           "categorySlug": "desserts-pastries",
           "category": "Bakverk, desserter og småkaker",
           "name": "Kladdkake",
-          "description": "Består av seig og klebrig kakao- og sjokoladekake. «kakao og sjokoladekake» rettet til «kakao- og sjokoladekake» (delt etterledd)",
+          "description": "Består av seig og klebrig kakao- og sjokoladekake.",
           "isSwedishClassic": false,
           "regularPrice": 19,
           "regularPriceFormatted": "19,-",

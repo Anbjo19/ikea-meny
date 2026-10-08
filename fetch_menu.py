@@ -101,6 +101,7 @@ from __future__ import annotations
 import argparse
 import datetime
 import json
+import os
 import re
 import sys
 import time
@@ -335,6 +336,51 @@ def strip_swedish_classic_marker(description: str) -> tuple[str, bool]:
     return description, is_classic
 
 
+# --- Midlertidige tekstoverstyringer ------------------------------------
+# text-overrides.json lar oss rette en tekst på tavlen mens vi venter på at
+# IKEA Food retter den ved kilden. En overstyring brukes KUN når IKEAs tekst
+# akkurat nå er identisk med "from" — retter IKEA kilden til noe annet,
+# slutter overstyringen å treffe, og IKEAs egen tekst vises av seg selv.
+OVERRIDES_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "text-overrides.json")
+USED_OVERRIDES: set[int] = set()
+
+
+def load_text_overrides() -> list[dict]:
+    try:
+        with open(OVERRIDES_PATH, encoding="utf-8") as f:
+            return json.load(f).get("overrides", [])
+    except FileNotFoundError:
+        return []
+    except (ValueError, OSError) as e:
+        print(f"  Advarsel: kunne ikke lese text-overrides.json: {e}", file=sys.stderr)
+        return []
+
+
+TEXT_OVERRIDES = load_text_overrides()
+
+
+def apply_text_overrides(name: str, description: str) -> tuple[str, str]:
+    for i, ov in enumerate(TEXT_OVERRIDES):
+        if ov.get("name") != name:
+            continue
+        field = ov.get("field")
+        if field == "description" and description == ov.get("from"):
+            description = ov.get("to", description)
+            USED_OVERRIDES.add(i)
+        elif field == "name" and name == ov.get("from"):
+            name = ov.get("to", name)
+            USED_OVERRIDES.add(i)
+    return name, description
+
+
+def report_unused_overrides() -> None:
+    unused = [ov for i, ov in enumerate(TEXT_OVERRIDES) if i not in USED_OVERRIDES]
+    if TEXT_OVERRIDES:
+        print(f"\nTekstoverstyringer brukt: {len(USED_OVERRIDES)} av {len(TEXT_OVERRIDES)}")
+    for ov in unused:
+        print(f"  Ikke lenger i bruk (IKEA har endret teksten?): {ov.get('name')} / {ov.get('field')} — kan fjernes fra text-overrides.json")
+
+
 def fetch_listing(salesarea: str) -> tuple[str, dict]:
     """Henter buildId + selve menylisten (ikke butikk-filtrert ennå).
 
@@ -399,6 +445,7 @@ def build_menu_from_listing(
 
         raw_description = re.sub(r"\s+", " ", (item.get("shortDescription") or "")).strip()
         description, is_swedish_classic = strip_swedish_classic_marker(raw_description)
+        title, description = apply_text_overrides((item.get("title") or "").strip(), description)
 
         allergens, allergens_traces = extract_allergens(item, allergen_dict)
 
@@ -406,7 +453,7 @@ def build_menu_from_listing(
             {
                 "categorySlug": category.get("slug", "ovrig"),
                 "category": category.get("name", "Øvrig"),
-                "name": (item.get("title") or "").strip(),
+                "name": title,
                 "description": description,
                 "isSwedishClassic": is_swedish_classic,
                 "regularPrice": regular_price,
@@ -515,6 +562,7 @@ def main():
         with open("stores.json", "w", encoding="utf-8") as f:
             json.dump({"stores": stores_list}, f, ensure_ascii=False, indent=2)
         print(f"\nSkrev stores.json: {len(stores_list)} butikker.")
+        report_unused_overrides()
         return
 
     store_code = args.store or None
