@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T12:01:29.426879Z",
+  "generatedAt": "2026-10-08T12:02:55.075948Z",
   "salesarea": "restaurant",
   "store": {
     "code": "007",
@@ -192,8 +192,8 @@
         {
           "categorySlug": "mains",
           "category": "Hovedretter",
-          "name": "Vegetable lasagne",
-          "description": "Vegetable lasagne, Vegetarisk lasagne, NO",
+          "name": "Vegetarisk lasagne",
+          "description": "",
           "isSwedishClassic": false,
           "regularPrice": 59,
           "regularPriceFormatted": "59,-",
@@ -428,7 +428,7 @@
         {
           "categorySlug": "cold-starter",
           "category": "Kalde tallerkener og forretter",
-          "name": "Gravet Laks",
+          "name": "Gravet laks",
           "description": "Serveres med gravlakssaus og salat.",
           "isSwedishClassic": false,
           "regularPrice": 79,

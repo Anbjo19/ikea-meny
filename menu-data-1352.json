@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T12:01:29.428476Z",
+  "generatedAt": "2026-10-08T12:02:55.077146Z",
   "salesarea": "restaurant",
   "store": {
     "code": "1352",
@@ -445,7 +445,7 @@
         {
           "categorySlug": "cold-starter",
           "category": "Kalde tallerkener og forretter",
-          "name": "Gravet Laks",
+          "name": "Gravet laks",
           "description": "Serveres med gravlakssaus og salat.",
           "isSwedishClassic": false,
           "regularPrice": 79,

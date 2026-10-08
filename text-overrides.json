@@ -24,6 +24,24 @@
       "field": "description",
       "from": "Serveres med salt svinebog, pølse, bacon og rotmos. «Raspeballer» hadde stor forbokstav midt i navnet, som «Gravet Laks»",
       "to": "Serveres med salt svinebog, pølse, bacon og rotmos."
+    },
+    {
+      "name": "Vegetable lasagne",
+      "field": "name",
+      "from": "Vegetable lasagne",
+      "to": "Vegetarisk lasagne"
+    },
+    {
+      "name": "Vegetable lasagne",
+      "field": "description",
+      "from": "Vegetable lasagne, Vegetarisk lasagne, NO",
+      "to": ""
+    },
+    {
+      "name": "Gravet Laks",
+      "field": "name",
+      "from": "Gravet Laks",
+      "to": "Gravet laks"
     }
   ]
 }

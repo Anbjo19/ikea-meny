@@ -212,7 +212,7 @@ antallet endrer seg mye fra kjøring til kjøring.
 Tekstene på tavlen kommer fra IKEA, og skal rettes ved kilden i IKEA Food.
 Når noe åpenbart feil allerede står på tavlene (for eksempel et notat som
 ved en feil er limt inn i en beskrivelse), kan vi likevel rette det her
-mens vi venter. Hver overstyring har `name`, `field` (`description` eller
+mens vi venter. Hver overstyring har `name` (IKEAs opprinnelige navn), `field` (`description` eller
 `name`), `from` (IKEAs tekst slik den er nå) og `to` (teksten tavlen skal
 vise).
 

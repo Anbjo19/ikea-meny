@@ -360,17 +360,20 @@ TEXT_OVERRIDES = load_text_overrides()
 
 
 def apply_text_overrides(name: str, description: str) -> tuple[str, str]:
+    """Matcher alltid mot IKEAs opprinnelige navn/beskrivelse, så rekkefølgen
+    på overstyringene i filen ikke spiller noen rolle."""
+    new_name, new_description = name, description
     for i, ov in enumerate(TEXT_OVERRIDES):
         if ov.get("name") != name:
             continue
         field = ov.get("field")
         if field == "description" and description == ov.get("from"):
-            description = ov.get("to", description)
+            new_description = ov.get("to", description)
             USED_OVERRIDES.add(i)
         elif field == "name" and name == ov.get("from"):
-            name = ov.get("to", name)
+            new_name = ov.get("to", name)
             USED_OVERRIDES.add(i)
-    return name, description
+    return new_name, new_description
 
 
 def report_unused_overrides() -> None:
