@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-07T10:36:59.603210Z",
+  "generatedAt": "2026-10-08T10:58:20.343252Z",
   "salesarea": "restaurant",
   "store": {
     "code": "722",
@@ -14,7 +14,7 @@
           "categorySlug": "sandwiches-wraps",
           "category": "Smørbrød og wraps",
           "name": "Baguette",
-          "description": "med ost, skinke, paprika, agurk og salat",
+          "description": "Serveres med ost, skinke, paprika, agurk og salat.",
           "isSwedishClassic": false,
           "regularPrice": 59,
           "regularPriceFormatted": "59,-",
@@ -29,7 +29,7 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/9882b11c-2d1d-4c42-8ebd-248d8cf0e2b7"
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/4e17d2b1-9ca2-4c07-a0b5-4eb26e9c1798"
         }
       ]
     },
@@ -41,7 +41,7 @@
           "categorySlug": "desserts-pastries",
           "category": "Bakverk, desserter og småkaker",
           "name": "Mandelkake med sitron",
-          "description": "Mandelkake med sitron",
+          "description": "Myk mandelkake med et hint av sitron.",
           "isSwedishClassic": false,
           "regularPrice": 29,
           "regularPriceFormatted": "29,-",
@@ -58,14 +58,14 @@
             "Trenøtter"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/7e315db6-39c1-4bf6-a0cb-43545dceb1c6"
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/29c8efc7-72b5-4c2c-9aee-c2629a5382e5"
         },
         {
           "categorySlug": "desserts-pastries",
           "category": "Bakverk, desserter og småkaker",
           "name": "Kanelbolle",
-          "description": "En hvetebolle fylt med en blanding av smør og kanel og dekorert med perlesukker.",
-          "isSwedishClassic": true,
+          "description": "Består av en hvetebolle fylt med en blanding av smør og kanel, dekorert med perlesukker.",
+          "isSwedishClassic": false,
           "regularPrice": 19,
           "regularPriceFormatted": "19,-",
           "familyPrice": null,
@@ -78,13 +78,13 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/2d2d86e4-9297-4dc0-a2f9-388ed814b87d"
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/245266f2-aace-45c3-89aa-e9c1aa40ee46"
         },
         {
           "categorySlug": "desserts-pastries",
           "category": "Bakverk, desserter og småkaker",
-          "name": "Muffin blåbær",
-          "description": "Bakverk fylt med blåbær",
+          "name": "Blåbærmuffin",
+          "description": "Består av bakverk fylt med blåbær. Navnet snudd til vanlig norsk sammensetning, som «Kanelbolle» og «Eplekake» ellers i menyen",
           "isSwedishClassic": false,
           "regularPrice": 39,
           "regularPriceFormatted": "39,-",
@@ -101,7 +101,7 @@
           "allergensTraces": [
             "Soyabønner"
           ],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/18724c6d-31d5-4b4d-8853-a4c205eb9314"
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/9dfade15-c9ad-42f1-ad22-96309461a95b"
         }
       ]
     },
