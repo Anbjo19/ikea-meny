@@ -51,7 +51,6 @@
   /* ---------- Header ---------- */
   header{
     display:flex; flex-direction:column; align-items:flex-start;
-    gap: calc(0.9 * var(--vh));
     background:var(--ikea-yellow);
     color:var(--ink);
     padding: calc(2.2 * var(--vh)) calc(4.8 * var(--vw)) calc(2 * var(--vh));
@@ -62,7 +61,7 @@
     max-width:100%;
   }
   header .brand .hej{
-    font-size:clamp(26px, calc(4.2 * var(--vw)), 60px);
+    font-size:calc(4.2 * var(--vw));
     font-weight:900;
     line-height:1.08;
     white-space:nowrap; /* hele hilsenen på én linje */
@@ -74,13 +73,15 @@
     flex:0 0 auto;
     display:flex;
     align-items:center;
-    gap:0.4em;
+    margin-top: calc(0.9 * var(--vh));
     white-space:nowrap;
-    font-size:clamp(15px, calc(1.9 * var(--vw)), 26px);
+    font-size:calc(1.9 * var(--vw));
     font-weight:700;
   }
+  header .store-name[hidden]{ display:none; }
   /* Skapa-ikonet "store" foran varehusnavnet */
   header .store-name .store-icon{
+    margin-right:0.4em;
     width:1.1em;
     height:1.1em;
     flex:0 0 auto;
@@ -92,7 +93,7 @@
     position:absolute;
     left:calc(4.8 * var(--vw));
     bottom:calc(1.2 * var(--vh));
-    font-size:clamp(9px, calc(0.85 * var(--vw)), 12px);
+    font-size:calc(0.85 * var(--vw));
     color:var(--muted);
     opacity:0.5;
     z-index:20;
@@ -139,9 +140,10 @@
   #board{
     display:flex;
     align-items:flex-start;
-    gap: calc(2.6 * var(--vw));
     width:100%;
   }
+  /* (margin i stedet for flex-gap: eldre Chromium på skjermene kjenner ikke gap) */
+  .board-col + .board-col{ margin-left: calc(2.6 * var(--vw)); }
   .board-col{
     flex:1 1 0;
     min-width:0;
@@ -155,7 +157,7 @@
   /* Liten etikett "IKEA Family-pris" rett foran den blå prisen, så hver
      rett forklarer seg selv uten egen forklaringsrad. */
   .item .fam-label{
-    font-size:clamp(10px, calc(1.15 * var(--vw)), 14px);
+    font-size:calc(1.15 * var(--vw));
     font-weight:700;
     color:var(--ikea-family-blue);
     margin-right:0.45em;
@@ -168,7 +170,7 @@
   }
   .category h2{
     margin:0 0 calc(0.45 * var(--vh)) 0;
-    font-size:clamp(21px, calc(2.45 * var(--vw)), 32px);
+    font-size:calc(2.45 * var(--vw));
     font-weight:900;
     color:var(--ink);
     text-transform:uppercase;
@@ -177,9 +179,9 @@
     break-after: avoid-column;
     display:flex;
     align-items:center;
-    gap:0.35em;
   }
   .cat-icon{
+    margin-right:0.35em;
     flex:0 0 auto;
     width:0.95em;
     height:0.95em;
@@ -192,6 +194,7 @@
   .item{
     display:grid;
     grid-template-columns: 1fr auto;
+    grid-column-gap:0.6em;
     column-gap:0.6em;
     padding: calc(0.22 * var(--vh)) 0;
     break-inside: avoid-column;
@@ -200,7 +203,6 @@
     grid-column:1;
     display:flex;
     align-items:baseline;
-    gap:0.5em;
     min-width:0;
   }
   /* Navnet får brytes over flere linjer hvis det er for langt til å få
@@ -212,7 +214,7 @@
     flex:0 1 auto;
     min-width:0;
     font-weight:700;
-    font-size:clamp(18px, calc(2.2 * var(--vw)), 28px);
+    font-size:calc(2.2 * var(--vw));
     /* Strammere linjeavstand når navnet brytes; padding opp/ned gir
        samme totalhøyde som én linje hadde med normal linjeavstand, så
        vanlige navn ser ut som før. */
@@ -239,7 +241,7 @@
     display:inline-block;
     margin-left:0.5em;
     vertical-align:middle;
-    font-size:clamp(10px, calc(1.05 * var(--vw)), 14px);
+    font-size:calc(1.05 * var(--vw));
   }
   .item .desc{
     grid-column:1;
@@ -247,7 +249,7 @@
     margin-top:calc(0.08 * var(--vh));
     white-space:normal;
     overflow-wrap:break-word;
-    font-size:clamp(14px, calc(1.5 * var(--vw)), 19px);
+    font-size:calc(1.5 * var(--vw));
     color:var(--muted);
     line-height:1.16;
   }
@@ -257,7 +259,7 @@
     margin-top:calc(0.05 * var(--vh));
     white-space:normal;
     overflow-wrap:break-word;
-    font-size:clamp(11px, calc(1.15 * var(--vw)), 15px);
+    font-size:calc(1.15 * var(--vw));
     color:var(--muted);
     opacity:0.75;
     font-style:italic;
@@ -275,6 +277,7 @@
   .item .leader{
     flex:1 1 0;
     min-width:0;
+    margin-left:0.5em;
     border-bottom: 2px dotted #98a2b3;
     height:0.55em;
     align-self:flex-end;
@@ -285,22 +288,22 @@
     grid-row:1;
     align-self:baseline;
     display:flex;
-    gap:0.6em;
     font-variant-numeric: tabular-nums;
     white-space:nowrap;
   }
   .item .family{
     font-weight:800;
-    font-size:clamp(16px, calc(2.0 * var(--vw)), 26px);
+    font-size:calc(2 * var(--vw));
     color:var(--ikea-family-blue);
     min-width:2.6em;
     text-align:right;
   }
   .item .regular{
     font-weight:900;
-    font-size:clamp(18px, calc(2.2 * var(--vw)), 28px);
+    font-size:calc(2.2 * var(--vw));
     color:var(--ink);
     min-width:2.8em;
+    margin-left:9.6px; /* var .prices { gap:0.6em } med 16px skrift */
     text-align:right;
   }
   /* Ekte IKEA-prislapp (gul/rød) for retter merket isBti — se assets/ikea-labels.css */
@@ -314,10 +317,11 @@
   .empty-state{
     display:flex; flex-direction:column; align-items:center; justify-content:center;
     height:100%; text-align:center; color:var(--muted);
-    gap:calc(1.2 * var(--vh)); padding: calc(4 * var(--vh));
+    padding: calc(4 * var(--vh));
   }
+  .empty-state > * + *{ margin-top: calc(1.2 * var(--vh)); }
   .empty-state .big{
-    font-size:clamp(18px,calc(2.6 * var(--vw)),32px); color:var(--ikea-blue-dark); font-weight:800;
+    font-size:calc(2.6 * var(--vw)); color:var(--ikea-blue-dark); font-weight:800;
   }
 
 </style>
