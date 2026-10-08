@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Skjermtest</title>
+<!--
+  diagnose.html — test av hva en skjerm/nettleser faktisk kan.
+  Åpne https://anbjo19.github.io/ikea-meny/diagnose.html?store=095 på skjermen
+  og ta bilde. Siden er bevisst skrevet i gammel JavaScript (ES5, ingen
+  moderne syntaks) så den kjører selv på svært gamle nettlesere.
+-->
+<style>
+  html,body{margin:0;padding:0;background:#fff;color:#111;font-family:Arial,Helvetica,sans-serif;}
+  #bar{background:#ffdb00;padding:28px 40px;font-size:44px;font-weight:bold;}
+  #wrap{padding:24px 40px;}
+  .row{font-size:30px;line-height:1.35;margin:0;padding:6px 0;border-bottom:1px solid #ddd;}
+  .ok{color:#0a7d2c;font-weight:bold;}
+  .bad{color:#c00000;font-weight:bold;}
+  .opt{color:#9a5b00;font-weight:bold;}
+  .info{color:#003d73;}
+  h2{font-size:34px;margin:28px 0 6px;}
+  #static{font-size:26px;color:#555;padding:16px 40px 0;}
+</style>
+</head>
+<body>
+<div id="bar">Skjermtest</div>
+<div id="static">1. HTML og CSS lastet (du ser denne gule stripen).<br />
+2. Resultatene under kommer fra JavaScript. Ser du ingen, kjører ikke JavaScript.</div>
+<noscript><div class="row bad" style="padding:0 40px">JavaScript er av eller støttes ikke.</div></noscript>
+<div id="wrap"><div class="row info">Tester ...</div></div>
+
+<script>
+(function () {
+  var out = [];
+  function add(cls, text) { out.push('<div class="row ' + cls + '">' + text + '</div>'); }
+  function h(text) { out.push('<h2>' + text + '</h2>'); }
+  // optional: tavlen trenger det ikke, så manglende støtte er ikke en feil (oransje, ikke rødt)
+  function yes(label, ok, extra, optional) {
+    var cls = ok ? 'ok' : (optional ? 'opt' : 'bad');
+    var tag = ok ? 'OK &nbsp;' : (optional ? 'STØTTES IKKE (greit) &nbsp;' : 'MANGLER &nbsp;');
+    add(cls, tag + label + (extra ? ' <span class="info">' + extra + '</span>' : ''));
+  }
+  function attempt(fn) { try { return fn(); } catch (e) { return false; } }
+
+  var q = (location.search.match(/[?&]store=([^&]+)/) || [])[1] || '095';
+
+  h('Skjermen');
+  var ua = navigator.userAgent || '';
+  var m = ua.match(/(?:Chrome|Chromium)\/([\d.]+)/);
+  add('info', 'Chromium-versjon: <b>' + (m ? m[1] : 'ukjent') + '</b>');
+  add('info', 'Nettleser: ' + ua);
+  add('info', 'Vindu: ' + window.innerWidth + ' × ' + window.innerHeight +
+      ' &nbsp; Skjerm: ' + (window.screen ? screen.width + ' × ' + screen.height : '?') +
+      ' &nbsp; Pikselforhold: ' + (window.devicePixelRatio || 1));
+  add('info', 'Adresse: ' + location.href);
+
+  h('CSS som tavlen bruker');
+  var body = document.body;
+  function box(css, html) {
+    var d = document.createElement('div');
+    d.style.cssText = 'position:absolute;left:-9999px;top:0;' + css;
+    d.innerHTML = html || '';
+    body.appendChild(d);
+    return d;
+  }
+  var d;
+  d = box('--x:10px;width:calc(var(--x) * 2)');
+  yes('CSS-variabler og calc()', d.offsetWidth === 20); body.removeChild(d);
+  d = box('display:grid;grid-template-columns:50px 50px', '<i style="display:block;height:5px"></i><i style="display:block;height:5px"></i>');
+  yes('CSS grid', d.children[1].offsetLeft === 50); body.removeChild(d);
+  d = box('display:flex;gap:20px', '<span style="width:10px;height:10px"></span><span style="width:10px;height:10px"></span>');
+  yes('Mellomrom i flexbox (gap)', (d.children[1].offsetLeft - d.children[0].offsetLeft) >= 29, '(Chromium 84+, tavlen trenger det ikke lenger)', true); body.removeChild(d);
+  d = box('font-size:clamp(20px,30px,40px)');
+  yes('clamp() i CSS', attempt(function () { return window.getComputedStyle(d).fontSize === '30px'; }), '(Chromium 79+, tavlen trenger det ikke lenger)', true); body.removeChild(d);
+  yes('Skrift: woff2', !!(window.FontFace || (document.fonts)));
+  yes('text-wrap: balance', attempt(function () { return window.CSS && CSS.supports && CSS.supports('text-wrap', 'balance'); }), '(valgfritt, bare finpuss)', true);
+
+  h('JavaScript som tavlen bruker');
+  yes('fetch()', typeof window.fetch === 'function');
+  yes('Promise', typeof window.Promise === 'function');
+  yes('URLSearchParams', typeof window.URLSearchParams === 'function');
+  yes('Moderne syntaks (?. og =>)', attempt(function () { new Function('var a=null;var f=function(){return 1};return a?.b'); return true; }), '(tavlen bruker ikke dette)', true);
+
+  h('Nettverk');
+  var t0 = new Date().getTime();
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'menu-data-' + q + '.json?cb=' + t0, true);
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState !== 4) return;
+    var ms = new Date().getTime() - t0;
+    if (xhr.status === 200) {
+      var info = '';
+      try { var j = JSON.parse(xhr.responseText); var n = 0, i; for (i = 0; i < j.categories.length; i++) n += j.categories[i].items.length;
+            info = n + ' retter, hentet av IKEA ' + j.generatedAt; } catch (e) { info = 'svaret kunne ikke leses som JSON'; }
+      add('ok', 'OK &nbsp;Hentet menu-data-' + q + '.json på ' + ms + ' ms <span class="info">' + info + '</span>');
+    } else {
+      add('bad', 'MANGLER &nbsp;menu-data-' + q + '.json svarte ' + xhr.status + ' etter ' + ms + ' ms');
+    }
+    render();
+  };
+  xhr.onerror = function () { add('bad', 'MANGLER &nbsp;Nettverksfeil ved henting av menu-data-' + q + '.json'); render(); };
+  try { xhr.send(); } catch (e) { add('bad', 'MANGLER &nbsp;Kunne ikke starte nettverkskall: ' + e); render(); }
+
+  function render() {
+    document.getElementById('wrap').innerHTML = out.join('');
+  }
+  render();
+})();
+</script>
+</body>
+</html>
