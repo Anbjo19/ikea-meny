@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T12:02:55.069935Z",
+  "generatedAt": "2026-10-09T06:01:04.197290Z",
   "salesarea": "restaurant",
   "store": {
     "code": "095",
@@ -32,7 +32,7 @@
           "allergensTraces": [
             "Sesam"
           ],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/790d7118-0db2-4cb3-8cf4-99eefb282e0c"
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/8ab03ac5-df71-4aff-86bc-7a6090e495e5"
         },
         {
           "categorySlug": "breakfast",
@@ -213,15 +213,15 @@
         {
           "categorySlug": "mains",
           "category": "Hovedretter",
-          "name": "Vegetarisk lasagne",
-          "description": "",
+          "name": "Vegetarlasagne",
+          "description": "Vegetarisk lasagne",
           "isSwedishClassic": false,
           "regularPrice": 59,
           "regularPriceFormatted": "59,-",
           "familyPrice": null,
           "familyPriceFormatted": null,
           "isNew": false,
-          "isBti": false,
+          "isBti": true,
           "commercialLabel": null,
           "allergens": [
             "Selleri",
@@ -764,7 +764,7 @@
             "Egg"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/2c5a9edd-934a-4cde-bca4-9efab33b63f2"
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/4ca5465e-6ba4-47a0-a50e-658b5fce0a8b"
         },
         {
           "categorySlug": "desserts-pastries",
@@ -851,7 +851,7 @@
           "allergensTraces": [
             "Soyabønner"
           ],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/9dfade15-c9ad-42f1-ad22-96309461a95b"
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/c0180c1b-96b3-4703-bb06-89f752c6db9f"
         },
         {
           "categorySlug": "desserts-pastries",

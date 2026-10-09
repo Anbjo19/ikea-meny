@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T12:02:55.076643Z",
+  "generatedAt": "2026-10-09T06:01:04.209277Z",
   "salesarea": "restaurant",
   "store": {
     "code": "722",
@@ -101,7 +101,7 @@
           "allergensTraces": [
             "Soyabønner"
           ],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/9dfade15-c9ad-42f1-ad22-96309461a95b"
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/c0180c1b-96b3-4703-bb06-89f752c6db9f"
         }
       ]
     },

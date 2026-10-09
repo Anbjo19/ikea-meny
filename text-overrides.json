@@ -2,42 +2,6 @@
   "_hjelp": "Midlertidige tekstoverstyringer. En overstyring brukes KUN hvis IKEAs tekst akkurat nå er identisk med 'from'. Når IKEA Food retter kilden, slutter den å treffe og tavlen viser IKEAs nye tekst av seg selv. Fjern gjerne linjen da. Skriptet melder fra om overstyringer som ikke ble brukt.",
   "overrides": [
     {
-      "name": "Blåbærmuffin",
-      "field": "description",
-      "from": "Består av bakverk fylt med blåbær. Navnet snudd til vanlig norsk sammensetning, som «Kanelbolle» og «Eplekake» ellers i menyen",
-      "to": "Består av bakverk fylt med blåbær."
-    },
-    {
-      "name": "Engelsk frokost med kalkunbacon",
-      "field": "description",
-      "from": "Serveres med eggerøre, kalkunbacon, pølse, tomatbønner, potetbåter, bakte cherrytomater, sjampinjong og hvitløksbrød. Se merknad under tabellen — beskrivelsen sier «bacon», ikke «kalkunbacon» som navnet lover",
-      "to": "Serveres med eggerøre, kalkunbacon, pølse, tomatbønner, potetbåter, bakte cherrytomater, sjampinjong og hvitløksbrød."
-    },
-    {
-      "name": "Kladdkake",
-      "field": "description",
-      "from": "Består av seig og klebrig kakao- og sjokoladekake. «kakao og sjokoladekake» rettet til «kakao- og sjokoladekake» (delt etterledd)",
-      "to": "Består av seig og klebrig kakao- og sjokoladekake."
-    },
-    {
-      "name": "Komler/Raspeballer",
-      "field": "description",
-      "from": "Serveres med salt svinebog, pølse, bacon og rotmos. «Raspeballer» hadde stor forbokstav midt i navnet, som «Gravet Laks»",
-      "to": "Serveres med salt svinebog, pølse, bacon og rotmos."
-    },
-    {
-      "name": "Vegetable lasagne",
-      "field": "name",
-      "from": "Vegetable lasagne",
-      "to": "Vegetarisk lasagne"
-    },
-    {
-      "name": "Vegetable lasagne",
-      "field": "description",
-      "from": "Vegetable lasagne, Vegetarisk lasagne, NO",
-      "to": ""
-    },
-    {
       "name": "Gravet Laks",
       "field": "name",
       "from": "Gravet Laks",
