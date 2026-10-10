@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-09T10:56:52.459004Z",
+  "generatedAt": "2026-10-10T10:09:34.656411Z",
   "salesarea": "restaurant",
   "store": {
     "code": "091",
@@ -30,7 +30,7 @@
             "Soyabønner"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/76a294cc-199f-49bb-812d-3f9a3ddf5eeb"
+          "image": null
         },
         {
           "categorySlug": "breakfast",
@@ -52,7 +52,7 @@
             "Soyabønner"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/68e23cbc-83db-4589-9aee-8d95649b4e56"
+          "image": null
         },
         {
           "categorySlug": "breakfast",
@@ -75,7 +75,7 @@
             "Soyabønner"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/dceb84a8-a7fa-4757-9011-285f9c63776c"
+          "image": null
         }
       ]
     },
@@ -104,7 +104,7 @@
             "Soyabønner"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/b0eb31a6-556d-4d99-8d4e-dbdf6ee273f5"
+          "image": null
         },
         {
           "categorySlug": "mains",
@@ -123,7 +123,7 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/558731e7-524c-4426-a36e-f073ff092c10"
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/7ce47285-9c8a-4de1-b140-8d2170f4ae8e"
         },
         {
           "categorySlug": "mains",
@@ -144,7 +144,27 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/6bae1424-1f0e-426e-a2fb-3471f64bc391"
+          "image": null
+        },
+        {
+          "categorySlug": "mains",
+          "category": "Hovedretter",
+          "name": "Planteboller (8 stk.)",
+          "description": "Serveres med erter, potetmos, fløtesaus og tyttebærsyltetøy. Laget av erteproteiner, havre, potet, løk og eple.",
+          "isSwedishClassic": false,
+          "regularPrice": 89,
+          "regularPriceFormatted": "89,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Gluten",
+            "Melk"
+          ],
+          "allergensTraces": [],
+          "image": null
         },
         {
           "categorySlug": "mains",
@@ -165,27 +185,7 @@
             "Sennep"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/3be5ab8f-ebf4-4de4-b554-82f992b91590"
-        },
-        {
-          "categorySlug": "mains",
-          "category": "Hovedretter",
-          "name": "Planteboller (8 stk.)",
-          "description": "Serveres med erter, potetmos, fløtesaus og tyttebærsyltetøy. Laget av erteproteiner, havre, potet, løk og eple.",
-          "isSwedishClassic": false,
-          "regularPrice": 89,
-          "regularPriceFormatted": "89,-",
-          "familyPrice": null,
-          "familyPriceFormatted": null,
-          "isNew": false,
-          "isBti": false,
-          "commercialLabel": null,
-          "allergens": [
-            "Gluten",
-            "Melk"
-          ],
-          "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/648bebc2-bef8-4cfe-b5d4-1200a02d44a7"
+          "image": null
         },
         {
           "categorySlug": "mains",
@@ -206,7 +206,7 @@
             "Soyabønner"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/9f85955f-3ede-4d5e-88e4-da3cd8764548"
+          "image": null
         },
         {
           "categorySlug": "mains",
@@ -253,7 +253,7 @@
             "Sennep"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/9adf3452-528d-47d4-8d80-e01f12478d91"
+          "image": null
         }
       ]
     },
@@ -279,7 +279,7 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/556d6260-29ec-4eb1-84ce-7c75665b463b"
+          "image": null
         },
         {
           "categorySlug": "childrens-menu",
@@ -300,7 +300,7 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/bc11b631-c545-41c7-93ad-52a6a2c6517d"
+          "image": null
         },
         {
           "categorySlug": "childrens-menu",
@@ -321,7 +321,7 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/d9ace538-7368-4fc6-8faa-5bf0751edaa0"
+          "image": null
         },
         {
           "categorySlug": "childrens-menu",
@@ -342,7 +342,7 @@
             "Sennep"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/42388bd0-926a-4efd-9c1e-83dc6e037794"
+          "image": null
         },
         {
           "categorySlug": "childrens-menu",
@@ -365,7 +365,7 @@
             "Sennep"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/e648cbd1-accb-4110-8e13-683a2513a7b0"
+          "image": null
         }
       ]
     },
@@ -394,7 +394,7 @@
             "Sennep"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/c701ceac-3fe3-4a3f-b940-d7d90a966ec1"
+          "image": null
         },
         {
           "categorySlug": "sandwiches-wraps",
@@ -415,7 +415,7 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/4e17d2b1-9ca2-4c07-a0b5-4eb26e9c1798"
+          "image": null
         },
         {
           "categorySlug": "sandwiches-wraps",
@@ -436,7 +436,7 @@
             "Sennep"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/32325c91-68b8-4329-928e-021a57c71c6d"
+          "image": null
         }
       ]
     },
@@ -462,7 +462,7 @@
             "Sennep"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/d2ab3962-c8f8-489c-b32b-e6a8d56ae94a"
+          "image": null
         },
         {
           "categorySlug": "cold-starter",
@@ -481,7 +481,7 @@
             "Selleri"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/664db458-366c-455e-9e1c-c0a19464181c"
+          "image": null
         }
       ]
     },
@@ -507,7 +507,7 @@
             "Sulfitt"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/d345e8cf-6b61-48b0-91d9-14ed2ed2f459"
+          "image": null
         },
         {
           "categorySlug": "salads",
@@ -529,7 +529,7 @@
             "Sennep"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/4a6e5f5d-b686-45a9-87c2-216e65a9b04a"
+          "image": null
         }
       ]
     },
@@ -555,7 +555,7 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/89221ccf-80b8-4f95-9d1c-d7116137902f"
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/62e7bb64-9345-469c-8556-cae60e6cf7b7"
         },
         {
           "categorySlug": "side-dishes",
@@ -582,7 +582,7 @@
             "Pekannøtter",
             "Trenøtter"
           ],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/8e08641a-6509-4154-97c7-45cfdaa9502b"
+          "image": null
         },
         {
           "categorySlug": "side-dishes",
@@ -609,7 +609,7 @@
             "Pekannøtter",
             "Trenøtter"
           ],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/34cb96c3-6518-4809-b8e7-19b1c0ce2079"
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/edc33397-5a91-4216-aaab-136be2694245"
         }
       ]
     },
@@ -634,7 +634,7 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/23a03bd8-2068-4994-8190-5dbfba578ca9"
+          "image": null
         },
         {
           "categorySlug": "desserts-pastries",
@@ -657,7 +657,7 @@
             "Trenøtter"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/bed5ef22-9810-42dc-8c89-6f83fe5afa71"
+          "image": null
         },
         {
           "categorySlug": "desserts-pastries",
@@ -677,7 +677,7 @@
             "Egg"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/716bc81c-5bf8-439a-a151-234cfb7704e0"
+          "image": null
         },
         {
           "categorySlug": "desserts-pastries",
@@ -698,28 +698,7 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/7a2c1ecc-bf56-4549-aa47-5da1e39042b1"
-        },
-        {
-          "categorySlug": "desserts-pastries",
-          "category": "Bakverk, desserter og småkaker",
-          "name": "Napoleonskake",
-          "description": "Består av et deilig fyll med smak av vanilje og rom, presset mellom to sprø plater av butterdeig.",
-          "isSwedishClassic": false,
-          "regularPrice": 69,
-          "regularPriceFormatted": "69,-",
-          "familyPrice": null,
-          "familyPriceFormatted": null,
-          "isNew": false,
-          "isBti": false,
-          "commercialLabel": null,
-          "allergens": [
-            "Gluten",
-            "Melk",
-            "Soyabønner"
-          ],
-          "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/d69c23f0-2353-483b-92ff-b279c5704c45"
+          "image": null
         },
         {
           "categorySlug": "desserts-pastries",
@@ -742,7 +721,28 @@
             "Trenøtter"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/909a706b-983f-4fa8-ac3e-9c16f598a8a8"
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/9ee26314-8e41-484c-8668-b4db68d57e22"
+        },
+        {
+          "categorySlug": "desserts-pastries",
+          "category": "Bakverk, desserter og småkaker",
+          "name": "Napoleonskake",
+          "description": "Består av et deilig fyll med smak av vanilje og rom, presset mellom to sprø plater av butterdeig.",
+          "isSwedishClassic": false,
+          "regularPrice": 69,
+          "regularPriceFormatted": "69,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Gluten",
+            "Melk",
+            "Soyabønner"
+          ],
+          "allergensTraces": [],
+          "image": null
         },
         {
           "categorySlug": "desserts-pastries",
@@ -762,7 +762,7 @@
             "Egg"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/4ca5465e-6ba4-47a0-a50e-658b5fce0a8b"
+          "image": null
         },
         {
           "categorySlug": "desserts-pastries",
@@ -783,7 +783,7 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/5789acb4-0670-424d-89b8-17941183fab6"
+          "image": null
         },
         {
           "categorySlug": "desserts-pastries",
@@ -795,7 +795,7 @@
           "regularPriceFormatted": "29,-",
           "familyPrice": null,
           "familyPriceFormatted": null,
-          "isNew": true,
+          "isNew": false,
           "isBti": false,
           "commercialLabel": null,
           "allergens": [
@@ -806,7 +806,7 @@
             "Trenøtter"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/29c8efc7-72b5-4c2c-9aee-c2629a5382e5"
+          "image": null
         },
         {
           "categorySlug": "desserts-pastries",
@@ -826,7 +826,7 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/245266f2-aace-45c3-89aa-e9c1aa40ee46"
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/29490604-2c97-4fea-a4c9-e767316a63b2"
         },
         {
           "categorySlug": "desserts-pastries",
@@ -847,7 +847,7 @@
             "Trenøtter"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/257a31cd-8aad-4f4d-8125-65a69ac65b74"
+          "image": null
         }
       ]
     },
@@ -870,7 +870,7 @@
           "commercialLabel": null,
           "allergens": [],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/fea695bc-2223-4580-9914-5f41d075d072"
+          "image": null
         },
         {
           "categorySlug": "hot-beverages",
@@ -887,7 +887,7 @@
           "commercialLabel": null,
           "allergens": [],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/a811e650-a05d-4d6b-8a8e-6c9f719cbb37"
+          "image": null
         }
       ]
     }

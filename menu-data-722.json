@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-09T10:56:52.467928Z",
+  "generatedAt": "2026-10-10T10:09:34.665579Z",
   "salesarea": "restaurant",
   "store": {
     "code": "722",
@@ -29,7 +29,7 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/4e17d2b1-9ca2-4c07-a0b5-4eb26e9c1798"
+          "image": null
         }
       ]
     },
@@ -47,7 +47,7 @@
           "regularPriceFormatted": "29,-",
           "familyPrice": null,
           "familyPriceFormatted": null,
-          "isNew": true,
+          "isNew": false,
           "isBti": false,
           "commercialLabel": null,
           "allergens": [
@@ -58,7 +58,7 @@
             "Trenøtter"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/29c8efc7-72b5-4c2c-9aee-c2629a5382e5"
+          "image": null
         },
         {
           "categorySlug": "desserts-pastries",
@@ -78,7 +78,7 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/245266f2-aace-45c3-89aa-e9c1aa40ee46"
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/29490604-2c97-4fea-a4c9-e767316a63b2"
         },
         {
           "categorySlug": "desserts-pastries",
@@ -101,7 +101,7 @@
           "allergensTraces": [
             "Soyabønner"
           ],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/c0180c1b-96b3-4703-bb06-89f752c6db9f"
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/f0759568-4cd2-4dfe-9f4e-1ee2bdd7206b"
         }
       ]
     },
@@ -124,7 +124,7 @@
           "commercialLabel": null,
           "allergens": [],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/fea695bc-2223-4580-9914-5f41d075d072"
+          "image": null
         },
         {
           "categorySlug": "hot-beverages",
@@ -141,7 +141,7 @@
           "commercialLabel": null,
           "allergens": [],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/a811e650-a05d-4d6b-8a8e-6c9f719cbb37"
+          "image": null
         }
       ]
     }
