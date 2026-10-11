@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-10T10:09:34.657949Z",
+  "generatedAt": "2026-10-11T10:21:33.087483Z",
   "salesarea": "restaurant",
   "store": {
     "code": "095",
@@ -32,7 +32,7 @@
           "allergensTraces": [
             "Sesam"
           ],
-          "image": null
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/b73fac68-7c70-4987-8196-6eedaf7d4cbc"
         },
         {
           "categorySlug": "breakfast",
@@ -146,7 +146,7 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": null
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/e5a61c79-3c18-454e-9e57-a180373f59d7"
         },
         {
           "categorySlug": "mains",
@@ -187,7 +187,7 @@
             "Sennep"
           ],
           "allergensTraces": [],
-          "image": null
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/1afb0f7a-99e8-4c22-aff0-a9ff1de48ca9"
         },
         {
           "categorySlug": "mains",
@@ -344,7 +344,7 @@
             "Sennep"
           ],
           "allergensTraces": [],
-          "image": null
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/9e19f6b1-8774-48d4-a5df-15c743e5b42c"
         },
         {
           "categorySlug": "childrens-menu",
@@ -636,7 +636,7 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": null
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/d4edcbe3-bcb6-4347-a891-1cb80403f0c7"
         },
         {
           "categorySlug": "desserts-pastries",
