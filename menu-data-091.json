@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T11:22:25.482852Z",
+  "generatedAt": "2026-10-13T11:13:09.390932Z",
   "salesarea": "restaurant",
   "store": {
     "code": "091",
@@ -123,7 +123,7 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/7ce47285-9c8a-4de1-b140-8d2170f4ae8e"
+          "image": null
         },
         {
           "categorySlug": "mains",
@@ -145,6 +145,26 @@
           ],
           "allergensTraces": [],
           "image": "https://storage.googleapis.com/fpi_product_images_prod/e5a61c79-3c18-454e-9e57-a180373f59d7"
+        },
+        {
+          "categorySlug": "mains",
+          "category": "Hovedretter",
+          "name": "Juletallerken",
+          "description": "Serveres med ribbe, medisterkaker, poteter, rødkål og saus.",
+          "isSwedishClassic": false,
+          "regularPrice": 249,
+          "regularPriceFormatted": "249,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Melk",
+            "Sennep"
+          ],
+          "allergensTraces": [],
+          "image": null
         },
         {
           "categorySlug": "mains",
@@ -555,7 +575,7 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/62e7bb64-9345-469c-8556-cae60e6cf7b7"
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/d320f146-3003-4b80-acb6-f65976146427"
         },
         {
           "categorySlug": "side-dishes",

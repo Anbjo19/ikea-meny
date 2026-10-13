@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-12T11:22:25.539987Z",
+  "generatedAt": "2026-10-13T11:13:09.393874Z",
   "salesarea": "restaurant",
   "store": {
     "code": "441",
@@ -101,7 +101,7 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/7ce47285-9c8a-4de1-b140-8d2170f4ae8e"
+          "image": null
         },
         {
           "categorySlug": "mains",
@@ -141,6 +141,45 @@
             "Gluten",
             "Melk",
             "Soyabønner"
+          ],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/5574ad95-300e-455b-9806-3b969cd1b3bb"
+        },
+        {
+          "categorySlug": "mains",
+          "category": "Hovedretter",
+          "name": "Pinnekjøtt",
+          "description": "Serveres med stekte poteter og rotmos.",
+          "isSwedishClassic": false,
+          "regularPrice": 299,
+          "regularPriceFormatted": "299,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Melk"
+          ],
+          "allergensTraces": [],
+          "image": null
+        },
+        {
+          "categorySlug": "mains",
+          "category": "Hovedretter",
+          "name": "Juletallerken",
+          "description": "Serveres med ribbe, medisterkaker, poteter, rødkål og saus.",
+          "isSwedishClassic": false,
+          "regularPrice": 249,
+          "regularPriceFormatted": "249,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Melk",
+            "Sennep"
           ],
           "allergensTraces": [],
           "image": null
@@ -554,7 +593,7 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/62e7bb64-9345-469c-8556-cae60e6cf7b7"
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/d320f146-3003-4b80-acb6-f65976146427"
         },
         {
           "categorySlug": "side-dishes",
