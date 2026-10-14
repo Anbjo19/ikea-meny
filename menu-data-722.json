@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-13T11:13:09.400398Z",
+  "generatedAt": "2026-10-14T09:03:56.942358Z",
   "salesarea": "restaurant",
   "store": {
     "code": "722",
@@ -29,7 +29,7 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": null
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/81e8a1a4-cc91-4ffe-89b5-ee571f888925"
         }
       ]
     },
@@ -58,7 +58,7 @@
             "Trenøtter"
           ],
           "allergensTraces": [],
-          "image": null
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/aaec6b06-be8c-4511-9bc6-e396134809b9"
         },
         {
           "categorySlug": "desserts-pastries",
@@ -78,7 +78,7 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/29490604-2c97-4fea-a4c9-e767316a63b2"
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/c8d849f4-4b99-4457-8104-6ab9629fd8b7"
         },
         {
           "categorySlug": "desserts-pastries",
@@ -101,7 +101,7 @@
           "allergensTraces": [
             "Soyabønner"
           ],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/f0759568-4cd2-4dfe-9f4e-1ee2bdd7206b"
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/3d4feb38-9987-41f8-bf1d-6dd33b0bc7e7"
         }
       ]
     },
@@ -124,7 +124,7 @@
           "commercialLabel": null,
           "allergens": [],
           "allergensTraces": [],
-          "image": null
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/a8df49f7-c2f3-4ce6-a84b-5454fd613593"
         },
         {
           "categorySlug": "hot-beverages",
@@ -141,7 +141,7 @@
           "commercialLabel": null,
           "allergens": [],
           "allergensTraces": [],
-          "image": null
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/005c1799-fe84-497a-81ba-d9b3a7900163"
         }
       ]
     }
