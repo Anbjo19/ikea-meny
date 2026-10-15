@@ -207,6 +207,25 @@ retter som ikke har `web` i `publishingAreas`. Skriptet skriver ut hvor
 mange retter som ble filtrert bort per butikk, slik at det er synlig hvis
 antallet endrer seg mye fra kjøring til kjøring.
 
+## Visningsregler (`display-rules.json`)
+
+Filen styrer hva tavlen viser uavhengig av IKEAs data, og leses av
+skjermen sammen med menydataene, så endringer slår inn innen fem minutter
+uten at noe må publiseres på nytt.
+
+- **`hide`** skjuler retter hvis navnet inneholder en av tekstene i
+  `names`. `until` er første dato retten skal vises (`ÅÅÅÅ-MM-DD`, norsk
+  tid), og `from` kan brukes for å skjule fra en bestemt dato. Retten er
+  tilbake av seg selv ved midnatt, uten at noen må gjøre noe. Eksempel i
+  dag: Juletallerken og Pinnekjøtt er skjult frem til 1. november 2026.
+- **`categoryNotes`** viser en liten tekst ved siden av kategoritittelen,
+  med kategoriens slug som nøkkel. I dag: «Serveres frem til kl. 11.00» ved
+  Frokost og «Varmmat serveres fra kl. 11.00» ved Hovedretter.
+
+Vil du se hvordan tavlen blir en bestemt dag, legg `&today=2026-11-01` på
+adressen. Mangler regelfilen eller kan den ikke leses, vises menyen uten
+regler.
+
 ## Midlertidige tekstoverstyringer (`text-overrides.json`)
 
 Tekstene på tavlen kommer fra IKEA, og skal rettes ved kilden i IKEA Food.

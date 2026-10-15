@@ -180,6 +180,16 @@
     display:flex;
     align-items:center;
   }
+  /* Liten tekst etter kategoritittelen, f.eks. "Serveres frem til kl. 11.00" */
+  .cat-note{
+    margin-left:0.9em;
+    font-size:calc(1.75 * var(--vw));
+    font-weight:400;
+    text-transform:none;
+    letter-spacing:0;
+    color:var(--muted);
+    white-space:nowrap;
+  }
   .cat-icon{
     margin-right:0.35em;
     flex:0 0 auto;
@@ -379,6 +389,71 @@
   var lastGeneratedAt = null;
   var lastMenu = null;
 
+  // ---- Visningsregler (display-rules.json) -------------------------------
+  // Skjuler retter i en periode og viser tidsnotater ved kategoriene.
+  // Filen hentes sammen med menydataene, så endringer slår inn innen fem
+  // minutter. Mangler filen eller kan den ikke leses, vises menyen uten regler.
+  var RULES_URL = "./display-rules.json";
+  var displayRules = null;
+  var lastRenderSig = null;
+
+  function fetchRules() {
+    return fetch(RULES_URL, { cache: "no-store" })
+      .then(function (r) {
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        return r.json();
+      })
+      .then(
+        function (j) { displayRules = j; },
+        function (err) { console.error("Kunne ikke laste " + RULES_URL + ":", err); }
+      );
+  }
+
+  // Dagens dato som ÅÅÅÅ-MM-DD i norsk tid. ?today=2026-11-01 i adressen
+  // overstyrer (nyttig for å se hvordan tavlen blir en bestemt dag).
+  function todayIso() {
+    var forced = (urlParams.get("today") || "").trim();
+    if (/^\d{4}-\d{2}-\d{2}$/.test(forced)) return forced;
+    var d = new Date();
+    try {
+      var parts = d.toLocaleDateString("en-US", {
+        timeZone: "Europe/Oslo", year: "numeric", month: "2-digit", day: "2-digit"
+      }).split("/");
+      if (parts.length === 3) return parts[2] + "-" + parts[0] + "-" + parts[1];
+    } catch (e) { /* faller tilbake til enhetens egen klokke */ }
+    function p(n) { return (n < 10 ? "0" : "") + n; }
+    return d.getFullYear() + "-" + p(d.getMonth() + 1) + "-" + p(d.getDate());
+  }
+
+  function isHiddenByRules(item, today) {
+    var rules = (displayRules && displayRules.hide) || [];
+    var name = String(item.name || "").toLowerCase();
+    for (var i = 0; i < rules.length; i++) {
+      var r = rules[i], names = r.names || [], hit = false;
+      for (var j = 0; j < names.length; j++) {
+        if (name.indexOf(String(names[j]).toLowerCase()) !== -1) { hit = true; break; }
+      }
+      if (!hit) continue;
+      var afterFrom = !r.from || today >= r.from;
+      var beforeUntil = !r.until || today < r.until;
+      if (afterFrom && beforeUntil) return true;
+    }
+    return false;
+  }
+
+  // Returnerer kategoriene med skjulte retter fjernet og eventuelt notat satt.
+  function applyRules(categories) {
+    var today = todayIso();
+    var notes = (displayRules && displayRules.categoryNotes) || {};
+    return categories.map(function (cat) {
+      var copy = {};
+      for (var k in cat) if (Object.prototype.hasOwnProperty.call(cat, k)) copy[k] = cat[k];
+      copy.items = (cat.items || []).filter(function (it) { return !isHiddenByRules(it, today); });
+      copy.note = notes[cat.slug] || "";
+      return copy;
+    }).filter(function (cat) { return cat.items.length; });
+  }
+
   function escapeHtml(s) {
     return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
@@ -462,7 +537,8 @@
       var iconHtml = iconSrc
         ? '<img class="cat-icon" src="' + iconSrc + '" alt="" aria-hidden="true">'
         : "";
-      html += '<div class="category"><h2>' + iconHtml + escapeHtml(cat.name) + "</h2>";
+      var noteHtml = cat.note ? '<span class="cat-note">' + escapeHtml(cat.note) + "</span>" : "";
+      html += '<div class="category"><h2>' + iconHtml + "<span>" + escapeHtml(cat.name) + noteHtml + "</span></h2>";
       cat.items.forEach(function (it) {
         var family = it.familyPriceFormatted
           ? '<span class="family"><span class="fam-label">IKEA Family-pris</span>' +
@@ -520,7 +596,7 @@
   // heller OPP (inntil MAX_SCALE) så tavlen fyller skjermen. Ellers to
   // spalter som skaleres ned akkurat nok til at alt får plass.
   function renderBoard(menu) {
-    var categories = menu.categories || [];
+    var categories = applyRules(menu.categories || []);
     if (!categories.length) {
       boardViewportEl.innerHTML =
         '<div class="empty-state"><div class="big">Ingen retter tilgjengelig akkurat nå</div>' +
@@ -626,13 +702,18 @@
 
   // ---- Hent data ---------------------------------------------------------
   function loadMenu() {
-    fetch(DATA_URL, { cache: "no-store" })
+    fetchRules()
+      .then(function () { return fetch(DATA_URL, { cache: "no-store" }); })
       .then(function (r) {
         if (!r.ok) throw new Error("HTTP " + r.status);
         return r.json();
       })
       .then(function (menu) {
-        if (menu.generatedAt === lastGeneratedAt) return; // ingenting nytt
+        // Tegn på nytt hvis menyen ELLER reglene/datoen er endret (en rett
+        // kan komme tilbake ved midnatt uten at menydataene har endret seg).
+        var sig = menu.generatedAt + "|" + todayIso() + "|" + JSON.stringify(displayRules);
+        if (sig === lastRenderSig) return; // ingenting nytt
+        lastRenderSig = sig;
         lastGeneratedAt = menu.generatedAt;
 
         // Butikknavn i headeren (gjesterettet). Butikkode og tidsstempel er

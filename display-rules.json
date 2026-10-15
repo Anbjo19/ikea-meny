@@ -1,0 +1,14 @@
+{
+  "_hjelp": "Regler for hva tavlen viser, uavhengig av IKEAs data. 'hide' skjuler retter hvis navnet inneholder en av tekstene i 'names' (store/små bokstaver spiller ingen rolle). 'until' er første dato retten skal vises, i formatet ÅÅÅÅ-MM-DD, etter norsk tid; før den datoen er retten skjult. 'from' kan legges til for å skjule fra og med en dato. 'categoryNotes' viser en liten tekst ved siden av kategoritittelen; nøkkelen er kategoriens slug (breakfast, mains, childrens-menu, sandwiches-wraps, cold-starter, salads, side-dishes, desserts-pastries, hot-beverages). Endringer slår inn på skjermene innen fem minutter.",
+  "hide": [
+    {
+      "names": ["juletallerken", "pinnekjøtt"],
+      "until": "2026-11-01",
+      "note": "Julemat vises fra 1. november"
+    }
+  ],
+  "categoryNotes": {
+    "breakfast": "Serveres frem til kl. 11.00",
+    "mains": "Varmmat serveres fra kl. 11.00"
+  }
+}
