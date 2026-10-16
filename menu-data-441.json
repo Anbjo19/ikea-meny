@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T08:32:40.996962Z",
+  "generatedAt": "2026-10-16T13:34:36.746066Z",
   "salesarea": "restaurant",
   "store": {
     "code": "441",
@@ -144,45 +144,6 @@
           ],
           "allergensTraces": [],
           "image": "https://storage.googleapis.com/fpi_product_images_prod/d558fa9c-0b5a-4cf9-b8d6-a18535573a2c"
-        },
-        {
-          "categorySlug": "mains",
-          "category": "Hovedretter",
-          "name": "Pinnekjøtt",
-          "description": "Serveres med stekte poteter og rotmos.",
-          "isSwedishClassic": false,
-          "regularPrice": 299,
-          "regularPriceFormatted": "299,-",
-          "familyPrice": null,
-          "familyPriceFormatted": null,
-          "isNew": false,
-          "isBti": false,
-          "commercialLabel": null,
-          "allergens": [
-            "Melk"
-          ],
-          "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/eca9e24e-0a12-4a4b-ac5b-26426f427582"
-        },
-        {
-          "categorySlug": "mains",
-          "category": "Hovedretter",
-          "name": "Juletallerken",
-          "description": "Serveres med ribbe, medisterkaker, poteter, rødkål og saus.",
-          "isSwedishClassic": false,
-          "regularPrice": 249,
-          "regularPriceFormatted": "249,-",
-          "familyPrice": null,
-          "familyPriceFormatted": null,
-          "isNew": false,
-          "isBti": false,
-          "commercialLabel": null,
-          "allergens": [
-            "Melk",
-            "Sennep"
-          ],
-          "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/3ac96fc0-ee00-4df9-a079-59dbd80d80e2"
         },
         {
           "categorySlug": "mains",
