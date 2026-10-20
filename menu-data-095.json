@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T09:20:56.530004Z",
+  "generatedAt": "2026-10-20T08:54:57.400428Z",
   "salesarea": "restaurant",
   "store": {
     "code": "095",
@@ -188,27 +188,6 @@
           ],
           "allergensTraces": [],
           "image": "https://storage.googleapis.com/fpi_product_images_prod/e54e7e12-fb0b-40b6-90e8-bae15b6e17b0"
-        },
-        {
-          "categorySlug": "mains",
-          "category": "Hovedretter",
-          "name": "Risrett med grønnsaker",
-          "description": "Ris og grønnsaker med kokosmelk og urter",
-          "isSwedishClassic": false,
-          "regularPrice": 69,
-          "regularPriceFormatted": "69,-",
-          "familyPrice": null,
-          "familyPriceFormatted": null,
-          "isNew": false,
-          "isBti": true,
-          "commercialLabel": null,
-          "allergens": [
-            "Gluten",
-            "Melk",
-            "Soyabønner"
-          ],
-          "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/0296f7e4-6693-4ff8-a6b9-e8bafd1a9a2c"
         },
         {
           "categorySlug": "mains",
