@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-20T13:54:07.222511Z",
+  "generatedAt": "2026-10-21T08:55:01.067972Z",
   "salesarea": "restaurant",
   "store": {
     "code": "007",
@@ -191,29 +191,6 @@
             "Soyabønner"
           ],
           "image": "https://storage.googleapis.com/fpi_product_images_prod/9b0fb14b-41d4-44bc-bec5-dcd057b38680"
-        },
-        {
-          "categorySlug": "mains",
-          "category": "Hovedretter",
-          "name": "Stekte fiskeboller",
-          "description": "med potetmos, grønne erter, smør og tyttebær.",
-          "isSwedishClassic": false,
-          "regularPrice": 119,
-          "regularPriceFormatted": "119,-",
-          "familyPrice": null,
-          "familyPriceFormatted": null,
-          "isNew": false,
-          "isBti": false,
-          "commercialLabel": null,
-          "allergens": [
-            "Gluten",
-            "Egg",
-            "Fisk",
-            "Melk",
-            "Sennep"
-          ],
-          "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/1ce67e53-9cfd-447a-9310-6e577d67e444"
         }
       ]
     },
