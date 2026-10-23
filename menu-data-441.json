@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T08:52:34.486778Z",
+  "generatedAt": "2026-10-23T13:52:00.555303Z",
   "salesarea": "restaurant",
   "store": {
     "code": "441",
@@ -298,29 +298,6 @@
           ],
           "allergensTraces": [],
           "image": "https://storage.googleapis.com/fpi_product_images_prod/66391bc5-c399-4d21-89e6-91c5a4ae566c"
-        },
-        {
-          "categorySlug": "childrens-menu",
-          "category": "Barnemeny",
-          "name": "Stekte fiskeboller barnerett",
-          "description": "Fiskeboller, 5 stk, med potetmos, grønne erter, smør og tyttebær",
-          "isSwedishClassic": false,
-          "regularPrice": 49,
-          "regularPriceFormatted": "49,-",
-          "familyPrice": null,
-          "familyPriceFormatted": null,
-          "isNew": false,
-          "isBti": false,
-          "commercialLabel": null,
-          "allergens": [
-            "Gluten",
-            "Egg",
-            "Fisk",
-            "Melk",
-            "Sennep"
-          ],
-          "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/73e0741f-fd34-4e85-a139-e2895ec94366"
         }
       ]
     },
@@ -354,11 +331,11 @@
         {
           "categorySlug": "sandwiches-wraps",
           "category": "Smørbrød og wraps",
-          "name": "Baguette",
-          "description": "Serveres med ost, skinke, paprika, agurk og salat.",
+          "name": "Croissant med ost",
+          "description": "Croissant med ost og grønt",
           "isSwedishClassic": false,
-          "regularPrice": 59,
-          "regularPriceFormatted": "59,-",
+          "regularPrice": 49,
+          "regularPriceFormatted": "49,-",
           "familyPrice": null,
           "familyPriceFormatted": null,
           "isNew": false,
@@ -370,7 +347,7 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/81e8a1a4-cc91-4ffe-89b5-ee571f888925"
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/32b1362d-7600-497a-b10e-689cdf826542"
         },
         {
           "categorySlug": "sandwiches-wraps",
@@ -447,28 +424,8 @@
         {
           "categorySlug": "salads",
           "category": "Salater",
-          "name": "Tomat- og mozzarellasalat",
-          "description": "Serveres med balsamico-eddik og basilikum.",
-          "isSwedishClassic": false,
-          "regularPrice": 39,
-          "regularPriceFormatted": "39,-",
-          "familyPrice": null,
-          "familyPriceFormatted": null,
-          "isNew": false,
-          "isBti": true,
-          "commercialLabel": null,
-          "allergens": [
-            "Melk",
-            "Sulfitt"
-          ],
-          "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/c992cdf8-79d5-4947-a867-56e0e6f755d2"
-        },
-        {
-          "categorySlug": "salads",
-          "category": "Salater",
           "name": "Kalkunsalat",
-          "description": "Salaten består av salatmiks, parmesan, kalkunkjøtt og cæsardressing. Pyntet med bladpersille.",
+          "description": "Består av salatmiks, parmesan, kalkunkjøtt og cæsardressing. Pyntet med bladpersille.",
           "isSwedishClassic": false,
           "regularPrice": 119,
           "regularPriceFormatted": "119,-",
@@ -484,7 +441,7 @@
             "Sennep"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/7e18aa57-052b-4d84-890a-c1b1f40fe5bc"
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/ab5f7c17-c2c4-45ed-b2f6-964fc40c07fa"
         }
       ]
     },
@@ -613,26 +570,6 @@
           ],
           "allergensTraces": [],
           "image": "https://storage.googleapis.com/fpi_product_images_prod/652a0b89-c745-42c4-bd65-c97540cd2e75"
-        },
-        {
-          "categorySlug": "desserts-pastries",
-          "category": "Bakverk, desserter og småkaker",
-          "name": "Mazarin",
-          "description": "Består av mørdeig fylt med mandelmasse og toppet med hvit glasur.",
-          "isSwedishClassic": false,
-          "regularPrice": 29,
-          "regularPriceFormatted": "29,-",
-          "familyPrice": null,
-          "familyPriceFormatted": null,
-          "isNew": false,
-          "isBti": false,
-          "commercialLabel": null,
-          "allergens": [
-            "Gluten",
-            "Egg"
-          ],
-          "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/6accc9e5-3fa6-4d0b-b1c2-2cf8e936bbf4"
         },
         {
           "categorySlug": "desserts-pastries",
@@ -782,27 +719,6 @@
           ],
           "allergensTraces": [],
           "image": "https://storage.googleapis.com/fpi_product_images_prod/c8d849f4-4b99-4457-8104-6ab9629fd8b7"
-        },
-        {
-          "categorySlug": "desserts-pastries",
-          "category": "Bakverk, desserter og småkaker",
-          "name": "Punsjrull",
-          "description": "Består av bakverk pakket inn i marsipan og dyppet i smeltet sjokolade.",
-          "isSwedishClassic": false,
-          "regularPrice": 10,
-          "regularPriceFormatted": "10,-",
-          "familyPrice": null,
-          "familyPriceFormatted": null,
-          "isNew": false,
-          "isBti": false,
-          "commercialLabel": null,
-          "allergens": [
-            "Gluten",
-            "Mandler",
-            "Trenøtter"
-          ],
-          "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/e590e321-0bd9-4f84-bb39-555cdbdf1c75"
         }
       ]
     },
