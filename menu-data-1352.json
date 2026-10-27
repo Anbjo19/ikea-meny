@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T09:24:47.722516Z",
+  "generatedAt": "2026-10-27T09:23:12.772394Z",
   "salesarea": "restaurant",
   "store": {
     "code": "1352",
@@ -54,7 +54,7 @@
             "Soyabønner"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/972af1c3-4c6a-43c1-8e5b-3d056f47db23"
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/64ba330d-78b0-4d99-9856-f4d78c690d9f"
         },
         {
           "categorySlug": "breakfast",
@@ -757,26 +757,6 @@
           ],
           "allergensTraces": [],
           "image": "https://storage.googleapis.com/fpi_product_images_prod/aaec6b06-be8c-4511-9bc6-e396134809b9"
-        },
-        {
-          "categorySlug": "desserts-pastries",
-          "category": "Bakverk, desserter og småkaker",
-          "name": "Kanelbolle",
-          "description": "Består av en hvetebolle fylt med en blanding av smør og kanel, dekorert med perlesukker.",
-          "isSwedishClassic": false,
-          "regularPrice": 19,
-          "regularPriceFormatted": "19,-",
-          "familyPrice": null,
-          "familyPriceFormatted": null,
-          "isNew": false,
-          "isBti": true,
-          "commercialLabel": null,
-          "allergens": [
-            "Gluten",
-            "Melk"
-          ],
-          "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/c8d849f4-4b99-4457-8104-6ab9629fd8b7"
         },
         {
           "categorySlug": "desserts-pastries",

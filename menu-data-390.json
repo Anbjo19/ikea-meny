@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T09:24:47.720451Z",
+  "generatedAt": "2026-10-27T09:23:12.769480Z",
   "salesarea": "restaurant",
   "store": {
     "code": "390",
@@ -30,7 +30,7 @@
             "Soyabønner"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/972af1c3-4c6a-43c1-8e5b-3d056f47db23"
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/64ba330d-78b0-4d99-9856-f4d78c690d9f"
         },
         {
           "categorySlug": "breakfast",
@@ -209,7 +209,7 @@
           "allergensTraces": [
             "Soyabønner"
           ],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/9b0fb14b-41d4-44bc-bec5-dcd057b38680"
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/a704f5a4-8e0e-4735-8f70-994a9887a124"
         }
       ]
     },
@@ -780,7 +780,7 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/c8d849f4-4b99-4457-8104-6ab9629fd8b7"
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/1c32f38a-96b4-418f-af63-c600327fb600"
         },
         {
           "categorySlug": "desserts-pastries",

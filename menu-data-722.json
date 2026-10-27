@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T09:24:47.722015Z",
+  "generatedAt": "2026-10-27T09:23:12.771712Z",
   "salesarea": "restaurant",
   "store": {
     "code": "722",
@@ -78,7 +78,7 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/c8d849f4-4b99-4457-8104-6ab9629fd8b7"
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/1c32f38a-96b4-418f-af63-c600327fb600"
         },
         {
           "categorySlug": "desserts-pastries",
