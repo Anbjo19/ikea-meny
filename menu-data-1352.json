@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T09:23:12.772394Z",
+  "generatedAt": "2026-10-28T10:04:22.759392Z",
   "salesarea": "restaurant",
   "store": {
     "code": "1352",
@@ -757,6 +757,26 @@
           ],
           "allergensTraces": [],
           "image": "https://storage.googleapis.com/fpi_product_images_prod/aaec6b06-be8c-4511-9bc6-e396134809b9"
+        },
+        {
+          "categorySlug": "desserts-pastries",
+          "category": "Bakverk, desserter og småkaker",
+          "name": "Kanelbolle",
+          "description": "Består av en hvetebolle fylt med en blanding av smør og kanel, dekorert med perlesukker.",
+          "isSwedishClassic": false,
+          "regularPrice": 19,
+          "regularPriceFormatted": "19,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": true,
+          "commercialLabel": null,
+          "allergens": [
+            "Gluten",
+            "Melk"
+          ],
+          "allergensTraces": [],
+          "image": "https://storage.googleapis.com/fpi_product_images_prod/ac7f031c-993a-4072-a380-0490c86bbe98"
         },
         {
           "categorySlug": "desserts-pastries",
