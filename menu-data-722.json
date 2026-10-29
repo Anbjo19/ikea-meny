@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T10:04:22.758628Z",
+  "generatedAt": "2026-10-29T10:28:36.078495Z",
   "salesarea": "restaurant",
   "store": {
     "code": "722",
@@ -29,7 +29,7 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/0fc1e18c-e28d-49d2-9797-9dc77fbdd76e"
+          "image": "https://iff-prd.aws.inter.ikea.net/api/00cdbd74-359d-4be4-b21a-3d3442369a50/c7118401-ca07-4d4c-9441-ce7fbccf9c50/500w"
         }
       ]
     },
@@ -37,29 +37,6 @@
       "slug": "desserts-pastries",
       "name": "Bakverk, desserter og småkaker",
       "items": [
-        {
-          "categorySlug": "desserts-pastries",
-          "category": "Bakverk, desserter og småkaker",
-          "name": "Mandelkake med sitron",
-          "description": "Myk mandelkake med et hint av sitron.",
-          "isSwedishClassic": false,
-          "regularPrice": 29,
-          "regularPriceFormatted": "29,-",
-          "familyPrice": null,
-          "familyPriceFormatted": null,
-          "isNew": false,
-          "isBti": false,
-          "commercialLabel": null,
-          "allergens": [
-            "Egg",
-            "Melk",
-            "Soyabønner",
-            "Mandler",
-            "Trenøtter"
-          ],
-          "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/aaec6b06-be8c-4511-9bc6-e396134809b9"
-        },
         {
           "categorySlug": "desserts-pastries",
           "category": "Bakverk, desserter og småkaker",
@@ -78,7 +55,7 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/ac7f031c-993a-4072-a380-0490c86bbe98"
+          "image": "https://iff-prd.aws.inter.ikea.net/api/50685e76-1b01-46a8-8513-ad5a24602de9/3828c10c-28fe-4a05-84af-e460123bb6cd/500w"
         },
         {
           "categorySlug": "desserts-pastries",
@@ -101,7 +78,30 @@
           "allergensTraces": [
             "Soyabønner"
           ],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/3d4feb38-9987-41f8-bf1d-6dd33b0bc7e7"
+          "image": "https://iff-prd.aws.inter.ikea.net/api/57f17d9e-a363-4861-8f4c-1d0398a34012/0d2cb5ad-4ba7-4cc7-b39c-06b2dcc9a78c/500w"
+        },
+        {
+          "categorySlug": "desserts-pastries",
+          "category": "Bakverk, desserter og småkaker",
+          "name": "Mandelkake med sitron",
+          "description": "Myk mandelkake med et hint av sitron.",
+          "isSwedishClassic": false,
+          "regularPrice": 29,
+          "regularPriceFormatted": "29,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Egg",
+            "Melk",
+            "Soyabønner",
+            "Mandler",
+            "Trenøtter"
+          ],
+          "allergensTraces": [],
+          "image": "https://iff-prd.aws.inter.ikea.net/api/1f177ac1-21a7-4863-bd78-799230ddc255/01684eb4-651f-441c-bc38-15f0d824b06b/500w"
         }
       ]
     },
@@ -109,23 +109,6 @@
       "slug": "hot-beverages",
       "name": "Varme drikker",
       "items": [
-        {
-          "categorySlug": "hot-beverages",
-          "category": "Varme drikker",
-          "name": "Te",
-          "description": "Te, valgfri smak. Gratis påfyll",
-          "isSwedishClassic": false,
-          "regularPrice": 20,
-          "regularPriceFormatted": "20,-",
-          "familyPrice": 5,
-          "familyPriceFormatted": "5,-",
-          "isNew": false,
-          "isBti": false,
-          "commercialLabel": null,
-          "allergens": [],
-          "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/a8df49f7-c2f3-4ce6-a84b-5454fd613593"
-        },
         {
           "categorySlug": "hot-beverages",
           "category": "Varme drikker",
@@ -141,7 +124,24 @@
           "commercialLabel": null,
           "allergens": [],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/005c1799-fe84-497a-81ba-d9b3a7900163"
+          "image": "https://iff-prd.aws.inter.ikea.net/api/2116ad98-4268-47a4-a4bd-e463a57dd2e3/8ab8c8a2-afd9-4730-819f-f16049cfdab6/500w"
+        },
+        {
+          "categorySlug": "hot-beverages",
+          "category": "Varme drikker",
+          "name": "Te",
+          "description": "Te, valgfri smak. Gratis påfyll",
+          "isSwedishClassic": false,
+          "regularPrice": 20,
+          "regularPriceFormatted": "20,-",
+          "familyPrice": 5,
+          "familyPriceFormatted": "5,-",
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [],
+          "allergensTraces": [],
+          "image": "https://iff-prd.aws.inter.ikea.net/api/d9ecd4e4-752f-40b1-88d0-826aefe3a11a/5d966a3b-2150-4198-af2e-79039a9462cd/500w"
         }
       ]
     }

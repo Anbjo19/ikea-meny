@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T10:04:22.748708Z",
+  "generatedAt": "2026-10-29T10:28:36.071916Z",
   "salesarea": "restaurant",
   "store": {
     "code": "441",
@@ -30,7 +30,7 @@
             "Soyabønner"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/64ba330d-78b0-4d99-9856-f4d78c690d9f"
+          "image": "https://iff-prd.aws.inter.ikea.net/api/06efe673-2952-4c17-abeb-29622b196884/ac56f57b-6efc-4bb9-a399-8ebf8202ca07/500w"
         },
         {
           "categorySlug": "breakfast",
@@ -53,7 +53,7 @@
             "Soyabønner"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/8b7c0f66-3a4c-485c-8f0f-7963b7f8b8b6"
+          "image": "https://iff-prd.aws.inter.ikea.net/api/23975eca-8a09-4d22-af33-99f307b30e58/4fcb5126-38f5-4123-bd2e-e6b330359801/500w"
         }
       ]
     },
@@ -61,6 +61,108 @@
       "slug": "mains",
       "name": "Hovedretter",
       "items": [
+        {
+          "categorySlug": "mains",
+          "category": "Hovedretter",
+          "name": "Planteboller (8 stk.)",
+          "description": "Serveres med erter, potetmos, fløtesaus og tyttebærsyltetøy. Laget av erteproteiner, havre, potet, løk og eple.",
+          "isSwedishClassic": false,
+          "regularPrice": 89,
+          "regularPriceFormatted": "89,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Gluten",
+            "Melk"
+          ],
+          "allergensTraces": [],
+          "image": "https://iff-prd.aws.inter.ikea.net/api/d0166019-7cc7-48ed-b0f4-0f7cc40ea468/668c29cd-3a06-4cd5-b28c-78e76a6b3b21/500w"
+        },
+        {
+          "categorySlug": "mains",
+          "category": "Hovedretter",
+          "name": "Kjøttboller (8 stk.)",
+          "description": "Serveres med erter, potetmos, fløtesaus og tyttebærsyltetøy.",
+          "isSwedishClassic": true,
+          "regularPrice": 109,
+          "regularPriceFormatted": "109,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Gluten",
+            "Egg",
+            "Melk"
+          ],
+          "allergensTraces": [],
+          "image": "https://iff-prd.aws.inter.ikea.net/api/bd437ac3-6b95-4da5-935d-d77383990a0f/b71ab245-29bd-4840-934b-50cee6762760/500w"
+        },
+        {
+          "categorySlug": "mains",
+          "category": "Hovedretter",
+          "name": "Viltkarbonader",
+          "description": "med stekte poteter, grønnsaker, viltsaus og tyttebærsyltetøy",
+          "isSwedishClassic": false,
+          "regularPrice": 179,
+          "regularPriceFormatted": "179,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Melk"
+          ],
+          "allergensTraces": [],
+          "image": "https://iff-prd.aws.inter.ikea.net/api/4c8a8118-c1b8-47d0-9509-00c2038df834/3315c5d0-692f-4ac4-a011-61f278f1c33b/500w"
+        },
+        {
+          "categorySlug": "mains",
+          "category": "Hovedretter",
+          "name": "Komler/raspeballer",
+          "description": "Serveres med salt svinebog, pølse, bacon og rotmos.",
+          "isSwedishClassic": false,
+          "regularPrice": 179,
+          "regularPriceFormatted": "179,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Gluten",
+            "Melk",
+            "Soyabønner"
+          ],
+          "allergensTraces": [],
+          "image": "https://iff-prd.aws.inter.ikea.net/api/89b45cfa-62fc-4f18-a278-124f54ddae03/ee58caf9-a666-4f58-b6e1-255f39fa6844/500w"
+        },
+        {
+          "categorySlug": "mains",
+          "category": "Hovedretter",
+          "name": "Falafel (8 stk.)",
+          "description": "Serveres med couscous, grønnsaker og aioli.",
+          "isSwedishClassic": false,
+          "regularPrice": 99,
+          "regularPriceFormatted": "99,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Gluten",
+            "Egg",
+            "Sennep"
+          ],
+          "allergensTraces": [],
+          "image": "https://iff-prd.aws.inter.ikea.net/api/7829056e-6b13-4e63-b03e-c4fc93f62224/86b077a8-974d-41ae-93b8-e407b3eab4f5/500w"
+        },
         {
           "categorySlug": "mains",
           "category": "Hovedretter",
@@ -82,109 +184,7 @@
             "Soyabønner"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/89a9327a-bec3-4b24-900a-a70a298a193e"
-        },
-        {
-          "categorySlug": "mains",
-          "category": "Hovedretter",
-          "name": "Viltkarbonader",
-          "description": "med stekte poteter, grønnsaker, viltsaus og tyttebærsyltetøy",
-          "isSwedishClassic": false,
-          "regularPrice": 179,
-          "regularPriceFormatted": "179,-",
-          "familyPrice": null,
-          "familyPriceFormatted": null,
-          "isNew": false,
-          "isBti": false,
-          "commercialLabel": null,
-          "allergens": [
-            "Melk"
-          ],
-          "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/1663ed83-0e4e-4a2a-a872-7a60ebeef98c"
-        },
-        {
-          "categorySlug": "mains",
-          "category": "Hovedretter",
-          "name": "Kjøttboller (8 stk.)",
-          "description": "Serveres med erter, potetmos, fløtesaus og tyttebærsyltetøy.",
-          "isSwedishClassic": true,
-          "regularPrice": 109,
-          "regularPriceFormatted": "109,-",
-          "familyPrice": null,
-          "familyPriceFormatted": null,
-          "isNew": false,
-          "isBti": false,
-          "commercialLabel": null,
-          "allergens": [
-            "Gluten",
-            "Egg",
-            "Melk"
-          ],
-          "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/60cb45de-198c-44dd-a70e-906040b6fba4"
-        },
-        {
-          "categorySlug": "mains",
-          "category": "Hovedretter",
-          "name": "Komler/Raspeballer",
-          "description": "Serveres med salt svinebog, pølse, bacon og rotmos.",
-          "isSwedishClassic": false,
-          "regularPrice": 179,
-          "regularPriceFormatted": "179,-",
-          "familyPrice": null,
-          "familyPriceFormatted": null,
-          "isNew": false,
-          "isBti": false,
-          "commercialLabel": null,
-          "allergens": [
-            "Gluten",
-            "Melk",
-            "Soyabønner"
-          ],
-          "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/d558fa9c-0b5a-4cf9-b8d6-a18535573a2c"
-        },
-        {
-          "categorySlug": "mains",
-          "category": "Hovedretter",
-          "name": "Planteboller (8 stk.)",
-          "description": "Serveres med erter, potetmos, fløtesaus og tyttebærsyltetøy. Laget av erteproteiner, havre, potet, løk og eple.",
-          "isSwedishClassic": false,
-          "regularPrice": 89,
-          "regularPriceFormatted": "89,-",
-          "familyPrice": null,
-          "familyPriceFormatted": null,
-          "isNew": false,
-          "isBti": false,
-          "commercialLabel": null,
-          "allergens": [
-            "Gluten",
-            "Melk"
-          ],
-          "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/25f76840-0b87-4440-80a9-720cbc1e661f"
-        },
-        {
-          "categorySlug": "mains",
-          "category": "Hovedretter",
-          "name": "Falafel (8 stk.)",
-          "description": "Serveres med couscous, grønnsaker og aioli.",
-          "isSwedishClassic": false,
-          "regularPrice": 99,
-          "regularPriceFormatted": "99,-",
-          "familyPrice": null,
-          "familyPriceFormatted": null,
-          "isNew": false,
-          "isBti": false,
-          "commercialLabel": null,
-          "allergens": [
-            "Gluten",
-            "Egg",
-            "Sennep"
-          ],
-          "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/e54e7e12-fb0b-40b6-90e8-bae15b6e17b0"
+          "image": "https://iff-prd.aws.inter.ikea.net/api/e5e9ceab-92c4-4e80-b670-1b3d356bc74d/d4e52ed2-06b4-4a22-8c1b-ede2193f2478/500w"
         },
         {
           "categorySlug": "mains",
@@ -208,7 +208,7 @@
           "allergensTraces": [
             "Soyabønner"
           ],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/a704f5a4-8e0e-4735-8f70-994a9887a124"
+          "image": "https://iff-prd.aws.inter.ikea.net/api/dea0526b-8076-4369-8181-45a8a09de196/494ea948-73df-4f8b-a668-30cfc249f8f1/500w"
         }
       ]
     },
@@ -219,11 +219,11 @@
         {
           "categorySlug": "childrens-menu",
           "category": "Barnemeny",
-          "name": "Planteboller barnerett (5 stk.)",
-          "description": "Serveres med potetmos, erter, fløtesaus og tyttebærsyltetøy.",
+          "name": "Pannekaker (3 stk.)",
+          "description": "Serveres med syltetøy.",
           "isSwedishClassic": false,
-          "regularPrice": 49,
-          "regularPriceFormatted": "49,-",
+          "regularPrice": 39,
+          "regularPriceFormatted": "39,-",
           "familyPrice": null,
           "familyPriceFormatted": null,
           "isNew": false,
@@ -231,10 +231,11 @@
           "commercialLabel": null,
           "allergens": [
             "Gluten",
+            "Egg",
             "Melk"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/4ecddeab-b81d-484a-8fe2-b2faa21a73c0"
+          "image": "https://iff-prd.aws.inter.ikea.net/api/102ef69a-9b80-43d0-b4db-df3aff3c4bf7/b9233a6b-2fb2-4543-86b4-ad3ac2c1138d/500w"
         },
         {
           "categorySlug": "childrens-menu",
@@ -255,16 +256,16 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/14fe14c1-27a6-49a4-9284-6f82c61e4d4d"
+          "image": "https://iff-prd.aws.inter.ikea.net/api/b58e84a2-5b78-4db6-8d24-ba1b6b926ab8/d3a8b11e-52ea-47e2-845f-9f57f0229747/500w"
         },
         {
           "categorySlug": "childrens-menu",
           "category": "Barnemeny",
-          "name": "Pannekaker (3 stk.)",
-          "description": "Serveres med syltetøy.",
+          "name": "Planteboller barnerett (5 stk.)",
+          "description": "Serveres med potetmos, erter, fløtesaus og tyttebærsyltetøy.",
           "isSwedishClassic": false,
-          "regularPrice": 39,
-          "regularPriceFormatted": "39,-",
+          "regularPrice": 49,
+          "regularPriceFormatted": "49,-",
           "familyPrice": null,
           "familyPriceFormatted": null,
           "isNew": false,
@@ -272,11 +273,10 @@
           "commercialLabel": null,
           "allergens": [
             "Gluten",
-            "Egg",
             "Melk"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/34530a5c-75b1-4f62-b4e1-ea7efa1f7aef"
+          "image": "https://iff-prd.aws.inter.ikea.net/api/ebb6478d-9bf8-4b55-b63f-42d9ed023916/97d88735-1697-499b-9fd2-407af5150bf3/500w"
         },
         {
           "categorySlug": "childrens-menu",
@@ -297,7 +297,7 @@
             "Sennep"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/66391bc5-c399-4d21-89e6-91c5a4ae566c"
+          "image": "https://iff-prd.aws.inter.ikea.net/api/8f3bc13e-374b-41bb-ba22-c966dedf4834/4a9955cc-48c3-4dce-90ca-5cc0d110d857/500w"
         }
       ]
     },
@@ -326,28 +326,7 @@
             "Sennep"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/ce45d514-5a1a-4d6a-bf3a-2c628125759e"
-        },
-        {
-          "categorySlug": "sandwiches-wraps",
-          "category": "Smørbrød og wraps",
-          "name": "Croissant med ost",
-          "description": "Croissant med ost og grønt",
-          "isSwedishClassic": false,
-          "regularPrice": 49,
-          "regularPriceFormatted": "49,-",
-          "familyPrice": null,
-          "familyPriceFormatted": null,
-          "isNew": false,
-          "isBti": true,
-          "commercialLabel": null,
-          "allergens": [
-            "Gluten",
-            "Egg",
-            "Melk"
-          ],
-          "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/32b1362d-7600-497a-b10e-689cdf826542"
+          "image": "https://iff-prd.aws.inter.ikea.net/api/db00b69c-d6bd-4e77-a4a2-1ca935f2c09a/a00df057-5a4b-44f3-9f0e-11dbfae9036f/500w"
         },
         {
           "categorySlug": "sandwiches-wraps",
@@ -368,7 +347,28 @@
             "Sennep"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/f06359c4-40f7-46ed-ac63-3dcffc862387"
+          "image": "https://iff-prd.aws.inter.ikea.net/api/2b38df26-2783-4bbb-ac1d-97f6f265ef60/3f37b65c-690f-4e55-9462-d111fed1227a/500w"
+        },
+        {
+          "categorySlug": "sandwiches-wraps",
+          "category": "Smørbrød og wraps",
+          "name": "Croissant med ost",
+          "description": "Croissant med ost og grønt",
+          "isSwedishClassic": false,
+          "regularPrice": 49,
+          "regularPriceFormatted": "49,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": true,
+          "commercialLabel": null,
+          "allergens": [
+            "Gluten",
+            "Egg",
+            "Melk"
+          ],
+          "allergensTraces": [],
+          "image": "https://iff-prd.aws.inter.ikea.net/api/04db9fee-a0fc-4af6-b4f0-7da8c45df2ad/6d1b3302-0fd8-422e-981d-47d00338d333/500w"
         }
       ]
     },
@@ -376,6 +376,25 @@
       "slug": "cold-starter",
       "name": "Kalde tallerkener og forretter",
       "items": [
+        {
+          "categorySlug": "cold-starter",
+          "category": "Kalde tallerkener og forretter",
+          "name": "Grønn sidesalat",
+          "description": "Består av salatmiks, grønnsaker og cherrytomater.",
+          "isSwedishClassic": false,
+          "regularPrice": 29,
+          "regularPriceFormatted": "29,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": true,
+          "commercialLabel": null,
+          "allergens": [
+            "Selleri"
+          ],
+          "allergensTraces": [],
+          "image": "https://iff-prd.aws.inter.ikea.net/api/f6012796-4d95-464c-8169-c165ab6977e7/79d91179-e5a5-499b-a2ca-2d52cab4875b/500w"
+        },
         {
           "categorySlug": "cold-starter",
           "category": "Kalde tallerkener og forretter",
@@ -394,26 +413,7 @@
             "Sennep"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/8be38953-300c-4702-bd69-99378858850a"
-        },
-        {
-          "categorySlug": "cold-starter",
-          "category": "Kalde tallerkener og forretter",
-          "name": "Grønn sidesalat",
-          "description": "Består av salatmiks, grønnsaker og cherrytomater.",
-          "isSwedishClassic": false,
-          "regularPrice": 29,
-          "regularPriceFormatted": "29,-",
-          "familyPrice": null,
-          "familyPriceFormatted": null,
-          "isNew": false,
-          "isBti": true,
-          "commercialLabel": null,
-          "allergens": [
-            "Selleri"
-          ],
-          "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/c6bf9605-6b22-4489-ae1b-d615d53106c7"
+          "image": "https://iff-prd.aws.inter.ikea.net/api/1471d626-3723-4d2f-93d4-d9285546f9c4/4b52e312-5bf7-4093-8560-fd7fc249cd17/500w"
         }
       ]
     },
@@ -441,7 +441,7 @@
             "Sennep"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/ab5f7c17-c2c4-45ed-b2f6-964fc40c07fa"
+          "image": "https://iff-prd.aws.inter.ikea.net/api/5af2e27b-e797-41e5-b24a-bce8838ab3bd/527d26ae-b063-4030-9c36-0b854f004974/500w"
         }
       ]
     },
@@ -467,34 +467,7 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/d320f146-3003-4b80-acb6-f65976146427"
-        },
-        {
-          "categorySlug": "side-dishes",
-          "category": "Tilbehør",
-          "name": "Rundstykke med frø",
-          "description": "Rundstykke med frø",
-          "isSwedishClassic": false,
-          "regularPrice": 15,
-          "regularPriceFormatted": "15,-",
-          "familyPrice": null,
-          "familyPriceFormatted": null,
-          "isNew": false,
-          "isBti": false,
-          "commercialLabel": null,
-          "allergens": [
-            "Gluten",
-            "Sesam",
-            "Soyabønner"
-          ],
-          "allergensTraces": [
-            "Egg",
-            "Melk",
-            "Mandler",
-            "Pekannøtter",
-            "Trenøtter"
-          ],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/ceebb177-0469-4abe-906d-60c55d879eee"
+          "image": "https://iff-prd.aws.inter.ikea.net/api/5499c6ff-61d7-40f6-8c1e-cab742bc0e3a/2b01c1c9-0f77-48b8-ad6e-2d50c1700873/500w"
         },
         {
           "categorySlug": "side-dishes",
@@ -521,7 +494,34 @@
             "Pekannøtter",
             "Trenøtter"
           ],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/bb073163-7496-4de1-8dec-42327e1ce323"
+          "image": "https://iff-prd.aws.inter.ikea.net/api/8ae0b8e4-6945-40f2-92ed-921a8a3a5727/26f36270-cdb2-4ee8-8c12-bad53b0fd940/500w"
+        },
+        {
+          "categorySlug": "side-dishes",
+          "category": "Tilbehør",
+          "name": "Rundstykke med frø",
+          "description": "Rundstykke med frø",
+          "isSwedishClassic": false,
+          "regularPrice": 15,
+          "regularPriceFormatted": "15,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Gluten",
+            "Sesam",
+            "Soyabønner"
+          ],
+          "allergensTraces": [
+            "Egg",
+            "Melk",
+            "Mandler",
+            "Pekannøtter",
+            "Trenøtter"
+          ],
+          "image": "https://iff-prd.aws.inter.ikea.net/api/59db4503-4b50-4366-b146-7d6ed539ec01/f703b4e0-9d47-4a11-97eb-303d6f880b55/500w"
         }
       ]
     },
@@ -546,7 +546,28 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/096b2a4c-dfee-4d57-9ed9-3abf15c02d2a"
+          "image": "https://iff-prd.aws.inter.ikea.net/api/5695f0de-cb6d-4019-b81e-9dc5f8a1fbb6/34c26c3d-bcd6-415a-a16d-e23e9c04afb4/500w"
+        },
+        {
+          "categorySlug": "desserts-pastries",
+          "category": "Bakverk, desserter og småkaker",
+          "name": "Napoleonskake",
+          "description": "Består av et deilig fyll med smak av vanilje og rom, presset mellom to sprø plater av butterdeig.",
+          "isSwedishClassic": false,
+          "regularPrice": 69,
+          "regularPriceFormatted": "69,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Gluten",
+            "Melk",
+            "Soyabønner"
+          ],
+          "allergensTraces": [],
+          "image": "https://iff-prd.aws.inter.ikea.net/api/ecfea507-544e-4e12-b239-505345af081e/e724584a-ae76-4ca3-8927-62db65def0a0/500w"
         },
         {
           "categorySlug": "desserts-pastries",
@@ -569,7 +590,27 @@
             "Trenøtter"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/652a0b89-c745-42c4-bd65-c97540cd2e75"
+          "image": "https://iff-prd.aws.inter.ikea.net/api/eda854c4-55c0-4356-acec-1ca60518e0ea/e3e46786-643d-42b2-907e-6d5f844bdf27/500w"
+        },
+        {
+          "categorySlug": "desserts-pastries",
+          "category": "Bakverk, desserter og småkaker",
+          "name": "Kanelbolle",
+          "description": "Består av en hvetebolle fylt med en blanding av smør og kanel, dekorert med perlesukker.",
+          "isSwedishClassic": false,
+          "regularPrice": 19,
+          "regularPriceFormatted": "19,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": true,
+          "commercialLabel": null,
+          "allergens": [
+            "Gluten",
+            "Melk"
+          ],
+          "allergensTraces": [],
+          "image": "https://iff-prd.aws.inter.ikea.net/api/50685e76-1b01-46a8-8513-ad5a24602de9/3828c10c-28fe-4a05-84af-e460123bb6cd/500w"
         },
         {
           "categorySlug": "desserts-pastries",
@@ -590,7 +631,7 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/aad37551-c8c1-4d1d-b759-4b9e00d008b3"
+          "image": "https://iff-prd.aws.inter.ikea.net/api/c929dcec-06da-465a-811c-aa544131294c/0008f7e5-a067-474b-9968-6313bc71ff69/500w"
         },
         {
           "categorySlug": "desserts-pastries",
@@ -613,48 +654,7 @@
             "Trenøtter"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/f124abc1-ce07-45be-b58d-ae021b3bcfc1"
-        },
-        {
-          "categorySlug": "desserts-pastries",
-          "category": "Bakverk, desserter og småkaker",
-          "name": "Napoleonskake",
-          "description": "Består av et deilig fyll med smak av vanilje og rom, presset mellom to sprø plater av butterdeig.",
-          "isSwedishClassic": false,
-          "regularPrice": 69,
-          "regularPriceFormatted": "69,-",
-          "familyPrice": null,
-          "familyPriceFormatted": null,
-          "isNew": false,
-          "isBti": false,
-          "commercialLabel": null,
-          "allergens": [
-            "Gluten",
-            "Melk",
-            "Soyabønner"
-          ],
-          "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/7d4d373a-3994-4b26-93ee-05319e54e039"
-        },
-        {
-          "categorySlug": "desserts-pastries",
-          "category": "Bakverk, desserter og småkaker",
-          "name": "Kladdkake",
-          "description": "Består av seig og klebrig kakao- og sjokoladekake.",
-          "isSwedishClassic": false,
-          "regularPrice": 19,
-          "regularPriceFormatted": "19,-",
-          "familyPrice": null,
-          "familyPriceFormatted": null,
-          "isNew": false,
-          "isBti": true,
-          "commercialLabel": null,
-          "allergens": [
-            "Gluten",
-            "Egg"
-          ],
-          "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/adab6e6d-831d-4b5a-bfeb-0dbbe755814d"
+          "image": "https://iff-prd.aws.inter.ikea.net/api/9f72d24c-1a2b-4436-bd47-45d9a944fd69/21c469d1-543e-4fb7-997f-f4e9b8b12695/500w"
         },
         {
           "categorySlug": "desserts-pastries",
@@ -675,7 +675,27 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/01dc9faa-f4fc-49a0-b095-dabe81460b3f"
+          "image": "https://iff-prd.aws.inter.ikea.net/api/bb1bd21e-b0e0-4622-973a-73296302b550/d7bb8294-7644-4e83-8464-d604513de7fb/500w"
+        },
+        {
+          "categorySlug": "desserts-pastries",
+          "category": "Bakverk, desserter og småkaker",
+          "name": "Kladdkake",
+          "description": "Består av seig og klebrig kakao- og sjokoladekake.",
+          "isSwedishClassic": false,
+          "regularPrice": 19,
+          "regularPriceFormatted": "19,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": true,
+          "commercialLabel": null,
+          "allergens": [
+            "Gluten",
+            "Egg"
+          ],
+          "allergensTraces": [],
+          "image": "https://iff-prd.aws.inter.ikea.net/api/f163c47c-9acd-413d-b2e7-c1c181b3c8ab/7763877d-7518-4fb2-9a0f-b4343def3da3/500w"
         },
         {
           "categorySlug": "desserts-pastries",
@@ -698,27 +718,7 @@
             "Trenøtter"
           ],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/aaec6b06-be8c-4511-9bc6-e396134809b9"
-        },
-        {
-          "categorySlug": "desserts-pastries",
-          "category": "Bakverk, desserter og småkaker",
-          "name": "Kanelbolle",
-          "description": "Består av en hvetebolle fylt med en blanding av smør og kanel, dekorert med perlesukker.",
-          "isSwedishClassic": false,
-          "regularPrice": 19,
-          "regularPriceFormatted": "19,-",
-          "familyPrice": null,
-          "familyPriceFormatted": null,
-          "isNew": false,
-          "isBti": true,
-          "commercialLabel": null,
-          "allergens": [
-            "Gluten",
-            "Melk"
-          ],
-          "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/ac7f031c-993a-4072-a380-0490c86bbe98"
+          "image": "https://iff-prd.aws.inter.ikea.net/api/1f177ac1-21a7-4863-bd78-799230ddc255/01684eb4-651f-441c-bc38-15f0d824b06b/500w"
         }
       ]
     },
@@ -726,23 +726,6 @@
       "slug": "hot-beverages",
       "name": "Varme drikker",
       "items": [
-        {
-          "categorySlug": "hot-beverages",
-          "category": "Varme drikker",
-          "name": "Te",
-          "description": "Te, valgfri smak. Gratis påfyll",
-          "isSwedishClassic": false,
-          "regularPrice": 20,
-          "regularPriceFormatted": "20,-",
-          "familyPrice": 5,
-          "familyPriceFormatted": "5,-",
-          "isNew": false,
-          "isBti": false,
-          "commercialLabel": null,
-          "allergens": [],
-          "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/a8df49f7-c2f3-4ce6-a84b-5454fd613593"
-        },
         {
           "categorySlug": "hot-beverages",
           "category": "Varme drikker",
@@ -758,7 +741,24 @@
           "commercialLabel": null,
           "allergens": [],
           "allergensTraces": [],
-          "image": "https://storage.googleapis.com/fpi_product_images_prod/005c1799-fe84-497a-81ba-d9b3a7900163"
+          "image": "https://iff-prd.aws.inter.ikea.net/api/2116ad98-4268-47a4-a4bd-e463a57dd2e3/8ab8c8a2-afd9-4730-819f-f16049cfdab6/500w"
+        },
+        {
+          "categorySlug": "hot-beverages",
+          "category": "Varme drikker",
+          "name": "Te",
+          "description": "Te, valgfri smak. Gratis påfyll",
+          "isSwedishClassic": false,
+          "regularPrice": 20,
+          "regularPriceFormatted": "20,-",
+          "familyPrice": 5,
+          "familyPriceFormatted": "5,-",
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [],
+          "allergensTraces": [],
+          "image": "https://iff-prd.aws.inter.ikea.net/api/d9ecd4e4-752f-40b1-88d0-826aefe3a11a/5d966a3b-2150-4198-af2e-79039a9462cd/500w"
         }
       ]
     }
