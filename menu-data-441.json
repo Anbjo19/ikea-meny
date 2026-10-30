@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T10:28:36.071916Z",
+  "generatedAt": "2026-10-30T10:29:48.227363Z",
   "salesarea": "restaurant",
   "store": {
     "code": "441",
@@ -105,11 +105,31 @@
         {
           "categorySlug": "mains",
           "category": "Hovedretter",
-          "name": "Viltkarbonader",
-          "description": "med stekte poteter, grønnsaker, viltsaus og tyttebærsyltetøy",
+          "name": "Juletallerken",
+          "description": "Serveres med ribbe, medisterkaker, poteter, rødkål og saus",
           "isSwedishClassic": false,
-          "regularPrice": 179,
-          "regularPriceFormatted": "179,-",
+          "regularPrice": 249,
+          "regularPriceFormatted": "249,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Melk",
+            "Sennep"
+          ],
+          "allergensTraces": [],
+          "image": "https://iff-prd.aws.inter.ikea.net/api/5d045aa9-5238-4fb6-beb8-504a012289d0/86f5166e-83e4-4733-8dd8-5c649d771edf/500w"
+        },
+        {
+          "categorySlug": "mains",
+          "category": "Hovedretter",
+          "name": "Pinnekjøtt",
+          "description": "med stekte poteter og rotmos",
+          "isSwedishClassic": false,
+          "regularPrice": 299,
+          "regularPriceFormatted": "299,-",
           "familyPrice": null,
           "familyPriceFormatted": null,
           "isNew": false,
@@ -119,28 +139,27 @@
             "Melk"
           ],
           "allergensTraces": [],
-          "image": "https://iff-prd.aws.inter.ikea.net/api/4c8a8118-c1b8-47d0-9509-00c2038df834/3315c5d0-692f-4ac4-a011-61f278f1c33b/500w"
+          "image": "https://iff-prd.aws.inter.ikea.net/api/cd474548-535f-40c3-b7b1-58f6740c03a0/210690dc-7242-40b7-b241-3ecc3aa57b6c/500w"
         },
         {
           "categorySlug": "mains",
           "category": "Hovedretter",
-          "name": "Komler/raspeballer",
-          "description": "Serveres med salt svinebog, pølse, bacon og rotmos.",
+          "name": "Ribbetallerken",
+          "description": "med ribbe, rødkål, stekte poteter og saus",
           "isSwedishClassic": false,
-          "regularPrice": 179,
-          "regularPriceFormatted": "179,-",
+          "regularPrice": 229,
+          "regularPriceFormatted": "229,-",
           "familyPrice": null,
           "familyPriceFormatted": null,
           "isNew": false,
           "isBti": false,
           "commercialLabel": null,
           "allergens": [
-            "Gluten",
             "Melk",
-            "Soyabønner"
+            "Sennep"
           ],
           "allergensTraces": [],
-          "image": "https://iff-prd.aws.inter.ikea.net/api/89b45cfa-62fc-4f18-a278-124f54ddae03/ee58caf9-a666-4f58-b6e1-255f39fa6844/500w"
+          "image": "https://iff-prd.aws.inter.ikea.net/api/07c99e0a-f41e-4688-ada0-c3a20f1d1349/ad8c6dd9-24dd-4d6c-95f3-8b3d4b86b3bb/500w"
         },
         {
           "categorySlug": "mains",
