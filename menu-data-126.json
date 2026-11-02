@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-01T10:50:11.520657Z",
+  "generatedAt": "2026-11-02T11:43:40.768475Z",
   "salesarea": "restaurant",
   "store": {
     "code": "126",
@@ -127,6 +127,26 @@
         {
           "categorySlug": "mains",
           "category": "Hovedretter",
+          "name": "Juletallerken",
+          "description": "Serveres med ribbe, medisterkaker, poteter, rødkål og saus",
+          "isSwedishClassic": false,
+          "regularPrice": 249,
+          "regularPriceFormatted": "249,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Melk",
+            "Sennep"
+          ],
+          "allergensTraces": [],
+          "image": "https://iff-prd.aws.inter.ikea.net/api/5d045aa9-5238-4fb6-beb8-504a012289d0/86f5166e-83e4-4733-8dd8-5c649d771edf/500w"
+        },
+        {
+          "categorySlug": "mains",
+          "category": "Hovedretter",
           "name": "Viltkarbonader",
           "description": "med stekte poteter, grønnsaker, viltsaus og tyttebærsyltetøy",
           "isSwedishClassic": false,
@@ -142,6 +162,45 @@
           ],
           "allergensTraces": [],
           "image": "https://iff-prd.aws.inter.ikea.net/api/4c8a8118-c1b8-47d0-9509-00c2038df834/3315c5d0-692f-4ac4-a011-61f278f1c33b/500w"
+        },
+        {
+          "categorySlug": "mains",
+          "category": "Hovedretter",
+          "name": "Pinnekjøtt",
+          "description": "med stekte poteter og rotmos",
+          "isSwedishClassic": false,
+          "regularPrice": 299,
+          "regularPriceFormatted": "299,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Melk"
+          ],
+          "allergensTraces": [],
+          "image": "https://iff-prd.aws.inter.ikea.net/api/cd474548-535f-40c3-b7b1-58f6740c03a0/210690dc-7242-40b7-b241-3ecc3aa57b6c/500w"
+        },
+        {
+          "categorySlug": "mains",
+          "category": "Hovedretter",
+          "name": "Ribbetallerken",
+          "description": "med ribbe, rødkål, stekte poteter og saus",
+          "isSwedishClassic": false,
+          "regularPrice": 229,
+          "regularPriceFormatted": "229,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Melk",
+            "Sennep"
+          ],
+          "allergensTraces": [],
+          "image": "https://iff-prd.aws.inter.ikea.net/api/07c99e0a-f41e-4688-ada0-c3a20f1d1349/ad8c6dd9-24dd-4d6c-95f3-8b3d4b86b3bb/500w"
         },
         {
           "categorySlug": "mains",
@@ -863,6 +922,46 @@
           "allergens": [],
           "allergensTraces": [],
           "image": "https://iff-prd.aws.inter.ikea.net/api/d9ecd4e4-752f-40b1-88d0-826aefe3a11a/5d966a3b-2150-4198-af2e-79039a9462cd/500w"
+        }
+      ]
+    },
+    {
+      "slug": "cold-beverages",
+      "name": "Kalde drikker",
+      "items": [
+        {
+          "categorySlug": "cold-beverages",
+          "category": "Kalde drikker",
+          "name": "Hamar Julebrus 0,5L",
+          "description": "Hamar Lillehammer julebrus er synonymt med jul. Norges mest populære og svært tradisjonelle julebrus er en folkefavoritt vi forvalter med stor respekt. Jul er tiden for kos, og da kommer Hamar Lillehammer Julebrus til sin fulle rett. Med sin karakteristiske smak av champagnebrus og juleminner er den en sikker vinner når julen nærmer seg.",
+          "isSwedishClassic": false,
+          "regularPrice": 32,
+          "regularPriceFormatted": "32,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [],
+          "allergensTraces": [],
+          "image": "https://iff-prd.aws.inter.ikea.net/api/9f98991d-6231-4f15-9d6d-2bb1166be848/0a836800-67a1-482c-adc0-8809da1694fa/500w"
+        },
+        {
+          "categorySlug": "cold-beverages",
+          "category": "Kalde drikker",
+          "name": "Hamar Julebrus Lett 0,33",
+          "description": "Norges største sukkerfrie julebrus",
+          "isSwedishClassic": false,
+          "regularPrice": 29,
+          "regularPriceFormatted": "29,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [],
+          "allergensTraces": [],
+          "image": "https://iff-prd.aws.inter.ikea.net/api/ccbd7918-4137-4956-9316-2436cc3f6929/e10118db-4bc7-4ff8-986c-55c33060e1a2/500w"
         }
       ]
     }

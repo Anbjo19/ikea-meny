@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-01T10:50:11.525078Z",
+  "generatedAt": "2026-11-02T11:43:40.773404Z",
   "salesarea": "restaurant",
   "store": {
     "code": "1352",
@@ -10,28 +10,6 @@
       "slug": "breakfast",
       "name": "Frokost",
       "items": [
-        {
-          "categorySlug": "breakfast",
-          "category": "Frokost",
-          "name": "Frokostrundstykke",
-          "description": "Serveres med ost og agurk.",
-          "isSwedishClassic": false,
-          "regularPrice": 29,
-          "regularPriceFormatted": "29,-",
-          "familyPrice": null,
-          "familyPriceFormatted": null,
-          "isNew": false,
-          "isBti": true,
-          "commercialLabel": null,
-          "allergens": [
-            "Gluten",
-            "Melk",
-            "Sesam",
-            "Soyabønner"
-          ],
-          "allergensTraces": [],
-          "image": "https://iff-prd.aws.inter.ikea.net/api/06efe673-2952-4c17-abeb-29622b196884/ac56f57b-6efc-4bb9-a399-8ebf8202ca07/500w"
-        },
         {
           "categorySlug": "breakfast",
           "category": "Frokost",
@@ -861,6 +839,29 @@
           "allergens": [],
           "allergensTraces": [],
           "image": "https://iff-prd.aws.inter.ikea.net/api/d9ecd4e4-752f-40b1-88d0-826aefe3a11a/5d966a3b-2150-4198-af2e-79039a9462cd/500w"
+        }
+      ]
+    },
+    {
+      "slug": "cold-beverages",
+      "name": "Kalde drikker",
+      "items": [
+        {
+          "categorySlug": "cold-beverages",
+          "category": "Kalde drikker",
+          "name": "Hamar Julebrus 0,5L",
+          "description": "Hamar Lillehammer julebrus er synonymt med jul. Norges mest populære og svært tradisjonelle julebrus er en folkefavoritt vi forvalter med stor respekt. Jul er tiden for kos, og da kommer Hamar Lillehammer Julebrus til sin fulle rett. Med sin karakteristiske smak av champagnebrus og juleminner er den en sikker vinner når julen nærmer seg.",
+          "isSwedishClassic": false,
+          "regularPrice": 32,
+          "regularPriceFormatted": "32,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [],
+          "allergensTraces": [],
+          "image": "https://iff-prd.aws.inter.ikea.net/api/9f98991d-6231-4f15-9d6d-2bb1166be848/0a836800-67a1-482c-adc0-8809da1694fa/500w"
         }
       ]
     }
