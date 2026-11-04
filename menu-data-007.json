@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T11:25:48.017579Z",
+  "generatedAt": "2026-11-04T11:38:41.200915Z",
   "salesarea": "restaurant",
   "store": {
     "code": "007",
@@ -162,6 +162,26 @@
           ],
           "allergensTraces": [],
           "image": "https://iff-prd.aws.inter.ikea.net/api/cd474548-535f-40c3-b7b1-58f6740c03a0/210690dc-7242-40b7-b241-3ecc3aa57b6c/500w"
+        },
+        {
+          "categorySlug": "mains",
+          "category": "Hovedretter",
+          "name": "Ribbetallerken",
+          "description": "med ribbe, rødkål, stekte poteter og saus",
+          "isSwedishClassic": false,
+          "regularPrice": 229,
+          "regularPriceFormatted": "229,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [
+            "Melk",
+            "Sennep"
+          ],
+          "allergensTraces": [],
+          "image": "https://iff-prd.aws.inter.ikea.net/api/07c99e0a-f41e-4688-ada0-c3a20f1d1349/ad8c6dd9-24dd-4d6c-95f3-8b3d4b86b3bb/500w"
         },
         {
           "categorySlug": "mains",
