@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T11:39:52.689179Z",
+  "generatedAt": "2026-11-06T11:38:22.303767Z",
   "salesarea": "restaurant",
   "store": {
     "code": "095",
@@ -145,25 +145,6 @@
           ],
           "allergensTraces": [],
           "image": "https://iff-prd.aws.inter.ikea.net/api/5d045aa9-5238-4fb6-beb8-504a012289d0/86f5166e-83e4-4733-8dd8-5c649d771edf/500w"
-        },
-        {
-          "categorySlug": "mains",
-          "category": "Hovedretter",
-          "name": "Pinnekjøtt",
-          "description": "med stekte poteter og rotmos",
-          "isSwedishClassic": false,
-          "regularPrice": 299,
-          "regularPriceFormatted": "299,-",
-          "familyPrice": null,
-          "familyPriceFormatted": null,
-          "isNew": false,
-          "isBti": false,
-          "commercialLabel": null,
-          "allergens": [
-            "Melk"
-          ],
-          "allergensTraces": [],
-          "image": "https://iff-prd.aws.inter.ikea.net/api/cd474548-535f-40c3-b7b1-58f6740c03a0/210690dc-7242-40b7-b241-3ecc3aa57b6c/500w"
         },
         {
           "categorySlug": "mains",
@@ -920,8 +901,8 @@
           "name": "Hamar Julebrus 0,5L",
           "description": "Hamar Lillehammer julebrus er synonymt med jul. Norges mest populære og svært tradisjonelle julebrus er en folkefavoritt vi forvalter med stor respekt. Jul er tiden for kos, og da kommer Hamar Lillehammer Julebrus til sin fulle rett. Med sin karakteristiske smak av champagnebrus og juleminner er den en sikker vinner når julen nærmer seg.",
           "isSwedishClassic": false,
-          "regularPrice": 32,
-          "regularPriceFormatted": "32,-",
+          "regularPrice": 35,
+          "regularPriceFormatted": "35,-",
           "familyPrice": null,
           "familyPriceFormatted": null,
           "isNew": false,

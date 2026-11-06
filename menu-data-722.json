@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T11:39:52.697018Z",
+  "generatedAt": "2026-11-06T11:38:22.325483Z",
   "salesarea": "restaurant",
   "store": {
     "code": "722",
@@ -79,29 +79,6 @@
             "Soyabønner"
           ],
           "image": "https://iff-prd.aws.inter.ikea.net/api/57f17d9e-a363-4861-8f4c-1d0398a34012/0d2cb5ad-4ba7-4cc7-b39c-06b2dcc9a78c/500w"
-        },
-        {
-          "categorySlug": "desserts-pastries",
-          "category": "Bakverk, desserter og småkaker",
-          "name": "Mandelkake med sitron",
-          "description": "Myk mandelkake med et hint av sitron.",
-          "isSwedishClassic": false,
-          "regularPrice": 29,
-          "regularPriceFormatted": "29,-",
-          "familyPrice": null,
-          "familyPriceFormatted": null,
-          "isNew": false,
-          "isBti": false,
-          "commercialLabel": null,
-          "allergens": [
-            "Egg",
-            "Melk",
-            "Soyabønner",
-            "Mandler",
-            "Trenøtter"
-          ],
-          "allergensTraces": [],
-          "image": "https://iff-prd.aws.inter.ikea.net/api/1f177ac1-21a7-4863-bd78-799230ddc255/01684eb4-651f-441c-bc38-15f0d824b06b/500w"
         }
       ]
     },
@@ -155,8 +132,8 @@
           "name": "Hamar Julebrus 0,5L",
           "description": "Hamar Lillehammer julebrus er synonymt med jul. Norges mest populære og svært tradisjonelle julebrus er en folkefavoritt vi forvalter med stor respekt. Jul er tiden for kos, og da kommer Hamar Lillehammer Julebrus til sin fulle rett. Med sin karakteristiske smak av champagnebrus og juleminner er den en sikker vinner når julen nærmer seg.",
           "isSwedishClassic": false,
-          "regularPrice": 32,
-          "regularPriceFormatted": "32,-",
+          "regularPrice": 35,
+          "regularPriceFormatted": "35,-",
           "familyPrice": null,
           "familyPriceFormatted": null,
           "isNew": false,
