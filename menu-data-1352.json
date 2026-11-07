@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T11:38:22.325859Z",
+  "generatedAt": "2026-11-07T10:43:36.137469Z",
   "salesarea": "restaurant",
   "store": {
     "code": "1352",
@@ -7,112 +7,9 @@
   },
   "categories": [
     {
-      "slug": "mains",
-      "name": "Hovedretter",
-      "items": [
-        {
-          "categorySlug": "mains",
-          "category": "Hovedretter",
-          "name": "Planteboller (8 stk.)",
-          "description": "Serveres med erter, potetmos, fløtesaus og tyttebærsyltetøy. Laget av erteproteiner, havre, potet, løk og eple.",
-          "isSwedishClassic": false,
-          "regularPrice": 89,
-          "regularPriceFormatted": "89,-",
-          "familyPrice": null,
-          "familyPriceFormatted": null,
-          "isNew": false,
-          "isBti": false,
-          "commercialLabel": null,
-          "allergens": [
-            "Gluten",
-            "Melk"
-          ],
-          "allergensTraces": [],
-          "image": "https://iff-prd.aws.inter.ikea.net/api/d0166019-7cc7-48ed-b0f4-0f7cc40ea468/668c29cd-3a06-4cd5-b28c-78e76a6b3b21/500w"
-        }
-      ]
-    },
-    {
-      "slug": "childrens-menu",
-      "name": "Barnemeny",
-      "items": [
-        {
-          "categorySlug": "childrens-menu",
-          "category": "Barnemeny",
-          "name": "Kjøttboller barnerett (5 stk.)",
-          "description": "Serveres med potetmos, erter, fløtesaus og tyttebærsyltetøy.",
-          "isSwedishClassic": true,
-          "regularPrice": 49,
-          "regularPriceFormatted": "49,-",
-          "familyPrice": null,
-          "familyPriceFormatted": null,
-          "isNew": false,
-          "isBti": false,
-          "commercialLabel": null,
-          "allergens": [
-            "Gluten",
-            "Egg",
-            "Melk"
-          ],
-          "allergensTraces": [],
-          "image": "https://iff-prd.aws.inter.ikea.net/api/b58e84a2-5b78-4db6-8d24-ba1b6b926ab8/d3a8b11e-52ea-47e2-845f-9f57f0229747/500w"
-        }
-      ]
-    },
-    {
-      "slug": "sandwiches-wraps",
-      "name": "Smørbrød og wraps",
-      "items": [
-        {
-          "categorySlug": "sandwiches-wraps",
-          "category": "Smørbrød og wraps",
-          "name": "Rekesmørbrød",
-          "description": "Serveres med egg og majones.",
-          "isSwedishClassic": true,
-          "regularPrice": 99,
-          "regularPriceFormatted": "99,-",
-          "familyPrice": null,
-          "familyPriceFormatted": null,
-          "isNew": false,
-          "isBti": false,
-          "commercialLabel": null,
-          "allergens": [
-            "Gluten",
-            "Skalldyr",
-            "Egg",
-            "Bløtdyr",
-            "Sennep"
-          ],
-          "allergensTraces": [],
-          "image": "https://iff-prd.aws.inter.ikea.net/api/db00b69c-d6bd-4e77-a4a2-1ca935f2c09a/a00df057-5a4b-44f3-9f0e-11dbfae9036f/500w"
-        }
-      ]
-    },
-    {
       "slug": "desserts-pastries",
       "name": "Bakverk, desserter og småkaker",
       "items": [
-        {
-          "categorySlug": "desserts-pastries",
-          "category": "Bakverk, desserter og småkaker",
-          "name": "Napoleonskake",
-          "description": "Består av et deilig fyll med smak av vanilje og rom, presset mellom to sprø plater av butterdeig.",
-          "isSwedishClassic": false,
-          "regularPrice": 69,
-          "regularPriceFormatted": "69,-",
-          "familyPrice": null,
-          "familyPriceFormatted": null,
-          "isNew": false,
-          "isBti": false,
-          "commercialLabel": null,
-          "allergens": [
-            "Gluten",
-            "Melk",
-            "Soyabønner"
-          ],
-          "allergensTraces": [],
-          "image": "https://iff-prd.aws.inter.ikea.net/api/ecfea507-544e-4e12-b239-505345af081e/e724584a-ae76-4ca3-8927-62db65def0a0/500w"
-        },
         {
           "categorySlug": "desserts-pastries",
           "category": "Bakverk, desserter og småkaker",
