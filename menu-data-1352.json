@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T10:48:36.882402Z",
+  "generatedAt": "2026-11-09T12:13:17.817077Z",
   "salesarea": "restaurant",
   "store": {
     "code": "1352",
@@ -95,6 +95,23 @@
           "allergens": [],
           "allergensTraces": [],
           "image": "https://iff-prd.aws.inter.ikea.net/api/2116ad98-4268-47a4-a4bd-e463a57dd2e3/8ab8c8a2-afd9-4730-819f-f16049cfdab6/500w"
+        },
+        {
+          "categorySlug": "hot-beverages",
+          "category": "Varme drikker",
+          "name": "Te",
+          "description": "Te, valgfri smak. Gratis påfyll",
+          "isSwedishClassic": false,
+          "regularPrice": 20,
+          "regularPriceFormatted": "20,-",
+          "familyPrice": 5,
+          "familyPriceFormatted": "5,-",
+          "isNew": false,
+          "isBti": false,
+          "commercialLabel": null,
+          "allergens": [],
+          "allergensTraces": [],
+          "image": "https://iff-prd.aws.inter.ikea.net/api/d9ecd4e4-752f-40b1-88d0-826aefe3a11a/5d966a3b-2150-4198-af2e-79039a9462cd/500w"
         }
       ]
     },
