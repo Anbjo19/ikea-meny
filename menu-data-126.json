@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T11:53:06.101852Z",
+  "generatedAt": "2026-11-11T11:29:33.461664Z",
   "salesarea": "restaurant",
   "store": {
     "code": "126",
@@ -537,7 +537,7 @@
           "familyPrice": null,
           "familyPriceFormatted": null,
           "isNew": false,
-          "isBti": true,
+          "isBti": false,
           "commercialLabel": null,
           "allergens": [
             "Melk",
@@ -895,8 +895,8 @@
           "isSwedishClassic": false,
           "regularPrice": 20,
           "regularPriceFormatted": "20,-",
-          "familyPrice": 5,
-          "familyPriceFormatted": "5,-",
+          "familyPrice": null,
+          "familyPriceFormatted": null,
           "isNew": false,
           "isBti": false,
           "commercialLabel": null,
