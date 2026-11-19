@@ -215,8 +215,10 @@ uten at noe må publiseres på nytt.
 
 - **`hide`** skjuler retter hvis navnet inneholder en av tekstene i
   `names`. `until` er første dato retten skal vises (`ÅÅÅÅ-MM-DD`, norsk
-  tid), og `from` kan brukes for å skjule fra en bestemt dato. Retten er
-  tilbake av seg selv ved midnatt, uten at noen må gjøre noe. Eksempel i
+  tid), og `from` kan brukes for å skjule fra en bestemt dato. `stores` begrenser regelen til bestemte butikker (butikkoder som
+  tekst, f.eks. `["390"]`); uten `stores` gjelder den alle. Uten `until`
+  og `from` gjelder regelen til den fjernes. Retten er tilbake av seg selv
+  ved midnatt, uten at noen må gjøre noe. Eksempel i
   dag: Juletallerken og Pinnekjøtt er skjult frem til 1. november 2026.
 - **`categoryNotes`** viser en liten tekst ved siden av kategoritittelen,
   med kategoriens slug som nøkkel. I dag: «Serveres frem til kl. 11.00» ved

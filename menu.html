@@ -425,11 +425,20 @@
     return d.getFullYear() + "-" + p(d.getMonth() + 1) + "-" + p(d.getDate());
   }
 
-  function isHiddenByRules(item, today) {
+  function isHiddenByRules(item, today, storeCode) {
     var rules = (displayRules && displayRules.hide) || [];
     var name = String(item.name || "").toLowerCase();
     for (var i = 0; i < rules.length; i++) {
       var r = rules[i], names = r.names || [], hit = false;
+      // 'stores' begrenser regelen til bestemte butikker (butikkoder som
+      // tekst, f.eks. "390"). Uten 'stores' gjelder regelen alle butikker.
+      if (r.stores && r.stores.length) {
+        var inStore = false;
+        for (var k = 0; k < r.stores.length; k++) {
+          if (String(r.stores[k]) === String(storeCode)) { inStore = true; break; }
+        }
+        if (!inStore) continue;
+      }
       for (var j = 0; j < names.length; j++) {
         if (name.indexOf(String(names[j]).toLowerCase()) !== -1) { hit = true; break; }
       }
@@ -442,13 +451,13 @@
   }
 
   // Returnerer kategoriene med skjulte retter fjernet og eventuelt notat satt.
-  function applyRules(categories) {
+  function applyRules(categories, storeCode) {
     var today = todayIso();
     var notes = (displayRules && displayRules.categoryNotes) || {};
     return categories.map(function (cat) {
       var copy = {};
       for (var k in cat) if (Object.prototype.hasOwnProperty.call(cat, k)) copy[k] = cat[k];
-      copy.items = (cat.items || []).filter(function (it) { return !isHiddenByRules(it, today); });
+      copy.items = (cat.items || []).filter(function (it) { return !isHiddenByRules(it, today, storeCode); });
       copy.note = notes[cat.slug] || "";
       return copy;
     }).filter(function (cat) { return cat.items.length; });
@@ -596,7 +605,7 @@
   // heller OPP (inntil MAX_SCALE) så tavlen fyller skjermen. Ellers to
   // spalter som skaleres ned akkurat nok til at alt får plass.
   function renderBoard(menu) {
-    var categories = applyRules(menu.categories || []);
+    var categories = applyRules(menu.categories || [], menu.store && menu.store.code);
     if (!categories.length) {
       boardViewportEl.innerHTML =
         '<div class="empty-state"><div class="big">Ingen retter tilgjengelig akkurat nå</div>' +
