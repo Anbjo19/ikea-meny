@@ -1,5 +1,5 @@
 {
-  "_hjelp": "Regler for hva tavlen viser, uavhengig av IKEAs data. 'hide' skjuler retter hvis navnet inneholder en av tekstene i 'names' (store/små bokstaver spiller ingen rolle). 'until' er første dato retten skal vises, i formatet ÅÅÅÅ-MM-DD, etter norsk tid; før den datoen er retten skjult. 'from' kan legges til for å skjule fra og med en dato. 'stores' begrenser regelen til bestemte butikker (liste med butikkoder som tekst, f.eks. [\"390\"]); uten 'stores' gjelder regelen alle butikker. Uten 'until' og 'from' gjelder regelen til du fjerner den. 'categoryNotes' viser en liten tekst ved siden av kategoritittelen; nøkkelen er kategoriens slug (breakfast, mains, childrens-menu, sandwiches-wraps, cold-starter, salads, side-dishes, desserts-pastries, hot-beverages). Endringer slår inn på skjermene innen fem minutter.",
+  "_hjelp": "Regler for hva tavlen viser, uavhengig av IKEAs data. 'hide' skjuler retter hvis navnet inneholder en av tekstene i 'names' (store/små bokstaver spiller ingen rolle). 'until' er første dato retten skal vises, i formatet ÅÅÅÅ-MM-DD, etter norsk tid; før den datoen er retten skjult. 'from' kan legges til for å skjule fra og med en dato. 'stores' begrenser regelen til bestemte butikker (liste med butikkoder som tekst, f.eks. [\"390\"]); uten 'stores' gjelder regelen alle butikker. Uten 'until' og 'from' gjelder regelen til du fjerner den. 'categoryNotes' viser en liten tekst ved siden av kategoritittelen; nøkkelen er kategoriens slug (breakfast, mains, childrens-menu, sandwiches-wraps, cold-starter, salads, side-dishes, desserts-pastries, hot-beverages). Endringer slår inn på skjermene innen fem minutter. 'hideInData' fjerner retter fra menydataene for bestemte butikker (samme 'names' og 'stores'; ingen datoer); det virker på alle skjermer med en gang, også de som kjører en eldre versjon av siden, og slår inn ved neste henting av data (nattlig, eller når jobben kjøres manuelt).",
   "hide": [
     {
       "names": [
@@ -8,7 +8,14 @@
       ],
       "until": "2026-11-01",
       "note": "Julemat vises fra 1. november"
-    },
+    }
+  ],
+  "categoryNotes": {
+    "breakfast": "Serveres frem til kl. 11.00",
+    "mains": "Varmmat serveres fra kl. 11.00",
+    "childrens-menu": "Varmmat serveres fra kl. 11.00"
+  },
+  "hideInData": [
     {
       "names": [
         "pinnekjøtt"
@@ -18,10 +25,5 @@
       ],
       "note": "IKEA Ringsaker selger ikke Pinnekjøtt, men har den i IKEAs data"
     }
-  ],
-  "categoryNotes": {
-    "breakfast": "Serveres frem til kl. 11.00",
-    "mains": "Varmmat serveres fra kl. 11.00",
-    "childrens-menu": "Varmmat serveres fra kl. 11.00"
-  }
+  ]
 }

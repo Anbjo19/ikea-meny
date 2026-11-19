@@ -224,6 +224,15 @@ uten at noe må publiseres på nytt.
   med kategoriens slug som nøkkel. I dag: «Serveres frem til kl. 11.00» ved
   Frokost og «Varmmat serveres fra kl. 11.00» ved Hovedretter.
 
+- **`hideInData`** fjerner retter fra menydataene for bestemte butikker
+  (`names` og `stores`, uten datoer). Det virker på alle skjermer med en
+  gang, også de som kjører en eldre versjon av siden, og slår inn når
+  dataene hentes på nytt (nattlig, eller når jobben kjøres manuelt fra
+  Actions-fanen). Bruk denne når en rett ikke selges i et varehus, men
+  ligger i IKEAs data for det. I dag: Pinnekjøtt i Ringsaker (390).
+  Regler i `hide` leses av selve siden og krever at skjermen har lastet
+  siden på nytt (hvert sjette time) før nye funksjoner som `stores` virker.
+
 Vil du se hvordan tavlen blir en bestemt dag, legg `&today=2026-11-01` på
 adressen. Mangler regelfilen eller kan den ikke leses, vises menyen uten
 regler.

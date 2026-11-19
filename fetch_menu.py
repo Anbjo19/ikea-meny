@@ -384,6 +384,39 @@ def report_unused_overrides() -> None:
         print(f"  Ikke lenger i bruk (IKEA har endret teksten?): {ov.get('name')} / {ov.get('field')} — kan fjernes fra text-overrides.json")
 
 
+# --- Retter som skjules i selve dataene for bestemte butikker -------------
+# display-rules.json har en liste "hideInData" med {"names": [...], "stores":
+# [...]}. Rettene fjernes da fra menu-data-<butikk>.json, så det virker på
+# alle skjermer uansett hvilken versjon av menu.html de kjører (i motsetning
+# til "hide", som leses av selve siden og krever at siden er lastet på nytt).
+DISPLAY_RULES_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "display-rules.json")
+
+
+def load_hide_in_data() -> list[dict]:
+    try:
+        with open(DISPLAY_RULES_PATH, encoding="utf-8") as f:
+            return json.load(f).get("hideInData", [])
+    except FileNotFoundError:
+        return []
+    except (ValueError, OSError) as e:
+        print(f"  Advarsel: kunne ikke lese display-rules.json: {e}", file=sys.stderr)
+        return []
+
+
+HIDE_IN_DATA = load_hide_in_data()
+
+
+def is_hidden_in_data(title: str, store_code: str | None) -> bool:
+    t = (title or "").lower()
+    for rule in HIDE_IN_DATA:
+        stores = [str(x) for x in rule.get("stores") or []]
+        if stores and str(store_code) not in stores:
+            continue
+        if any(str(n).lower() in t for n in rule.get("names") or []):
+            return True
+    return False
+
+
 def fetch_listing(salesarea: str) -> tuple[str, dict]:
     """Henter buildId + selve menylisten (ikke butikk-filtrert ennå).
 
@@ -414,6 +447,7 @@ def build_menu_from_listing(
 
     items = []
     skipped_not_web = 0
+    hidden_in_data = 0
     for entry in reduced_products:
         item = entry.get("item", {})
         excluded = {s.get("code") for s in item.get("excludedStores", []) or []}
@@ -431,6 +465,10 @@ def build_menu_from_listing(
         publishing_areas = item.get("publishingAreas") or []
         if "web" not in publishing_areas:
             skipped_not_web += 1
+            continue
+
+        if is_hidden_in_data(item.get("title") or "", store_code):
+            hidden_in_data += 1
             continue
 
         sales_areas = item.get("salesAreas") or []
@@ -473,6 +511,8 @@ def build_menu_from_listing(
         )
 
     print(f"  {len(items)} retter etter butikk-filter")
+    if hidden_in_data:
+        print(f"  (skjulte {hidden_in_data} rett(er) via hideInData i display-rules.json)")
     if skipped_not_web:
         print(f"  (hoppet over {skipped_not_web} rett(er) uten 'web' i publishingAreas — vises ikke på ikea.com)")
 
